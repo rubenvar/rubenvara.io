@@ -4,7 +4,8 @@
   import "@fontsource/baloo-2";
   import "@fontsource/victor-mono";
   import "normalize.css";
-  import "../app.css";
+  import "../app.scss";
+
   import TopBar from "$lib/TopBar.svelte";
   import Footer from "$lib/Footer.svelte";
 </script>

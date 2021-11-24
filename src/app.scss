@@ -1,3 +1,4 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
 :root {
   --maxWidth: 50ch;
   --maxCodeWidth: 76ch;
@@ -167,7 +168,7 @@ h4 {
   margin: 0 0 var(--gap50);
   text-rendering: optimizeLegibility;
   font-family: var(--specialFont);
-  font-weight: 500;
+  font-weight: 600;
 }
 /* h1 {} */
 h2 {

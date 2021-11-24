@@ -1,0 +1,13 @@
+/* Variables and mixins declared here will be available in all other SCSS files */
+@mixin emphasis {
+  font-style: italic;
+  border-radius: 3px;
+  padding: 0 2px;
+  font-family: var(--codeFont);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+@mixin jsEmphasis {
+  color: var(--javascriptYellow);
+  background: #333;
+}
