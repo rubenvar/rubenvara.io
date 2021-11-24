@@ -1,5 +1,5 @@
 {
-  "name": "src",
+  "name": "rv-svelte",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
@@ -7,8 +7,15 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
+    "@fontsource/baloo-2": "^4.5.0",
+    "@fontsource/dm-sans": "^4.5.0",
+    "@fontsource/mansalva": "^4.5.0",
+    "@fontsource/victor-mono": "^4.5.0",
     "@sveltejs/kit": "next",
-    "svelte": "^3.42.6"
+    "normalize.css": "^8.0.1",
+    "sass": "^1.43.4",
+    "svelte": "^3.42.6",
+    "svelte-preprocess": "^4.9.8"
   },
   "type": "module"
 }
