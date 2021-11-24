@@ -7,9 +7,9 @@
     <a href="/">Inicio</a>
     <span>◇</span>
   {/if}
-  <a class:active={$page.path.includes("/blog")} href="/blog"> Blog </a>
+  <a class:active={$page.path.includes("/blog")} href="/blog">Blog</a>
   <span>◇</span>
-  <a class:active={$page.path === "/now"} href="/now"> Ahora </a>
+  <a class:active={$page.path === "/now"} href="/now">Ahora</a>
 </nav>
 
 <style lang="scss">

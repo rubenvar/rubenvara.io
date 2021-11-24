@@ -12,7 +12,6 @@
 <footer>
   <div class="wrapper">
     <Nav />
-
     <p>
       ©{new Date().getFullYear()} rubenvara.io ·{" "}
       <a href="mailto:hey@rubenvara.io">Contacto</a>
@@ -77,6 +76,15 @@
           color: var(--grey500);
         }
       }
+    }
+  }
+  .wrapper {
+    max-width: 100%;
+    margin: 0 var(--gap50);
+    position: relative;
+    @media only screen and (min-width: 740px) {
+      width: var(--maxWidth);
+      margin: 0 auto;
     }
   }
 </style>

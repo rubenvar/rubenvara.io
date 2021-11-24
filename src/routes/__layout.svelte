@@ -1,4 +1,6 @@
 <script>
+  import { page } from "$app/stores";
+
   import "@fontsource/mansalva";
   import "@fontsource/dm-sans";
   import "@fontsource/baloo-2";
@@ -7,12 +9,13 @@
   import "../app.scss";
 
   import TopBar from "$lib/TopBar.svelte";
+  import Header from "$lib/Header.svelte";
   import Footer from "$lib/Footer.svelte";
 </script>
 
 <!-- <SkipLink /> -->
 <TopBar />
-<!-- <Header /> -->
+{#if $page.path !== "/"}<Header />{/if}
 <main>
   <slot />
 </main>
