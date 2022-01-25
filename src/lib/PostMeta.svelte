@@ -1,6 +1,6 @@
 <script>
   import dayjs from "dayjs";
-  import "dayjs/locale/es";
+  import "dayjs/locale/es.js";
 
   export let inBottom;
   export let inFullPost;

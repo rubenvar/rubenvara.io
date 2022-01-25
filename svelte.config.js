@@ -19,6 +19,21 @@ const config = {
     // hydrate the <div id="svelte"> element in src/app.html
     target: '#svelte',
     vite: {
+      // https://github.com/vitejs/vite/issues/6333
+      postcss: {
+        plugins: [
+          {
+            postcssPlugin: 'internal:charset-removal',
+            AtRule: {
+              charset: (atRule) => {
+                if (atRule.name === 'charset') {
+                  atRule.remove();
+                }
+              },
+            },
+          },
+        ],
+      },
       css: {
         preprocessorOptions: {
           scss: {
