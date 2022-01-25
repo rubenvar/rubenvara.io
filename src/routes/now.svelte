@@ -3,7 +3,7 @@
   import PageHeader from "$lib/PageHeader.svelte";
 </script>
 
-<PageHeader title="Ahora mismo" content="Actualizado: 23, nov" />
+<PageHeader title="Ahora mismo" content="Actualizado: 25 de enero, 2022" />
 
 <h2>¿Dónde estoy?</h2>
 <p>🏡 En casa.</p>

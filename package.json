@@ -6,18 +6,59 @@
     "build": "svelte-kit build",
     "preview": "svelte-kit preview"
   },
+  "type": "module",
   "devDependencies": {
-    "@fontsource/baloo-2": "^4.5.0",
+    "@babel/core": "^7.16.12",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/preset-react": "^7.16.7",
+    "@fontsource/baloo-2": "^4.5.1",
     "@fontsource/dm-sans": "^4.5.0",
-    "@fontsource/mansalva": "^4.5.0",
-    "@fontsource/victor-mono": "^4.5.0",
-    "@sveltejs/kit": "next",
+    "@fontsource/mansalva": "^4.5.1",
+    "@fontsource/victor-mono": "^4.5.1",
+    "@sveltejs/kit": "^1.0.0-next.241",
+    "@types/node": "^16.11.21",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
     "dayjs": "^1.10.7",
+    "dracula-prism": "^2.1.7",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^16.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-wesbos": "^3.0.2",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-svelte3": "^3.4.0",
     "mdsvex": "^0.9.8",
     "normalize.css": "^8.0.1",
-    "sass": "^1.42.1",
-    "svelte": "^3.42.6",
-    "svelte-preprocess": "^4.9.8"
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.6.0",
+    "sass": "^1.49.0",
+    "svelte": "^3.46.2",
+    "svelte-preprocess": "^4.10.2",
+    "typescript": "^4.5.5"
   },
-  "type": "module"
+  "eslintConfig": {
+    "extends": [
+      "wesbos"
+    ],
+    "plugins": [
+      "svelte3"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.svelte"
+        ],
+        "processor": "svelte3/svelte3"
+      }
+    ],
+    "rules": {
+      "import/no-extraneous-dependencies": "warn"
+    }
+  }
 }

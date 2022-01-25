@@ -6,6 +6,7 @@
   import "@fontsource/baloo-2";
   import "@fontsource/victor-mono";
   import "normalize.css";
+  import "dracula-prism/dist/css/dracula-prism.css";
   import "../app.scss";
 
   import TopBar from "$lib/TopBar.svelte";
@@ -15,7 +16,7 @@
 
 <!-- <SkipLink /> -->
 <TopBar />
-{#if $page.path !== "/"}<Header />{/if}
+{#if $page.url.pathname !== "/"}<Header />{/if}
 <main>
   <slot />
 </main>

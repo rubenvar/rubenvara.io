@@ -2,7 +2,7 @@
   let showLong = false;
 </script>
 
-<h2>Durante la última década...</h2>
+<h2>Durante la década pasada...</h2>
 {#if showLong}
   <p>
     Estudié un grado en alternancia en el IMH, Elgoibar. Trabajé varios años

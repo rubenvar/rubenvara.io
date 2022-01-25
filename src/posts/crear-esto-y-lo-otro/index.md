@@ -8,6 +8,7 @@ description: 'Folding cameras have the benefits of high resolution negatives but
 categories:
   - Javascript
   - Herramientas
+status: published
 ---
 
 lorem oiaerghañoit ñoeariga ñrgñar goñaerh iaerioñh iaoñlorem oiaerghañoit ñoeariga ñrgñar goñaerh iaerioñh iaoñlorem oiaerghañoit ñoeariga ñrgñar goñaerh iaerioñh iaoñlorem oiaerghañoit ñoeariga ñrgñar goñaerh iaerioñh iaoñlorem oiaerghañoit ñoeariga ñrgñar goñaerh iaelorem oiaerghañoit ñoeariga ñrgñar goñaerh iaerioñh iaoñlorem oiaerghañoit ñoeariga ñrgñar goñaerh iaerioñh iaoñlorem oiaerghañoit ñoeari

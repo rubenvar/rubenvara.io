@@ -12,7 +12,7 @@
     </span>
   {/each}
 </h1>
-<p>Desarollo páginas web naturales, rápidas y modernas.</p>
+<p class="bigger">Desarollo páginas web naturales, rápidas y modernas</p>
 <p>
   En los ratos libres escalo todo lo que puedo, leo, dibujo, y trabajo en más
   proyectos web.
@@ -69,5 +69,8 @@
         letter-spacing: -4px;
       }
     }
+  }
+  .bigger {
+    font-size: var(--fontSize50);
   }
 </style>

@@ -7,7 +7,9 @@
     <h2>
       <a href="/">rubenvara.io</a>
     </h2>
-    {#if !$page.path.includes("/blog")}<a href="/blog">Ir al blog</a>{/if}
+    {#if !$page.url.pathname.includes("/blog")}
+      <a href="/blog">Ir al blog</a>
+    {/if}
   </div>
 </header>
 

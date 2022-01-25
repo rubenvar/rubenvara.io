@@ -4,7 +4,7 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
-- Full rewrite site in SvelteKit.
+- Full rewrite (*simple*) site in SvelteKit.
 
 ### Changed
 

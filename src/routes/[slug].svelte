@@ -1,6 +1,6 @@
 <script context="module">
-  export async function load({ page, fetch }) {
-    const res = await fetch(`/${page.params.slug}.json`);
+  export async function load({ params, fetch }) {
+    const res = await fetch(`/${params.slug}.json`);
 
     if (res.ok) {
       const data = await res.json();
@@ -22,40 +22,31 @@
 </script>
 
 <script>
-  import dayjs from "dayjs";
-  import "dayjs/locale/es";
+  import PostMeta from "$lib/PostMeta.svelte";
 
   export let post;
+
+  // const seoTitle = post.seoTitle || post.title;
+  // const metaDescription = post.description || post.title;
 </script>
 
 <header>
   <h1>{post.title}</h1>
-  <p class="post-meta">
-    <span>
-      <time dateTime={post.date}
-        >{dayjs(post.date).locale("es").format("D [de] MMMM, YYYY")}</time
-      >
-    </span>
-    <span class="cats">
-      {#each post.categories as cat}
-        <span>#{cat.toLowerCase()}</span>
-      {/each}
-    </span>
-  </p>
+  <PostMeta
+    inFullPost={true}
+    date={post.updated || post.date}
+    categories={post.categories}
+  />
 </header>
+
 {@html post.content}
-<p class="post-meta in-bottom">
-  <span>
-    <time dateTime={post.date}
-      >{dayjs(post.date).locale("es").format("D [de] MMMM, YYYY")}</time
-    >
-  </span>
-  <span class="cats">
-    {#each post.categories as cat}
-      <span>#{cat.toLowerCase()}</span>
-    {/each}
-  </span>
-</p>
+
+<PostMeta
+  inBottom={true}
+  inFullPost={true}
+  date={post.updated || post.date}
+  categories={post.categories}
+/>
 
 <!-- <TwitterBox twitter={frontmatter.twitter} /> -->
 
@@ -65,25 +56,6 @@
     margin-bottom: var(--gap70);
     h1 {
       color: var(--primary500);
-    }
-  }
-  .post-meta {
-    margin: 0;
-    display: flex;
-    justify-content: space-between;
-    gap: var(--gap40);
-    color: var(--grey500);
-    font-size: var(--fontSize30);
-    &.in-bottom {
-      margin-top: var(--gap90);
-    }
-    .cats {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      span {
-        margin: 0 var(--gap20) 0 0;
-      }
     }
   }
 </style>
