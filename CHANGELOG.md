@@ -4,7 +4,12 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
-- Full rewrite (*simple*) site in SvelteKit.
+## [0.3.0] - 2022-01-25
+
+- Full rewrite (*simple*) site in SvelteKit:
+  - Added (old*ish*) index and now page
+  - Added blog and posts, written in MDsveX.
+  - Added ESlint.
 
 ### Changed
 
