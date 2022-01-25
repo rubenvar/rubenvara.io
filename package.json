@@ -15,6 +15,7 @@
     "@fontsource/dm-sans": "^4.5.0",
     "@fontsource/mansalva": "^4.5.1",
     "@fontsource/victor-mono": "^4.5.1",
+    "@sveltejs/adapter-netlify": "^1.0.0-next.43",
     "@sveltejs/kit": "^1.0.0-next.241",
     "@types/node": "^16.11.21",
     "@typescript-eslint/eslint-plugin": "^5.10.1",
