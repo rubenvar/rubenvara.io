@@ -1,6 +1,8 @@
 <script context="module">
   export async function load({ params, fetch }) {
-    const res = await fetch(`/${params.slug}.json`);
+    const { slug } = params;
+
+    const res = await fetch(`/${slug}.json`);
 
     if (res.ok) {
       const data = await res.json();
@@ -8,6 +10,7 @@
       return {
         props: {
           post: data.post,
+          page: (await import(`../posts/${slug}/index.md`)).default,
         },
       };
     }
@@ -26,7 +29,7 @@
   import PostMeta from "$lib/PostMeta.svelte";
 
   export let post;
-
+  export let page;
   // const seoTitle = post.seoTitle || post.title;
   // const metaDescription = post.description || post.title;
 </script>
@@ -42,7 +45,8 @@
   />
 </header>
 
-{@html post.content}
+<!-- {@html post.content} -->
+<svelte:component this={page} />
 
 <PostMeta
   inBottom={true}

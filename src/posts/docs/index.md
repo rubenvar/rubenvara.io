@@ -30,7 +30,9 @@ twitter: https://www.twitter.com/etc-etc-etc
 
 Only `slug`, `title` and `date` are required.
 
-`slug` is used to fetch the single post and when listing all posts, the folder name inside `/posts/` means nothing.
+`slug` is used to fetch the single post and when listing all posts
+
+The folder name inside `/posts/` is used to render the whole md file, so **it has to match** the `slug` field.
 
 If no `seoTitle` or `description` provided, `title` is used.
 
