@@ -22,6 +22,7 @@
 </script>
 
 <script>
+  import { dev } from "$app/env";
   import PostMeta from "$lib/PostMeta.svelte";
 
   export let post;
@@ -31,7 +32,9 @@
 </script>
 
 <header>
-  <h1>{post.title}</h1>
+  <h1>
+    {post.title}{#if dev && post.status === "draft"}{" "}(draft){/if}
+  </h1>
   <PostMeta
     inFullPost={true}
     date={post.updated || post.date}

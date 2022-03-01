@@ -100,9 +100,9 @@ export const getSinglePost = async (slug, isContentWanted = true) => {
 
   if (!contentPath) throw new Error('no post found with this url');
   const article = fs.readFileSync(contentPath, { encoding: 'utf-8' });
-
   const compiled = await compile(article);
-  const { title, seoTitle, date, updated, description, categories } =
+
+  const { title, seoTitle, date, updated, description, categories, status } =
     compiled.data.fm;
 
   let result = {
@@ -113,6 +113,7 @@ export const getSinglePost = async (slug, isContentWanted = true) => {
     updated,
     description,
     categories,
+    status,
   };
   if (isContentWanted) {
     result = { ...result, content: compiled.code };
