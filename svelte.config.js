@@ -16,8 +16,6 @@ const config = {
   ],
   kit: {
     adapter: adapter(),
-    // hydrate the <div id="svelte"> element in src/app.html
-    target: '#svelte',
     vite: {
       // https://github.com/vitejs/vite/issues/6333
       postcss: {
