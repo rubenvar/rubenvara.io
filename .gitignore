@@ -7,3 +7,4 @@ package/
 .env
 .vscode/
 IDEAS.md
+.netlify/
