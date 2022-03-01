@@ -4,6 +4,22 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.3.2] - 2022-03-01
+
+### Added
+
+- Created `/now` page in `svx` instead of `html`.
+- Added draft text in post title in `dev`.
+- Added draft text in listed post in `dev`.
+
+### Changed
+
+- Tried to add the Triangles canvas.
+
+### Fixed
+
+- Fixed `svx` post content code snippets render.
+
 ## [0.3.1] - 2022-03-01
 
 ### Changed
