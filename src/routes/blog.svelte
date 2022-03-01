@@ -41,9 +41,7 @@
 </header>
 
 {#each posts as post}
-  <article>
-    <ListedPost {post} />
-  </article>
+  <ListedPost {post} />
 {/each}
 
 <style lang="scss">
