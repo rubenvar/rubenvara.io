@@ -11,10 +11,12 @@
   import TopBar from "$lib/TopBar.svelte";
   import Header from "$lib/Header.svelte";
   import Footer from "$lib/Footer.svelte";
+  // import Triangles from "$lib/Triangles.svelte";
 </script>
 
 <!-- <SkipLink /> -->
 <TopBar />
+<!-- <Triangles /> -->
 {#if $page.url.pathname !== "/"}<Header />{/if}
 <main>
   <slot />
@@ -23,6 +25,7 @@
 
 <style lang="scss">
   main {
+    position: relative;
     display: grid;
     grid-template-columns:
       1fr min(var(--maxWidth), calc(100% - 40px))

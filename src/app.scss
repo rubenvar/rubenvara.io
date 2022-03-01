@@ -131,6 +131,9 @@ body {
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
+#svelte {
+  position: relative;
+}
 audio,
 canvas,
 progress,
@@ -202,6 +205,16 @@ code,
 pre[class*="language-"] {
   font-family: var(--codeFont);
   font-size: var(--fontSize30);
+}
+main > pre[class*="language-"] {
+  // grid-column: 1 / -1;
+  // border-radius: 0;
+  margin-bottom: var(--gap70);
+  // > code {
+  //   display: block;
+  //   max-width: 720px;
+  //   margin: 0 auto;
+  // }
 }
 /* add it here as svelte strips it from __layout css */
 main > * {

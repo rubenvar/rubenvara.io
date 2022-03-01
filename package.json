@@ -35,6 +35,7 @@
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-svelte3": "^3.4.1",
+    "just-random-integer": "^4.0.0",
     "mdsvex": "^0.10.5",
     "normalize.css": "^8.0.1",
     "prettier": "^2.5.1",
