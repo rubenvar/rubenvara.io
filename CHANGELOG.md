@@ -4,6 +4,13 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.3.1] - 2022-03-01
+
+### Changed
+
+- Updated dependencies.
+- Try Netlify adapter again.
+
 ## [0.3.0] - 2022-01-25
 
 - Full rewrite (*simple*) site in SvelteKit:
@@ -11,8 +18,6 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
   - Added blog and posts, written in MDsveX.
   - Added ESlint.
   - Added netlify adapter.
-
-### Changed
 
 ## [0.2.1] - 2021-01-15
 
