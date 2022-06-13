@@ -1,24 +1,3 @@
-<script context="module">
-  export async function load({ fetch }) {
-    const res = await fetch("/blog.json");
-
-    if (res.ok) {
-      const data = await res.json();
-
-      return {
-        props: {
-          posts: data.posts,
-        },
-      };
-    }
-
-    console.log("noooo");
-    return {
-      props: {},
-    };
-  }
-</script>
-
 <script>
   import ListedPost from "$lib/ListedPost.svelte";
 

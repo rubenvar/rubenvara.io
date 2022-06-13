@@ -1,6 +1,6 @@
 <script>
-  import Box from "$lib/Box.svelte";
-  import PageHeader from "$lib/PageHeader.svelte";
+  import Box from "$lib/Box.svelte"; import PageHeader from
+  "$lib/PageHeader.svelte";
 </script>
 
 <PageHeader title="Ahora mismo" content="Actualizado: 25 de enero, 2022" />
@@ -34,6 +34,7 @@ Seguir aprendiendo desarrollo web. Y empezar a enseñarlo, muy pronto. Por escri
 Nadar más todavía. Y seguir escalando.
 
 Seguir desarrollando otras aficiones como el fitness/calistenia, el dibujo, y el bricolaje. Poco a poco.
+
 <Box type="info">
 
 Esto es una página _now_ ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:
