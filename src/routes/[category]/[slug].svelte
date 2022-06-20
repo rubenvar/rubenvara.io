@@ -6,6 +6,12 @@
   export let post: Post;
 </script>
 
+<svelte:head>
+  {#if post}
+    <title>{post.seoTitle}</title>
+    <meta name="description" content={post.description || post.title} />
+  {/if}
+</svelte:head>
 {#if post}
   <header>
     <h1>
