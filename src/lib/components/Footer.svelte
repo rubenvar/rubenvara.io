@@ -13,7 +13,8 @@
   <div class="wrapper">
     <Nav />
     <p>
-      ©{new Date().getFullYear()} rubenvara.io ·{' '}
+      <!-- svelte-ignore missing-declaration -->
+      v{__PKG_VERSION__} · ©{new Date().getFullYear()} rubenvara.io ·{' '}
       <a href="mailto:hey@rubenvara.io">Contacto</a>
     </p>
   </div>
