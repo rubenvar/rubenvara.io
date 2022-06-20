@@ -82,18 +82,18 @@
   --gap110: 96px;
   --gap120: 131px;
 
-  --fontSize10: 0.6rem;
-  --fontSize20: 0.75rem;
-  --fontSize30: 0.85rem;
-  --fontSize40: 1rem;
-  --fontSize50: 1.15rem;
-  --fontSize60: 1.35rem;
-  --fontSize70: 1.6rem;
-  --fontSize80: 1.85rem;
-  --fontSize90: 2.2rem;
-  --fontSize100: 2.55rem;
-  --fontSize110: 2.7rem;
-  --fontSize150: 3.8rem;
+  --fz10: 0.6rem;
+  --fz20: 0.75rem;
+  --fz30: 0.85rem;
+  --fz40: 1rem;
+  --fz50: 1.15rem;
+  --fz60: 1.35rem;
+  --fz70: 1.6rem;
+  --fz80: 1.85rem;
+  --fz90: 2.2rem;
+  --fz100: 2.55rem;
+  --fz110: 2.7rem;
+  --fz150: 3.8rem;
 
   --focus: orange;
 
@@ -133,6 +133,7 @@ body {
 }
 #svelte {
   position: relative;
+  min-height: 100vh;
 }
 audio,
 canvas,
@@ -174,15 +175,15 @@ h4 {
 /* h1 {} */
 h2 {
   margin: var(--gap70) 0 var(--gap60);
-  font-size: var(--fontSize80);
+  font-size: var(--fz80);
 }
 h3 {
   margin: var(--gap30) 0 var(--gap60);
-  font-size: var(--fontSize70);
+  font-size: var(--fz70);
 }
 h4 {
   margin: 0 0 var(--gap60);
-  font-size: var(--fontSize60);
+  font-size: var(--fz60);
 }
 ul,
 ol {
@@ -204,7 +205,7 @@ a:focus {
 code,
 pre[class*='language-'] {
   font-family: var(--codeFont);
-  font-size: var(--fontSize30);
+  font-size: var(--fz30);
 }
 main > pre[class*='language-'] {
   // grid-column: 1 / -1;

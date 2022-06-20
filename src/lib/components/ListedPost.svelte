@@ -25,7 +25,7 @@
   }
   h2 {
     font-weight: 500;
-    font-size: var(--fontSize60);
+    font-size: var(--fz60);
     margin-top: 0;
     margin-bottom: var(--gap30);
     a {
@@ -38,7 +38,7 @@
   }
   .description {
     color: var(--grey700);
-    font-size: var(--fontSize30);
+    font-size: var(--fz30);
     margin: 0;
     margin-bottom: var(--gap30);
     line-height: 1.35rem;

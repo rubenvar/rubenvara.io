@@ -63,7 +63,7 @@
     font-style: italic;
     font-family: var(--specialFont);
     font-weight: 700;
-    font-size: var(--fontSize60);
+    font-size: var(--fz60);
   }
   label {
     /* props to Sara Soueidan (https://sarasoueidan.com) for the component design */
@@ -78,7 +78,7 @@
       }
     }
     .text {
-      font-size: var(--fontSize30);
+      font-size: var(--fz30);
       cursor: pointer;
       vertical-align: middle;
       transition: all 0.25s;

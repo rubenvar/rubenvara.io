@@ -18,8 +18,8 @@
     justify-content: center;
     align-items: center;
     gap: var(--gap70);
-    padding: var(--gap80) 0 var(--gap110);
-    font-size: var(--fontSize60);
+    padding: var(--gap80) 0;
+    font-size: var(--fz60);
     a {
       text-decoration: none;
       color: var(--primary700);
@@ -31,7 +31,7 @@
       }
     }
     span {
-      font-size: var(--fontSize30);
+      font-size: var(--fz30);
       color: var(--secondary500);
       opacity: 0.8;
     }

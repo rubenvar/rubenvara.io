@@ -36,7 +36,7 @@
     justify-content: space-between;
     gap: var(--gap40);
     color: var(--grey500);
-    font-size: var(--fontSize30);
+    font-size: var(--fz30);
     &.in-bottom {
       margin-top: var(--gap90);
     }

@@ -44,7 +44,7 @@
   }
   h1 {
     font-family: var(--logoFont);
-    font-size: var(--fontSize150);
+    font-size: var(--fz150);
     /* letter-spacing: -1px; */
     color: var(--primary500);
     /* this would chose a color randomly for each letter, could be done in js? */
@@ -72,7 +72,7 @@
     }
   }
   .bigger {
-    font-size: var(--fontSize50);
+    font-size: var(--fz50);
   }
   img {
     border: 5px solid var(--grey700);
