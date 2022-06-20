@@ -1,10 +1,14 @@
 export type Post = {
+  // required on post create
   title: string;
-  slug: string;
   date: string;
-  updated: string;
-  description: string;
   status: 'published' | 'draft';
+  // from file system
+  slug: string;
   category: string;
   content: string;
+  // optional
+  seoTitle?: string;
+  updated?: string;
+  description?: string;
 }

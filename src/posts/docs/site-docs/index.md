@@ -21,7 +21,7 @@ twitter: https://www.twitter.com/etc-etc-etc
 ---
 ```
 
-Only `title` and `date` are required.
+Only `title`, `date` and `status` are required.
 
 Post `slug` is the folder name, so careful on folder naming/renaming.
 
@@ -37,6 +37,6 @@ If `updated` is equal to `date`, it's ignored. No need to set it on publish.
 
 ## Post status
 
-Posts can be `status: "published"` or `status: "draft" (or anything else)`.
+Posts can be `status: "published"` or `status: "draft" (or anything else really)`.
 
 If not `"published"`, posts load in `dev` but not in `prod`.
