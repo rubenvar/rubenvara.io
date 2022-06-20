@@ -1,8 +1,8 @@
 ---
-title: Cómo mostrar la version desde package.json en SvelteKit
-seoTitle: Cómo Mostrar la Version desde package.json en SvelteKit
+title: Cómo mostrar la versión desde package.json en SvelteKit
+seoTitle: Cómo Mostrar la Versión desde package.json en SvelteKit
 date: 2022-04-21
-description: Cómo mostrar la versíon de tu app, importada desde `package.json`, sin errores ni problemas de ningún tipo
+description: Cómo mostrar la versíon de tu app, importada desde package.json, sin errores ni problemas de ningún tipo
 status: published
 ---
 
