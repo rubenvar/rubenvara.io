@@ -2,7 +2,6 @@
 title: Cómo crear un conversor de colores en bloque (bulk)
 seoTitle: Cómo Convertir una Lista de Colores de HEX a HSL en bloque
 date: 2020-04-05
-updated: 2022-04-10
 description: Convertir colores HEX a HSL(). Muchos a la vez. Y evitar que alguien lo rompa. Todo en vanilla javascript
 status: published
 ---
@@ -324,7 +323,5 @@ reset.addEventListener(`click`, () => {
 ```
 
 ## Conclusión
-
-Ya has visto cómo se hace, aquí te lo repito todo otra vez en dos líneas.
 
 El código completo con todo lo que acabas de ver (pero junto), con los `getElementById`s y demás, [lo tienes aquí mismo](https://github.com/rubenvar/bulk-color-converter/blob/master/src/scripts.js).
