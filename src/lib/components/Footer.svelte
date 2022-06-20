@@ -16,33 +16,6 @@
       ©{new Date().getFullYear()} rubenvara.io ·{' '}
       <a href="mailto:hey@rubenvara.io">Contacto</a>
     </p>
-    <p>
-      Web creada con{' '}
-      <a
-        href="https://kit.svelte.dev/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        SvelteKit
-      </a>{' '}
-      y alojada en{' '}
-      <a
-        href="https://www.netlify.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Netlify
-      </a>
-      . El código está en{' '}
-      <a
-        href="https://github.com/rubenvar/rubenvara.io"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Github
-      </a>
-      .
-    </p>
   </div>
 </footer>
 
@@ -65,7 +38,7 @@
     transition: all 0.3s;
     p {
       margin: 0;
-      font-size: var(--fontSize20);
+      font-size: var(--fz20);
       text-align: center;
       color: var(--grey500);
       a {
