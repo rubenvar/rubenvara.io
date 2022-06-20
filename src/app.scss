@@ -193,6 +193,14 @@ ol {
     margin-bottom: var(--gap10);
   }
 }
+hr {
+  box-sizing: border-box;
+  margin: calc(var(--gap80) - var(--gap60)) auto var(--gap80);
+  border: 2px solid var(--grey500);
+  width: 0;
+  height: 64px;
+  border-radius: 3px;
+}
 button {
   cursor: pointer;
 }
