@@ -2,6 +2,7 @@
   import type { Post } from '$lib/utils/types';
   import { dev } from '$app/env';
   import PostMeta from '$lib/components/PostMeta.svelte';
+  import TwitterBox from '$lib/components/TwitterBox.svelte';
 
   export let post: Post;
 </script>
@@ -25,6 +26,8 @@
   </header>
 
   {@html post.content}
+
+  <TwitterBox twitter={post.twitter} />
 
   <PostMeta
     inBottom={true}

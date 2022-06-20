@@ -11,4 +11,5 @@ export type Post = {
   seoTitle?: string;
   updated?: string;
   description?: string;
+  twitter?: string;
 }
