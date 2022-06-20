@@ -42,7 +42,7 @@
     /* .gatsby-highlight pre code {
     display: block;
     width: 100%;
-    max-width: var(--maxCodeWidth);
+    max-width: var(--codeWidth);
     margin: 0 auto;
   } */
   }

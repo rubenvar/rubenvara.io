@@ -1,10 +1,7 @@
 /* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
 :root {
   --maxWidth: 50ch;
-  --maxCodeWidth: 76ch;
-
-  --smallBr: 6px;
-  --bigBr: 13px;
+  --codeWidth: 80ch;
 
   --normalFont: 'DM Sans', --apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -102,6 +99,10 @@
   --boxShadow100: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   --boxShadow200: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
   --boxShadow300: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+
+  --radius10: 3px;
+  --radius20: 6px;
+  --radius30: 11px;
 }
 html {
   font-family: var(--normalFont);
@@ -196,10 +197,12 @@ ol {
 hr {
   box-sizing: border-box;
   margin: calc(var(--gap80) - var(--gap60)) auto var(--gap80);
+  background: var(--grey500);
   border: 2px solid var(--grey500);
-  width: 0;
+  width: 0px;
   height: 64px;
   border-radius: 3px;
+  transform: rotate(14deg);
 }
 button {
   cursor: pointer;
@@ -213,18 +216,20 @@ a:focus {
 code,
 pre[class*='language-'] {
   font-family: var(--codeFont);
-  font-size: var(--fz30);
+  font-size: 0.9em;
 }
 main > pre[class*='language-'] {
-  // grid-column: 1 / -1;
-  // border-radius: 0;
+  grid-column: 1 / -1;
   margin-bottom: var(--gap70);
-  // > code {
-  //   display: block;
-  //   max-width: 720px;
-  //   margin: 0 auto;
-  // }
+  width: var(--codeWidth);
+  justify-self: center;
+  > code {
+    display: block;
+    max-width: var(--codeWidth);
+    margin: 0 auto;
+  }
 }
+
 /* add it here as svelte strips it from __layout css */
 main > * {
   grid-column: 2;
