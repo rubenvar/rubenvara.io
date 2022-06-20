@@ -4,7 +4,7 @@
 // https://github.com/mattjennings/sveltekit-blog-template
 import type { Post } from '$lib/utils/types';
 
-export async function getAllPosts(category?: string) {
+export async function getAllPosts(isDev: boolean, category?: string) {
   const allPostFiles = import.meta.glob('../posts/**/*.md');
 
   const iterablePostFiles = Object.entries(allPostFiles);
@@ -22,16 +22,20 @@ export async function getAllPosts(category?: string) {
   );
 
   // sort by date here
-  const sortedPosts = allPosts.sort((a, b) => {
+  let posts = allPosts.sort((a, b) => {
     return new Date(b.date) < new Date(a.date) ? -1 : 1;
   });
 
-  // filter by category
-  if (category) {
-    return sortedPosts.filter((post) => post.category === category);
+  if (!isDev) {
+    posts = posts.filter(post => post.status === 'published');
   }
 
-  return sortedPosts;
+  // filter by category
+  if (category) {
+    posts = posts.filter((post) => post.category === category);
+  }
+
+  return posts;
 }
 
 export const getSinglePost = async (category: string, slug: string) => {
