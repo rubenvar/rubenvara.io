@@ -1,5 +1,5 @@
 <script>
-  import Nav from "./Nav.svelte";
+  import Nav from './Nav.svelte';
   // const angle = -3;
   // calculate magic number
   // const magicNumber = Math.abs(Math.tan((angle * Math.PI) / 180) / 2);
@@ -13,19 +13,19 @@
   <div class="wrapper">
     <Nav />
     <p>
-      ©{new Date().getFullYear()} rubenvara.io ·{" "}
+      ©{new Date().getFullYear()} rubenvara.io ·{' '}
       <a href="mailto:hey@rubenvara.io">Contacto</a>
     </p>
     <p>
-      Web creada con{" "}
+      Web creada con{' '}
       <a
         href="https://kit.svelte.dev/"
         target="_blank"
         rel="noopener noreferrer"
       >
         SvelteKit
-      </a>{" "}
-      y alojada en{" "}
+      </a>{' '}
+      y alojada en{' '}
       <a
         href="https://www.netlify.com/"
         target="_blank"
@@ -33,7 +33,7 @@
       >
         Netlify
       </a>
-      . El código está en{" "}
+      . El código está en{' '}
       <a
         href="https://github.com/rubenvar/rubenvara.io"
         target="_blank"

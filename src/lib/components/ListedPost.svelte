@@ -1,22 +1,22 @@
-<script>
-  import { dev } from "$app/env";
+<script lang="ts">
+  import { dev } from '$app/env';
+  import PostMeta from './PostMeta.svelte';
+  import type { Post } from '$lib/utils/types';
 
-  import PostMeta from "./PostMeta.svelte";
-
-  export let post;
+  export let post: Post;
 </script>
 
 <article>
   <h2>
-    <a href={post.slug}>{post.title}</a>
+    <a href="/{post.category}/{post.slug}">{post.title}</a>
   </h2>
   {#if post.description}
     <p class="description">{post.description}</p>
   {/if}
-  {#if dev && post.status === "draft"}
+  {#if dev && post.status === 'draft'}
     <p class="description">(draft)</p>
   {/if}
-  <PostMeta date={post.updated || post.date} categories={post.categories} />
+  <PostMeta date={post.updated || post.date} category={post.category} />
 </article>
 
 <style lang="scss">

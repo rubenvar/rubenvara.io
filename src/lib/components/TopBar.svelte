@@ -59,7 +59,7 @@
       var(--primary400),
       var(--primary500)
     );
-    content: "";
+    content: '';
     position: absolute;
   }
 </style>

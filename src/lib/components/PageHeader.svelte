@@ -1,6 +1,6 @@
-<script>
-  export let title;
-  export let content = undefined;
+<script lang="ts">
+  export let title: string;
+  export let content: string | undefined;
 </script>
 
 <header>

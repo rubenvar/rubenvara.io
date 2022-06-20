@@ -1,23 +1,23 @@
 <script>
-  import { page } from "$app/stores";
-  import "@fontsource/mansalva";
-  import "@fontsource/dm-sans";
-  import "@fontsource/baloo-2";
-  import "@fontsource/victor-mono";
-  import "normalize.css";
-  import "dracula-prism/dist/css/dracula-prism.css";
+  import { page } from '$app/stores';
+  import '@fontsource/mansalva';
+  import '@fontsource/dm-sans';
+  import '@fontsource/baloo-2';
+  import '@fontsource/victor-mono';
+  import 'normalize.css';
+  import 'dracula-prism/dist/css/dracula-prism.css';
 
-  import "../app.scss";
-  import TopBar from "$lib/TopBar.svelte";
-  import Header from "$lib/Header.svelte";
-  import Footer from "$lib/Footer.svelte";
-  // import Triangles from "$lib/Triangles.svelte";
+  import '../app.scss';
+  import TopBar from '$lib/components/TopBar.svelte';
+  import Header from '$lib/components/Header.svelte';
+  import Footer from '$lib/components/Footer.svelte';
+  // import Triangles from "$lib/components/Triangles.svelte";
 </script>
 
 <!-- <SkipLink /> -->
 <TopBar />
 <!-- <Triangles /> -->
-{#if $page.url.pathname !== "/"}<Header />{/if}
+{#if $page.url.pathname !== '/'}<Header />{/if}
 <main>
   <slot />
 </main>

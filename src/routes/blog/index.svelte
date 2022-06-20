@@ -1,7 +1,8 @@
-<script>
-  import ListedPost from "$lib/ListedPost.svelte";
+<script lang="ts">
+  import ListedPost from '$lib/components/ListedPost.svelte';
+  import type { Post } from '$lib/utils/types';
 
-  export let posts;
+  export let posts: Post[];
 </script>
 
 <header>

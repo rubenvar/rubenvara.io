@@ -1,5 +1,5 @@
 <script>
-  import { page } from "$app/stores";
+  import { page } from '$app/stores';
 </script>
 
 <header>
@@ -7,7 +7,7 @@
     <h2>
       <a href="/">rubenvara.io</a>
     </h2>
-    {#if !$page.url.pathname.includes("/blog")}
+    {#if !$page.url.pathname.includes('/blog')}
       <a href="/blog">Ir al blog</a>
     {/if}
   </div>

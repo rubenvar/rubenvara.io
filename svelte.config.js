@@ -1,22 +1,21 @@
 import { mdsvex } from 'mdsvex';
 import preprocess from 'svelte-preprocess';
-// import adapter from '@sveltejs/adapter-static';
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
+// import adapter from '@sveltejs/adapter-auto';
 import mdsvexConfig from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  extensions: ['.svelte', ...mdsvexConfig.extensions],
-  preprocess: [
-    preprocess({
-      scss: {
-        prependData: '@use "src/variables.scss";',
-      },
-    }),
-    mdsvex(mdsvexConfig),
-  ],
   kit: {
     adapter: adapter(),
+    trailingSlash: 'always',
+    // Override http methods in the Todo forms
+    methodOverride: {
+      allowed: ['PATCH', 'DELETE'],
+    },
+    prerender: {
+      default: true,
+    },
     vite: {
       // https://github.com/vitejs/vite/issues/6333
       postcss: {
@@ -42,6 +41,15 @@ const config = {
       },
     },
   },
+  extensions: ['.svelte', ...mdsvexConfig.extensions],
+  preprocess: [
+    preprocess({
+      scss: {
+        prependData: '@use "src/variables.scss";',
+      },
+    }),
+    mdsvex(mdsvexConfig),
+  ],
 };
 
 export default config;

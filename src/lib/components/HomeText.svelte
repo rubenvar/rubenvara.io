@@ -55,7 +55,7 @@
     on:change={() => (showLong = !showLong)}
   />
   <span aria-hidden="true" class="switch" />
-  <span class={showLong ? "text selected" : "text"}> Versión extendida </span>
+  <span class={showLong ? 'text selected' : 'text'}> Versión extendida </span>
 </label>
 
 <style lang="scss">
@@ -121,11 +121,11 @@
       margin: 0 5px;
       transition: all 0.25s;
       &::after {
-        content: "";
+        content: '';
         width: 21px;
         height: 21px;
         background: #fff;
-        content: "";
+        content: '';
         border-radius: 10.5px;
         position: absolute;
         margin-top: 0px;

@@ -1,6 +1,6 @@
 <script>
-  import Box from "$lib/Box.svelte"; import PageHeader from
-  "$lib/PageHeader.svelte";
+  import Box from "$lib/components/Box.svelte";
+  import PageHeader from "$lib/components/PageHeader.svelte";
 </script>
 
 <PageHeader title="Ahora mismo" content="Actualizado: 25 de enero, 2022" />

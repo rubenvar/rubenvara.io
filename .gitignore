@@ -5,6 +5,8 @@ functions/
 .svelte-kit/
 package/
 .env
+.env.*
+!.env.example
 .vscode/
 IDEAS.md
 .netlify/

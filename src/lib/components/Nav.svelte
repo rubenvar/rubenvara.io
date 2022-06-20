@@ -1,15 +1,15 @@
 <script>
-  import { page } from "$app/stores";
+  import { page } from '$app/stores';
 </script>
 
 <nav>
-  {#if $page.url.pathname !== "/"}
+  {#if $page.url.pathname !== '/'}
     <a href="/">Inicio</a>
     <span>◇</span>
   {/if}
-  <a class:active={$page.url.pathname.includes("/blog")} href="/blog">Blog</a>
+  <a class:active={$page.url.pathname.includes('/blog')} href="/blog">Blog</a>
   <span>◇</span>
-  <a class:active={$page.url.pathname === "/now"} href="/now">Ahora</a>
+  <a class:active={$page.url.pathname === '/now'} href="/now">Ahora</a>
 </nav>
 
 <style lang="scss">

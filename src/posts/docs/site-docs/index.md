@@ -1,10 +1,7 @@
 ---
-slug: docs
 title: Docs para publicar en mi web
 date: 2020-03-21
 updated: 2022-01-25
-categories:
-  - Docs
 status: draft
 ---
 
@@ -14,25 +11,21 @@ All possible frontmatter values for posts:
 
 ```yaml
 ---
-slug: como-crear-conversor-colores-bulk
 title: Cómo crear un conversor de colores en bloque (bulk)
 seoTitle: Cómo Convertir una Lista de Colores de HEX a HSL en bloque
 date: 2020-04-05
 updated: 2020-04-10
 description: Convertir colores HEX a HSL(). Muchos a la vez. Y evitar que alguien lo rompa. Todo en vanilla javascript
-categories:
-  - Javascript
-  - Herramientas
 status: published or draft
 twitter: https://www.twitter.com/etc-etc-etc
 ---
 ```
 
-Only `slug`, `title` and `date` are required.
+Only `title` and `date` are required.
 
-`slug` is used to fetch the single post and when listing all posts
+Post `slug` is the folder name, so careful on folder naming/renaming.
 
-The folder name inside `/posts/` is used to render the whole md file, so **it has to match** the `slug` field.
+Post `category` is the parent folder name, so equally careful on directory renaming.
 
 If no `seoTitle` or `description` provided, `title` is used.
 

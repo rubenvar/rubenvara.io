@@ -1,13 +1,13 @@
 <script>
-  import HomeText from "$lib/HomeText.svelte";
+  import HomeText from '$lib/components/HomeText.svelte';
 
   // separate the letters
-  const letters = Array.from("Rubén Vara");
+  const letters = Array.from('Rubén Vara');
 </script>
 
 <h1>
   {#each letters as letter}
-    <span class={letter === " " ? "💩" : `🚀 ${letter}`}>
+    <span class={letter === ' ' ? '💩' : `🚀 ${letter}`}>
       {letter}
     </span>
   {/each}

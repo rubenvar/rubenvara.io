@@ -6,13 +6,13 @@
   --smallBr: 6px;
   --bigBr: 13px;
 
-  --normalFont: "DM Sans", --apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, "Open Sans", "Helvetica Neue", sans-serif;
-  --specialFont: "Baloo 2", --apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Oxygen, Ubuntu, "Open Sans", "Helvetica Neue", sans-serif;
-  --logoFont: "Mansalva", cursive;
-  --codeFont: "Victor Mono", PT Mono, Consolas, Monaco, "Andale Mono",
-    "Ubuntu Mono", monospace;
+  --normalFont: 'DM Sans', --apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --specialFont: 'Baloo 2', --apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --logoFont: 'Mansalva', cursive;
+  --codeFont: 'Victor Mono', PT Mono, Consolas, Monaco, 'Andale Mono',
+    'Ubuntu Mono', monospace;
 
   --textLineHeight: 1.63793924em;
 
@@ -126,10 +126,10 @@ body {
   word-wrap: break-word;
   font-size: 1rem;
   font-kerning: normal;
-  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-  font-feature-settings: "kern", "liga", "clig", "calt";
+  -moz-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 }
 #svelte {
   position: relative;
@@ -202,11 +202,11 @@ a:focus {
   transition: none;
 }
 code,
-pre[class*="language-"] {
+pre[class*='language-'] {
   font-family: var(--codeFont);
   font-size: var(--fontSize30);
 }
-main > pre[class*="language-"] {
+main > pre[class*='language-'] {
   // grid-column: 1 / -1;
   // border-radius: 0;
   margin-bottom: var(--gap70);
