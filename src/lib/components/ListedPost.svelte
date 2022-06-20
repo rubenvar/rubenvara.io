@@ -4,6 +4,7 @@
   import type { Post } from '$lib/utils/types';
 
   export let post: Post;
+  export let inCategoryPage = false;
 </script>
 
 <article>
@@ -16,7 +17,11 @@
   {#if dev && post.status === 'draft'}
     <p class="description">(draft)</p>
   {/if}
-  <PostMeta date={post.updated || post.date} category={post.category} />
+  <PostMeta
+    date={post.updated || post.date}
+    category={post.category}
+    {inCategoryPage}
+  />
 </article>
 
 <style lang="scss">

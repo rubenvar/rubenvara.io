@@ -8,6 +8,7 @@
   export let inFullPost = false;
   export let date: Post['date'];
   export let category: Post['category'];
+  export let inCategoryPage: boolean = !inFullPost;
 
   const dateFormat = inFullPost ? 'D [de] MMMM, YYYY' : 'MMMM YYYY';
 </script>
@@ -23,7 +24,7 @@
       <a href="/{category}">
         #{category.toLowerCase()}
       </a>
-    {:else}
+    {:else if !inCategoryPage}
       #{category.toLowerCase()}
     {/if}
   </span>

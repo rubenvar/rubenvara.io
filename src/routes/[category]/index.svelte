@@ -13,7 +13,7 @@
 </header>
 
 {#each posts as post}
-  <ListedPost {post} />
+  <ListedPost inCategoryPage {post} />
 {/each}
 
 <style lang="scss">
