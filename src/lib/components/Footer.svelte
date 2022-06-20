@@ -61,8 +61,7 @@
     padding: var(--gap50);
     position: relative;
     margin-top: var(--gap120);
-    background: #ccc;
-    background: linear-gradient(transparent, var(--grey500));
+    background: var(--white);
     transition: all 0.3s;
     p {
       margin: 0;

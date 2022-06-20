@@ -1,5 +1,6 @@
 <script>
   import HomeText from '$lib/components/HomeText.svelte';
+  import rvImage from '$lib/assets/images/rv.webp';
 
   // separate the letters
   const letters = Array.from('Rubén Vara');
@@ -17,7 +18,7 @@
   En los ratos libres escalo todo lo que puedo, leo, dibujo, y trabajo en más
   proyectos web.
 </p>
-
+<img src={rvImage} alt="Rubén Vara" width={320} height={320} />
 <HomeText />
 
 <style lang="scss">
@@ -72,5 +73,9 @@
   }
   .bigger {
     font-size: var(--fontSize50);
+  }
+  img {
+    border: 5px solid var(--grey700);
+    border-radius: 50%;
   }
 </style>
