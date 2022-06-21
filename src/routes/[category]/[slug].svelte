@@ -43,7 +43,8 @@
 <!-- <PostNav prev={prev} next={next} /> -->
 <style lang="scss">
   header {
-    margin-bottom: var(--gap70);
+    margin-top: var(--gap50);
+    margin-bottom: var(--gap80);
     h1 {
       color: var(--primary500);
     }

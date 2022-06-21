@@ -41,5 +41,11 @@
     &.in-bottom {
       margin-top: var(--gap90);
     }
+    a {
+      color: var(--grey700);
+      &:hover {
+        color: var(--primary400);
+      }
+    }
   }
 </style>
