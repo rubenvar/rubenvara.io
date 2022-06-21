@@ -24,7 +24,7 @@
   div {
     margin-top: var(--gap70);
     /* TODO use twitter colors here, logo, etc. as I did the original idea */
-    border: 3px solid paleturquoise;
+    border: 3px solid blueviolet;
     border-radius: var(--radius30);
     padding: var(--gap30);
     p {

@@ -198,11 +198,10 @@ hr {
   box-sizing: border-box;
   margin: calc(var(--gap80) - var(--gap60)) auto var(--gap80);
   background: var(--grey500);
-  border: 2px solid var(--grey500);
+  border: 2px solid var(--secondary500);
   width: 0px;
   height: 64px;
   border-radius: 3px;
-  transform: rotate(14deg);
 }
 button {
   cursor: pointer;
