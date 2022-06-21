@@ -25,7 +25,7 @@ Así que decidí convertir el listado entero de hex a hsl.
 
 Pero no conseguí encontrar un conversor online que lo hiciera con todo el listado a la vez. Tendría que ir de uno en uno, y tenía 50 colores.
 
-Así que decidí crear un _bulk-converter_, un conversor en bloque:
+Así que decidí crear un *bulk-converter*, un conversor en bloque:
 
 GIF del conversor
 
@@ -47,7 +47,7 @@ De toda la vida.
 
 Vamos a por ello:
 
-## Cómo se hace (las típicas _User Stories_)
+## Cómo se hace (las típicas *User Stories*)
 
 Queremos un formulario donde el usuario pueda **pegar** una lista de colores hex.
 
@@ -87,7 +87,7 @@ Antes de realmente convertir entre hex y hsl hay que manipular un poquillo el `i
 
 ### Qué nos ha dado el user
 
-Veamos. Esto iría dentro de la _callback_ del _EventListener_ que acabamos de ver:
+Veamos. Esto iría dentro de la *callback* del *EventListener* que acabamos de ver:
 
 ```javascript
 // usamos directamente los values de las textareas aunque no sea lo más ortodoxo
@@ -138,7 +138,7 @@ Lo que hace el regex:
 - Después puede haber 3 o 6 caracteres que sean números o letras entre `a` y `f`, mayúsculas o minúsculas.
 - Y después tiene que acabar, no puede haber más caracteres detrás
 
-Podría convertir todas las letras a _mayus_ o _minus_ antes del test... Pero realmente da igual porque en ambos casos (e incluso aunque estén mezcladas) las fórmulas podrán convertir los valores hexadecimales a hsl sin problema.
+Podría convertir todas las letras a *mayus* o *minus* antes del test... Pero realmente da igual porque en ambos casos (e incluso aunque estén mezcladas) las fórmulas podrán convertir los valores hexadecimales a hsl sin problema.
 
 Después quitamos el símbolo `#` para evitar problemas. Si no lo traía, pues nos da igual. Y si unos lo traían y otros no en el input general, así tratamos a todos igual.
 
@@ -203,7 +203,7 @@ Aquí es donde se complica la cosa:
 
 ### Convertir rgb() en hsl()
 
-Primero sacaremos el _matiz_, el _hue_.
+Primero sacaremos el *matiz*, el *hue*.
 
 Para ello calculamos primero un par de valores que usaremos en todas las fórmulas:
 
@@ -259,7 +259,7 @@ Ya queda poco
 
 Vamos a por los dos que quedan, que los calcularemos en el orden inverso:
 
-Primero la _luminosidad_, que la usaremos para la _saturación_.
+Primero la *luminosidad*, que la usaremos para la *saturación*.
 
 #### Calcular la Luminosidad
 
@@ -276,7 +276,7 @@ Y a por el último:
 
 #### Calcula la Saturación
 
-Al igual que con el _matiz_, si `delta` era 0, este también es 0. Sino, aplicamos otra fórmula:
+Al igual que con el *matiz*, si `delta` era 0, este también es 0. Sino, aplicamos otra fórmula:
 
 ```js
 // calcular Saturación
@@ -285,7 +285,7 @@ let s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
 
 #### El último detalle
 
-Ya solo falta un último retoque con _saturación_ y _luminosidad_:
+Ya solo falta un último retoque con *saturación* y *luminosidad*:
 
 Estos dos valores tienen que ser porcentajes en el resultado final. Y sin decimales.
 

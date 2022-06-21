@@ -5,7 +5,7 @@ import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 // import adapter from '@sveltejs/adapter-auto';
 import mdsvexConfig from './mdsvex.config.js';
- 
+
 const file = fileURLToPath(new URL('package.json', import.meta.url));
 const json = readFileSync(file, 'utf8');
 const pkg = JSON.parse(json);
@@ -46,8 +46,8 @@ const config = {
         },
       },
       define: {
-        '__PKG_VERSION__': JSON.stringify(pkg.version),
-      }
+        __PKG_VERSION__: JSON.stringify(pkg.version),
+      },
     },
   },
   extensions: ['.svelte', ...mdsvexConfig.extensions],

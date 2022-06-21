@@ -45,8 +45,8 @@ Como quiero que `NProgress.js` se muestre en todas las páginas de mi web, yo lo
 ```html
 <script>
   // ...otros imports
-  import { navigating } from "$app/stores";// readable store de SvelteKit
-  import NProgress from "nprogress"; // métodos de NProgress.js
+  import { navigating } from '$app/stores'; // readable store de SvelteKit
+  import NProgress from 'nprogress'; // métodos de NProgress.js
   import '../app.css'; // el css de la app, el de NProgress.js incluido
 
   // aquí usamos la store de SvelteKit

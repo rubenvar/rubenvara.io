@@ -27,7 +27,7 @@ export async function getAllPosts(isDev: boolean, category?: string) {
   });
 
   if (!isDev) {
-    posts = posts.filter(post => post.status === 'published');
+    posts = posts.filter((post) => post.status === 'published');
   }
 
   // filter by category

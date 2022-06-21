@@ -17,7 +17,7 @@ En el archivo `svelte.config.js`, añadir lo siguiente:
 ```js
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
- 
+
 const file = fileURLToPath(new URL('package.json', import.meta.url));
 const json = readFileSync(file, 'utf8');
 const pkg = JSON.parse(json);
@@ -27,8 +27,8 @@ const config = {
     // ...
     vite: {
       define: {
-        '__APP_VERSION__': JSON.stringify(pkg.version),
-      }
+        __APP_VERSION__: JSON.stringify(pkg.version),
+      },
     },
   },
   // ...
@@ -74,7 +74,6 @@ En el archivo `/src/app.d.ts` que SvelteKit suele generar cuando empiezas un nue
 // ...
 
 declare const __APP_VERSION__: string;
-
 ```
 
 Listo, ahora `TS` reconoce la cadena `__APP_VERSION__` y no vuelve a quejarse.

@@ -12,4 +12,4 @@ export type Post = {
   updated?: string;
   description?: string;
   twitter?: string;
-}
+};
