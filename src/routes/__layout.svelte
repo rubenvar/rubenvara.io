@@ -11,12 +11,11 @@
   import TopBar from '$lib/components/TopBar.svelte';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
-  // import Triangles from "$lib/components/Triangles.svelte";
 </script>
 
 <!-- <SkipLink /> -->
+
 <TopBar />
-<!-- <Triangles /> -->
 {#if $page.url.pathname !== '/'}<Header />{/if}
 <main>
   <slot />
@@ -34,16 +33,6 @@
     > * {
       grid-column: 2;
     }
-    /* .full-bleed {
-      width: 100%;
-      grid-column: 1 / -1;
-    } */
     margin-top: var(--gap60);
-    /* .gatsby-highlight pre code {
-    display: block;
-    width: 100%;
-    max-width: var(--codeWidth);
-    margin: 0 auto;
-  } */
   }
 </style>
