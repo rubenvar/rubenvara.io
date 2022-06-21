@@ -2,8 +2,8 @@ import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { mdsvex } from 'mdsvex';
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-static';
-// import adapter from '@sveltejs/adapter-auto';
+// import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 import mdsvexConfig from './mdsvex.config.js';
 
 const file = fileURLToPath(new URL('package.json', import.meta.url));

@@ -4,6 +4,17 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.5.0] - 2022-06-21
+
+- Created TwitterBox for post end twitter link.
+- Changed PostMeta to conditionally show category (don't show in category pages).
+- Wrote 2 new posts.
+- Added post title and description in `head`.
+- Added app version in footer.
+- Simplified footer.
+- Show title in category page.
+- Filter draft posts if prod.
+
 ## [0.4.0] - 2022-06-20
 
 - Many changes: rewrote the whole blog post fetching functionality, it's much simpler now.
@@ -31,8 +42,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [0.3.0] - 2022-01-25
 
-- Full rewrite (_simple_) site in SvelteKit:
-  - Added (old_ish_) index and now page
+- Full rewrite (*simple*) site in SvelteKit:
+  - Added (old*ish*) index and now page
   - Added blog and posts, written in MDsveX.
   - Added ESlint.
   - Added netlify adapter.
