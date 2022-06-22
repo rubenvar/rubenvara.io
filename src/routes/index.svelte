@@ -1,6 +1,9 @@
 <script>
   import HomeText from '$lib/components/HomeText.svelte';
   import rvImage from '$lib/assets/images/rv.webp';
+  import CardCAA from '$lib/components/CardCAA.svelte';
+  import CardTN from '$lib/components/CardTN.svelte';
+  import CardVPNF from '$lib/components/CardVPNF.svelte';
 
   // separate the letters
   const letters = Array.from('Rubén Vara');
@@ -18,8 +21,21 @@
   En los ratos libres escalo todo lo que puedo, leo, dibujo, y trabajo en más
   proyectos web.
 </p>
-<img src={rvImage} alt="Rubén Vara" width={320} height={320} />
+<img src={rvImage} alt="Rubén Vara" width={300} height={300} />
+
+<h2 class="section-title">Durante la década pasada...</h2>
 <HomeText />
+
+<h2 class="section-title">Algunos proyectos</h2>
+<CardCAA />
+<CardTN />
+<CardVPNF />
+<hr />
+<p>
+  Desde hace unos cuantos años, casi cada mes tengo una idea y empiezo un nuevo
+  proyecto. Algunos los termino. A veces funcionan. Siempre aprendo algo nuevo,
+  todos los días.
+</p>
 
 <style lang="scss">
   @keyframes changeColor {
@@ -74,6 +90,12 @@
   h2 {
     margin-top: var(--gap50);
     font-weight: 400;
+    &.section-title {
+      font-style: italic;
+      font-family: var(--specialFont);
+      font-weight: 700;
+      font-size: var(--fz60);
+    }
   }
   img {
     border: 5px solid var(--grey700);

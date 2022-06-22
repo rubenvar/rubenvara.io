@@ -1,51 +1,60 @@
 <script>
+  import { fade } from 'svelte/transition';
   let showLong = false;
 </script>
 
-<h2>Durante la década pasada...</h2>
 {#if showLong}
-  <p>
+  <p transition:fade={{ duration: 200 }}>
     Estudié un grado en alternancia en el IMH, Elgoibar. Trabajé varios años
     como ingeniero industrial. Aprendí un monton muy grande sobre procesos
     comerciales y otras cosas.
   </p>
-  <p>
+  <p transition:fade={{ duration: 200 }}>
     Descubrí que <strong>no era así como quería vivir</strong>. Decidí cambiar
     mi vida por completo y abandonarlo todo. O intentarlo.
   </p>
-  <p>
+{:else}
+  <p transition:fade={{ duration: 200 }}>
+    Estudié un grado. Trabajé varios años como ingeniero industrial. Decidí
+    cambiar mi vida y abandonarlo todo.
+  </p>
+{/if}
+
+{#if showLong}
+  <p transition:fade={{ duration: 200 }}>
     Me marché de viaje, con el vago plan de dar la vuelta al mundo. Me quedé por
     el camino.
   </p>
-  <p>
+  <p transition:fade={{ duration: 200 }}>
     Pasé <strong>tres años</strong> recorriendo el este de Europa y un poco más.
     Viví en varios países, creando mi negocio online, escalando, y conociendo cientos
     de personas maravillosas.
   </p>
-  <p>
+{:else}
+  <p transition:fade={{ duration: 200 }}>
+    Me marché de viaje, sin fechas ni planes. Pasé tres años viviendo en varios
+    países, creando mi negocio online, escalando, y estudiando.
+  </p>
+{/if}
+
+{#if showLong}
+  <p transition:fade={{ duration: 200 }}>
     Volví a casa, para vivir en el monte alejado del ruido del mundo real. Para
     dedicar mi tiempo a estudiar, a escalar y a nadar casi a diario.
   </p>
-  <p>
+  <p transition:fade={{ duration: 200 }}>
     Y a trabajar en mi negocio online, donde diseño y desarrollo <strong
       >páginas y aplicaciones web modernas</strong
     > con tecnologías punteras. Suelo romper el Internet a menudo pero siempre consigo
     arreglarlo.
   </p>
 {:else}
-  <p>
-    Estudié un grado. Trabajé varios años como ingeniero industrial. Decidí
-    cambiar mi vida y abandonarlo todo.
-  </p>
-  <p>
-    Me marché de viaje, sin fechas ni planes. Pasé tres años viviendo en varios
-    países, creando mi negocio online, escalando, y estudiando.
-  </p>
-  <p>
+  <p transition:fade={{ duration: 200 }}>
     Volví a casa, para vivir en el monte alejado del ruido. Para dedicar mi
     tiempo a estudiar, entrenar, y trabajar en mi negocio.
   </p>
 {/if}
+
 <label for="toggler" class="theme-toggler">
   <input
     type="checkbox"
@@ -59,12 +68,6 @@
 </label>
 
 <style lang="scss">
-  h2 {
-    font-style: italic;
-    font-family: var(--specialFont);
-    font-weight: 700;
-    font-size: var(--fz60);
-  }
   label {
     /* props to Sara Soueidan (https://sarasoueidan.com) for the component design */
     position: relative;
