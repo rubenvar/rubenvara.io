@@ -189,7 +189,7 @@ img {
   color: var(--grey100);
 }
 a {
-  transition: all 0.3s;
+  transition: color 0.3s;
   color: var(--primary500);
 }
 p {
@@ -241,8 +241,10 @@ button {
 }
 button:focus,
 a:focus {
-  outline: none;
-  border: 2px solid var(--focus);
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: var(--focus);
+  border-radius: var(--radius10);
   transition: none;
 }
 code,
