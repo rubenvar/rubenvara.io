@@ -5,11 +5,12 @@
 
   export let posts: Post[];
 
+  const total = posts.length;
   const { category } = $page.params;
 </script>
 
 <header>
-  <h1>Todos los artículos en <span>`{category}`</span></h1>
+  <h1>{total} artículo{total !== 1 ? 's' : ''} en <span>`{category}`</span></h1>
 </header>
 
 {#each posts as post}
