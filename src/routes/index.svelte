@@ -91,10 +91,11 @@
     margin-top: var(--gap50);
     font-weight: 400;
     &.section-title {
+      margin-top: var(--gap100);
       font-style: italic;
       font-family: var(--specialFont);
       font-weight: 700;
-      font-size: var(--fz60);
+      font-size: var(--fz70);
     }
   }
   img {

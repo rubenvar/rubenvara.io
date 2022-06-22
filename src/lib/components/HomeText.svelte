@@ -13,14 +13,6 @@
     Descubrí que <strong>no era así como quería vivir</strong>. Decidí cambiar
     mi vida por completo y abandonarlo todo. O intentarlo.
   </p>
-{:else}
-  <p transition:fade={{ duration: 200 }}>
-    Estudié un grado. Trabajé varios años como ingeniero industrial. Decidí
-    cambiar mi vida y abandonarlo todo.
-  </p>
-{/if}
-
-{#if showLong}
   <p transition:fade={{ duration: 200 }}>
     Me marché de viaje, con el vago plan de dar la vuelta al mundo. Me quedé por
     el camino.
@@ -30,14 +22,6 @@
     Viví en varios países, creando mi negocio online, escalando, y conociendo cientos
     de personas maravillosas.
   </p>
-{:else}
-  <p transition:fade={{ duration: 200 }}>
-    Me marché de viaje, sin fechas ni planes. Pasé tres años viviendo en varios
-    países, creando mi negocio online, escalando, y estudiando.
-  </p>
-{/if}
-
-{#if showLong}
   <p transition:fade={{ duration: 200 }}>
     Volví a casa, para vivir en el monte alejado del ruido del mundo real. Para
     dedicar mi tiempo a estudiar, a escalar y a nadar casi a diario.
@@ -49,6 +33,14 @@
     arreglarlo.
   </p>
 {:else}
+  <p transition:fade={{ duration: 200 }}>
+    Estudié un grado. Trabajé varios años como ingeniero industrial. Decidí
+    cambiar mi vida y abandonarlo todo.
+  </p>
+  <p transition:fade={{ duration: 200 }}>
+    Me marché de viaje, sin fechas ni planes. Pasé tres años viviendo en varios
+    países, creando mi negocio online, escalando, y estudiando.
+  </p>
   <p transition:fade={{ duration: 200 }}>
     Volví a casa, para vivir en el monte alejado del ruido. Para dedicar mi
     tiempo a estudiar, entrenar, y trabajar en mi negocio.
