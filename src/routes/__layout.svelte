@@ -27,7 +27,7 @@
     position: relative;
     display: grid;
     grid-template-columns:
-      1fr min(var(--maxWidth), calc(100% - 40px))
+      1fr min(var(--maxWidth), calc(100% - var(--gap50) * 2))
       1fr;
     grid-column-gap: var(--gap50);
     > * {
