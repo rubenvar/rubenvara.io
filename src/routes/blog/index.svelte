@@ -44,10 +44,4 @@
       }
     }
   }
-  .emphasis {
-    @include variables.emphasis;
-  }
-  .js-emphasis {
-    @include variables.jsEmphasis;
-  }
 </style>

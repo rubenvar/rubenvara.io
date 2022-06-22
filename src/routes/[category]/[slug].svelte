@@ -9,7 +9,7 @@
 
 <svelte:head>
   {#if post}
-    <title>{post.seoTitle}</title>
+    <title>{post.seoTitle || post.title}</title>
     <meta name="description" content={post.description || post.title} />
   {/if}
 </svelte:head>
