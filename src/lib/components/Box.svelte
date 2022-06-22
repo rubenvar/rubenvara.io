@@ -1,3 +1,4 @@
+<!-- unused -->
 <script lang="ts">
   export let type: 'info';
 </script>

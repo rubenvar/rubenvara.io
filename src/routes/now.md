@@ -1,11 +1,15 @@
 <script>
-  import Box from "$lib/components/Box.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
 </script>
 
-<PageHeader title="Ahora mismo" content="Actualizado: 25 de enero, 2022" />
+<PageHeader title="Ahora mismo" content="Actualizado: 22 de junio, 2022" />
 
-## ¿Dónde estoy?
+Esto es una página **now** ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:
+
+- Puedes leer en qué estoy trabajando ahora mismo.
+- Aquí están mis planes, y sus respectivos avances.
+
+## 🌍 ¿Dónde estoy?
 
 🏡 En casa.
 
@@ -13,32 +17,22 @@ Tras pasar casi tres años viajando (2016-2019) por el este de Europa y Asia Cen
 
 A descansar, ver a la gente que echaba de menos, y empezar nuevos proyectos.
 
-No descarto volver a marcharme pronto, visto que la situación actual va para largo. Si me vuelvo a marchar de viaje, seguramente sea con un objetivo más concreto que la última vez.
+Ya llevo aquí 3 años y empieza a ser hora de un nuevo cambio...
 
-## ¿Qué estoy haciendo ahora?
+## 💻 ¿Qué estoy haciendo ahora?
 
 Empezar nuevos proyectos y trabajar en ellos:
 
-- Tanto en programación (node.js, React, svg, etc.), como en el mundo real.
+- Tanto en programación (node.js, React, GraphQL, SvelteKit, etc.), como en el mundo real.
 
-Nadar, a diario. Todo lo que puedo. En aguas abiertas, y federado en la sección Máster del CN Menditxo.
+Escalar todo lo que puedo. Cuando no, correr por el monte. También estoy empezando a aficionarme a las carreras de orientación.
 
-Escalar cuando saco ratos libres.
+Además, seguir tratando de mejorar, física y mentalmente, poco a poco.
 
-Además, seguir tratando de mejorar, física y mentalmente. Ahora trabajando con Kettlebells.
+## 📆 ¿Qué planes tengo?
 
-## ¿Qué planes tengo?
+Seguir **aprendiendo** desarrollo web. Ahora peleándome con Typescript y, cuando no, con Python.
 
-Seguir aprendiendo desarrollo web. Y empezar a enseñarlo, muy pronto. Por escrito y en video.
+Empezar a enseñarlo (o intentarlo), muy pronto.
 
-Nadar más todavía. Y seguir escalando.
-
-Seguir desarrollando otras aficiones como el fitness/calistenia, el dibujo, y el bricolaje. Poco a poco.
-
-<Box type="info">
-
-Esto es una página _now_ ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:
-
-Aquí puedes leer en qué estoy trabajando ahora mismo, mis planes, y sus respectivos avances.
-
-</Box>
+Seguir escalando, corriendo, y desarrollando otras aficiones como el fitness/calistenia, el dibujo, y el bricolaje. Poco a poco.
