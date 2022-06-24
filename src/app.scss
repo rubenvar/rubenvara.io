@@ -257,6 +257,18 @@ main > pre[class*='language-'] {
   margin-bottom: var(--gap70);
   width: var(--codeWidth);
   justify-self: center;
+  @media only screen and (max-width: 790px) {
+    // at this width the code block would go out of screen
+    // width --codeWith is approx 749px
+    grid-column: 1 / -1;
+    border-radius: 0;
+    // grid-column: 2;
+    width: 100%;
+  }
+  @media only screen and (max-width: 576px) {
+    grid-column: 1 / -1;
+    border-radius: 0;
+  }
   > code {
     display: block;
     max-width: var(--codeWidth);
