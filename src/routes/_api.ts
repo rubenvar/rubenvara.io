@@ -32,7 +32,10 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
 
   // sort by date here
   let posts = allPosts.sort((a, b) => {
-    return new Date(b.date) < new Date(a.date) ? -1 : 1;
+    const dateA = a.updated || a.date;
+    const dateB = b.updated || b.date;
+    
+    return new Date(dateB) < new Date(dateA) ? -1 : 1;
   });
 
   if (!isDev) {
