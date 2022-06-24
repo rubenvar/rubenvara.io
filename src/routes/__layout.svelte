@@ -16,10 +16,15 @@
 <!-- <SkipLink /> -->
 
 <TopBar />
-{#if $page.url.pathname !== '/'}<Header />{/if}
+
+{#if $page.url.pathname !== '/'}
+  <Header />
+{/if}
+
 <main>
   <slot />
 </main>
+
 <Footer />
 
 <style lang="scss">

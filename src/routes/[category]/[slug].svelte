@@ -13,6 +13,7 @@
     <meta name="description" content={post.description || post.title} />
   {/if}
 </svelte:head>
+
 {#if post}
   <header>
     <h1>
@@ -44,9 +45,9 @@
 <style lang="scss">
   header {
     margin-top: var(--gap50);
-    margin-bottom: var(--gap80);
+    margin-bottom: var(--gap90);
     h1 {
-      color: var(--primary500);
+      color: var(--primary600);
     }
   }
 </style>

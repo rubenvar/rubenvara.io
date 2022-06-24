@@ -191,6 +191,9 @@ img {
 a {
   transition: color 0.3s;
   color: var(--primary500);
+  &:hover{
+    color: var(--primary800);
+  }
 }
 p {
   margin: 0 0 var(--gap60);
@@ -236,6 +239,28 @@ hr {
   height: 64px;
   border-radius: 3px;
 }
+blockquote {
+  font-style: italic;
+  color: var(--grey700);
+  font-size: var(--fz50);
+  font-weight: 300;
+  border-left: 3px solid var(--primary300);
+  margin: 0 0 var(--gap60) var(--gap70);
+  padding-left: var(--gap40);
+  position: relative;
+  p {
+    margin: 0;
+  }
+  &::after {
+    content: '"';
+    color: var(--primary300);
+    position: absolute;
+    font-size: var(--fz110);
+    font-family: var(--logoFont);
+    top: -10px;
+    left: -40px;
+  }
+}
 button {
   cursor: pointer;
 }
@@ -246,6 +271,11 @@ a:focus {
   outline-color: var(--focus);
   border-radius: var(--radius10);
   transition: none;
+}
+p code, ul code {
+  background: var(--grey100);
+  border-radius: var(--radius10);
+  padding: 0 var(--gap10);
 }
 code,
 pre[class*='language-'] {
@@ -284,6 +314,6 @@ main > * {
 .emphasis {
   @include variables.emphasis;
 }
-.js-emphasis {
+.emphasis-js {
   @include variables.jsEmphasis;
 }

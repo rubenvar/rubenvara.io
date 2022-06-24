@@ -16,7 +16,7 @@
   </p>
   <p>
     Si te quedas por aquí seguro que aprendes algo nuevo sobre JavaScript. Sobre
-    todo, <span class="emphasis js-emphasis">JavaScript</span>.
+    todo, <span class="emphasis emphasis-js">JavaScript</span>.
   </p>
 </header>
 
