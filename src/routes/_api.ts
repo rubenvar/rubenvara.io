@@ -15,8 +15,9 @@ export async function getAllPosts(isDev: boolean, category?: string) {
       const { metadata } = await resolver();
 
       // try to get the category and slug from file structure (take out ../posts/ and /index.md)
-      const [cat, slug] = path.slice(9, -9).split('/');
-
+      // TODO maybe make it more resilient with regex or something?
+      const [cat, slug] = path.slice(9, -3).split('/');
+      
       return { ...metadata, category: cat, slug };
     })
   );
@@ -42,7 +43,7 @@ export const getSinglePost = async (category: string, slug: string) => {
   const allPostFiles = import.meta.glob('../posts/**/*.md');
 
   // try to get the single post
-  const postResolver = allPostFiles[`../posts/${category}/${slug}/index.md`];
+  const postResolver = allPostFiles[`../posts/${category}/${slug}.md`];
   if (!postResolver) return;
 
   const resolvedPost = await postResolver();

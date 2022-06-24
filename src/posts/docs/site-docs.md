@@ -23,11 +23,13 @@ twitter: https://www.twitter.com/etc-etc-etc
 
 Only `title`, `date` and `status` are required.
 
-Post `slug` is the folder name, so careful on folder naming/renaming.
+Post `slug` is the file name, so careful on file naming/renaming.
 
 Post `category` is the parent folder name, so equally careful on directory renaming.
 
-If no `seoTitle` or `description` provided, `title` is used.
+If no `seoTitle` or `description` provided, `title` is used for both.
+
+`twitter` is a link to a twitter thread about this topic, to be shown at post footer. If no `twitter`, generic box is shown with link to my twitter account.
 
 ### Managing Dates
 
@@ -40,3 +42,7 @@ If `updated` is equal to `date`, it's ignored. No need to set it on publish.
 Posts can be `status: "published"` or `status: "draft" (or anything else really)`.
 
 If not `"published"`, posts load in `dev` but not in `prod`.
+
+## Future
+
+New optional fields can always be inputed in the future, for layout, post series, etc.
