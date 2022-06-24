@@ -12,7 +12,7 @@ interface Options {
 export async function getAllPosts(isDev: boolean, options?: Options) {
   const category = options?.category;
   const take = options?.take;
-  
+
   const allPostFiles = import.meta.glob('../posts/**/*.md');
 
   const iterablePostFiles = Object.entries(allPostFiles);
@@ -25,7 +25,7 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
       // try to get the category and slug from file structure (take out ../posts/ and /index.md)
       // TODO maybe make it more resilient with regex or something?
       const [cat, slug] = path.slice(9, -3).split('/');
-      
+
       return { ...metadata, category: cat, slug };
     })
   );

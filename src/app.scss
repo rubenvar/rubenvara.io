@@ -94,14 +94,14 @@
 
   --focus: orange;
 
-  --caa500: hsl(29,84%,53%);
-  --caa600: hsl(27,88%,43%);
+  --caa500: hsl(29, 84%, 53%);
+  --caa600: hsl(27, 88%, 43%);
   --tn400: #267df7;
   --tn500: #055ad1;
   --tn600: #054194;
-  --vpnf500: hsl(270,75%,70%);
-  --vpnf600: hsl(270,70%,60%);
-  --vpnf700: hsl(270,80%,50%);
+  --vpnf500: hsl(270, 75%, 70%);
+  --vpnf600: hsl(270, 70%, 60%);
+  --vpnf700: hsl(270, 80%, 50%);
   --javascriptYellow: #f7df1e; /* https://github.com/colorjs/javascript-yellow */
 
   --vanillajs: #f0db4f;
@@ -120,11 +120,11 @@
   --digitalocean: #0080ff;
   --react-query: #ff4154;
   --react: #61dafb;
-  --nextjs:#000000;
-  --typescript:#3178c6;
-  --graphql:#e10098;
+  --nextjs: #000000;
+  --typescript: #3178c6;
+  --graphql: #e10098;
   --graphql-codegen: #ec1cd7;
-  --keystonejs:  #166bff;
+  --keystonejs: #166bff;
   --prisma: #5a67d8;
   --wordpress: #117ac9;
   --php: #4f5b93;
@@ -191,7 +191,7 @@ img {
 a {
   transition: color 0.3s;
   color: var(--primary500);
-  &:hover{
+  &:hover {
     color: var(--primary800);
   }
 }
@@ -272,7 +272,8 @@ a:focus {
   border-radius: var(--radius10);
   transition: none;
 }
-p code, ul code {
+p code,
+ul code {
   background: var(--grey100);
   border-radius: var(--radius10);
   padding: 0 var(--gap10);
