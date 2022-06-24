@@ -4,7 +4,15 @@
 // https://github.com/mattjennings/sveltekit-blog-template
 import type { Post } from '$lib/utils/types';
 
-export async function getAllPosts(isDev: boolean, category?: string) {
+interface Options {
+  category?: string;
+  take?: number;
+}
+
+export async function getAllPosts(isDev: boolean, options?: Options) {
+  const category = options?.category;
+  const take = options?.take;
+  
   const allPostFiles = import.meta.glob('../posts/**/*.md');
 
   const iterablePostFiles = Object.entries(allPostFiles);
@@ -34,6 +42,11 @@ export async function getAllPosts(isDev: boolean, category?: string) {
   // filter by category
   if (category) {
     posts = posts.filter((post) => post.category === category);
+  }
+
+  // return a number of posts
+  if (take) {
+    posts = posts.slice(0, take);
   }
 
   return posts;

@@ -4,7 +4,7 @@ import { getAllPosts } from '../_api';
 
 export const get: RequestHandler = async ({ params }) => {
   const { category } = params;
-  const posts = await getAllPosts(dev, category);
+  const posts = await getAllPosts(dev, {category});
 
   if (posts.length) {
     return {
