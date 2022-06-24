@@ -5,6 +5,7 @@
 
   export let post: Post;
   export let inCategoryPage = false;
+  export let index: number | undefined = undefined;
 </script>
 
 <article>
@@ -18,6 +19,9 @@
       {/if}
       {#if dev && post.status === 'draft'}
         <p class="description">(draft)</p>
+      {/if}
+      {#if index}
+        <span class="index">{index < 10 ? `0${index}` : index}</span>
       {/if}
       <PostMeta
         date={post.updated || post.date}
@@ -44,6 +48,7 @@
   }
   article {
     margin-bottom: var(--gap110);
+    position: relative;
   }
   h2 {
     font-weight: 500;
@@ -57,5 +62,12 @@
     margin: 0;
     margin-bottom: var(--gap30);
     line-height: 1.35rem;
+  }
+  .index {
+    font-family: var(--codeFont);
+    position: absolute;
+    top: calc(50% - var(--fz20) / 2);
+    left: -36px;
+    font-size: var(--fz20);
   }
 </style>

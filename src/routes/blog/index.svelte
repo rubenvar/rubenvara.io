@@ -20,8 +20,8 @@
   </p>
 </header>
 
-{#each posts as post}
-  <ListedPost {post} />
+{#each posts as post, index}
+  <ListedPost {post} index={posts.length - index} />
 {/each}
 
 <style lang="scss">
