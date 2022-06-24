@@ -4,6 +4,12 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.6.0] - 2022-06-24
+
+- Added latest posts in home.
+- Changed the post api API.
+- Wrote 2 new posts.
+
 ## [0.5.0] - 2022-06-21
 
 - Created TwitterBox for post end twitter link.
