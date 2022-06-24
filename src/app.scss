@@ -245,20 +245,11 @@ blockquote {
   font-size: var(--fz50);
   font-weight: 300;
   border-left: 3px solid var(--primary300);
-  margin: 0 0 var(--gap60) var(--gap70);
+  margin: 0 0 var(--gap60) var(--gap60);
   padding-left: var(--gap40);
   position: relative;
   p {
     margin: 0;
-  }
-  &::after {
-    content: '"';
-    color: var(--primary300);
-    position: absolute;
-    font-size: var(--fz110);
-    font-family: var(--logoFont);
-    top: -10px;
-    left: -40px;
   }
 }
 button {
