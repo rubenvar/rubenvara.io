@@ -1,9 +1,26 @@
-<script>
+<script lang="ts" context="module">
+  export async function load() {
+    const latestPosts = await getAllPosts(dev, { take: 3 });
+
+    return {
+      props: { latestPosts },
+    };
+  }
+</script>
+
+<script lang="ts">
+  import { dev } from '$app/env';
+  import { getAllPosts } from './_api';
+
   import HomeText from '$lib/components/HomeText.svelte';
   import rvImage from '$lib/assets/images/rv.webp';
-  import CardCAA from '$lib/components/CardCAA.svelte';
-  import CardTN from '$lib/components/CardTN.svelte';
-  import CardVPNF from '$lib/components/CardVPNF.svelte';
+  import ListedPost from '$lib/components/ListedPost.svelte';
+  import type { Post } from '$lib/utils/types';
+  // import CardCAA from '$lib/components/CardCAA.svelte';
+  // import CardTN from '$lib/components/CardTN.svelte';
+  // import CardVPNF from '$lib/components/CardVPNF.svelte';
+
+  export let latestPosts: Post[];
 
   // separate the letters
   const letters = Array.from('Rubén Vara');
@@ -26,7 +43,17 @@
 <h2 class="section-title">Durante la década pasada...</h2>
 <HomeText />
 
-<h2 class="section-title">Algunos proyectos</h2>
+<h2 class="section-title">Posts más recientes</h2>
+<p class="blog-intro">
+  En mi blog escribo sobre <span class="emphasis emphasis-js">JavaScript</span> y
+  otros inventos modernos. Mira los últimos artículos:
+</p>
+{#each latestPosts as post}
+  <ListedPost {post} />
+{/each}
+<p class="read-more"><a href="/blog">Ver todos ⟶</a></p>
+
+<!-- <h2 class="section-title">Algunos proyectos</h2>
 <CardCAA />
 <CardTN />
 <CardVPNF />
@@ -35,8 +62,7 @@
   Desde hace unos cuantos años, casi cada mes tengo una idea y empiezo un nuevo
   proyecto. Algunos los termino. A veces funcionan. Siempre aprendo algo nuevo,
   todos los días.
-</p>
-
+</p> -->
 <style lang="scss">
   @keyframes changeColor {
     0% {
@@ -101,5 +127,18 @@
   img {
     border: 5px solid var(--grey700);
     border-radius: 50%;
+  }
+  .blog-intro {
+    color: var(--grey600);
+    margin: 0 0 var(--gap100);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .read-more {
+    text-align: right;
+    a {
+      text-decoration: none;
+    }
   }
 </style>
