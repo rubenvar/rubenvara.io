@@ -35,6 +35,8 @@ If no `seoTitle` or `description` provided, `title` is used for both.
 
 Set `date` on publish. On subsequent updates, set `updated`, leave `date` untouched. I can always keep the previous `updated` dates in text notes.
 
+For post sorting and display in PostMeta, updated is used if it exists. If it doesn't, date is used.
+
 If `updated` is equal to `date`, it's ignored. No need to set it on publish.
 
 ## Post status
