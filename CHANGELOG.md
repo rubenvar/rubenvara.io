@@ -4,6 +4,13 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.7.0] - 2022-06-25
+
+- Updated dependencies.
+- Wrote 2 new posts.
+- Fixed post sorting by updated or date.
+- Added post index in listed posts in blog.
+
 ## [0.6.0] - 2022-06-24
 
 - Added latest posts in home.
