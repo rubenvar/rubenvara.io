@@ -21,7 +21,6 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
-    "@sveltejs/adapter-static": "^1.0.0-next.34",
     "@sveltejs/kit": "next",
     "dayjs": "^1.11.3",
     "dracula-prism": "^2.1.13",
@@ -33,7 +32,7 @@
     "normalize.css": "^8.0.1",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
-    "sass": "^1.52.3",
+    "sass": "^1.53.0",
     "svelte": "^3.48.0",
     "svelte-check": "^2.7.2",
     "svelte-preprocess": "^4.10.7",
