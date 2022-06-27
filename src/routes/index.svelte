@@ -1,17 +1,4 @@
-<script lang="ts" context="module">
-  export async function load() {
-    const latestPosts = await getAllPosts(dev, { take: 3 });
-
-    return {
-      props: { latestPosts },
-    };
-  }
-</script>
-
 <script lang="ts">
-  import { dev } from '$app/env';
-  import { getAllPosts } from './_api';
-
   import HomeText from '$lib/components/HomeText.svelte';
   import rvImage from '$lib/assets/images/rv.webp';
   import ListedPost from '$lib/components/ListedPost.svelte';
@@ -45,8 +32,8 @@
 
 <h2 class="section-title">Posts más recientes</h2>
 <p class="blog-intro">
-  En mi blog escribo sobre <span class="emphasis emphasis-js">JavaScript</span> y
-  otros inventos modernos. Mira los últimos artículos:
+  En mi blog escribo sobre JavaScript y otros inventos modernos. Mira los
+  últimos artículos:
 </p>
 {#each latestPosts as post}
   <ListedPost {post} />
