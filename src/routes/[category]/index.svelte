@@ -1,6 +1,15 @@
 <script context="module" lang="ts">
   export const load: Load = async ({ fetch, params }) => {
     const data = await fetch(`/${params.category}/__data.json`);
+
+    if (!data.ok && data.status === 301) {
+      // if 301 passed from endpoint, it's an old route. redirect home
+      return {
+        status: data.status,
+        redirect: '/',
+      };
+    }
+
     const json = await data.json();
     const posts: Post[] = json.posts;
 
