@@ -4,6 +4,14 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.8.0] - 2022-06-28
+
+- Added old route redirects in category endpoint.
+- Updated dependencies.
+- Wrote 1 new post.
+- Added page transitions.
+- Changed page load fns to manage page meta `title` and `description` defaults and in blog pages.
+
 ## [0.7.0] - 2022-06-25
 
 - Updated dependencies.
