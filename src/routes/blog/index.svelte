@@ -1,6 +1,32 @@
+<script context="module" lang="ts">
+  export const load: Load = async ({ fetch }) => {
+    const data = await fetch('/blog/__data.json');
+    const json = await data.json();
+    const posts: Post[] = json.posts;
+
+    if (posts.length) {
+      return {
+        status: data.status,
+        props: {
+          posts,
+        },
+        stuff: {
+          title: `Mi blog sobre JavaScript y otras tecnologías: ${posts.length} artículos detallados`,
+          description: `Dicen que no sabes lo que sabes hasta que intentas enseñarlo, así que en eso estamos: Escribo sobre JavaScript y desarrollo web en español`,
+        },
+      };
+    }
+
+    return {
+      status: data.status,
+    };
+  };
+</script>
+
 <script lang="ts">
-  import ListedPost from '$lib/components/ListedPost.svelte';
+  import type { Load } from './__types';
   import type { Post } from '$lib/utils/types';
+  import ListedPost from '$lib/components/ListedPost.svelte';
 
   export let posts: Post[];
 </script>

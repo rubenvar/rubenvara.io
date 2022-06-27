@@ -6,7 +6,10 @@ declare namespace App {
   // interface Locals {}
   // interface Platform {}
   // interface Session {}
-  // interface Stuff {}
+  interface Stuff {
+    title: string;
+    description: string;
+  }
 }
 
 declare module 'dayjs/locale/es.js';

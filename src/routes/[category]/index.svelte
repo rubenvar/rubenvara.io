@@ -1,7 +1,33 @@
+<script context="module" lang="ts">
+  export const load: Load = async ({ fetch, params }) => {
+    const data = await fetch(`/${params.category}/__data.json`);
+    const json = await data.json();
+    const posts: Post[] = json.posts;
+
+    if (posts.length) {
+      return {
+        status: data.status,
+        props: {
+          posts,
+        },
+        stuff: {
+          title: `Todos los artículos sobre ${params.category}`,
+          description: `Mira ${posts.length} artículos detallados sobre ${params.category}: quédate por aquí y seguro que aprendes algo`,
+        },
+      };
+    }
+
+    return {
+      status: data.status,
+    };
+  };
+</script>
+
 <script lang="ts">
   import { page } from '$app/stores';
   import ListedPost from '$lib/components/ListedPost.svelte';
   import type { Post } from '$lib/utils/types';
+  import type { Load } from './__types';
 
   export let posts: Post[];
 
