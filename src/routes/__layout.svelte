@@ -1,5 +1,8 @@
 <script context="module" lang="ts">
-  export const load: Load = () => ({
+  export const load: Load = ({ url }) => ({
+    props: {
+      key: url.pathname,
+    },
     stuff: {
       title:
         'Rubén Vara ~ Mi Blog sobre Javascript, Desarrollo Web, y Otras Historias',
@@ -23,27 +26,33 @@
   import TopBar from '$lib/components/TopBar.svelte';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import PageTransition from '$lib/components/PageTransition.svelte';
+
+  // for page transitions
+  export let key: string;
 </script>
 
 <svelte:head>
-  <!-- gets stuff from page. title and description are either defined here (above) by default, or on the specific route -->
+  <!-- gets `stuff` from page.
+    title and description are either defined here (above) by default, or on the specific route -->
   <title>{$page.stuff.title}</title>
   <meta name="description" content={$page.stuff.description} />
 </svelte:head>
 
-<!-- <SkipLink /> -->
+<PageTransition refresh={key}>
+  <!-- <SkipLink /> -->
+  <TopBar />
 
-<TopBar />
+  {#if $page.url.pathname !== '/'}
+    <Header />
+  {/if}
 
-{#if $page.url.pathname !== '/'}
-  <Header />
-{/if}
+  <main>
+    <slot />
+  </main>
 
-<main>
-  <slot />
-</main>
-
-<Footer />
+  <Footer />
+</PageTransition>
 
 <style lang="scss">
   main {
