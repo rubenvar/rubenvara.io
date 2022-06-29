@@ -30,23 +30,25 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
     })
   );
 
-  // sort by date here
-  let posts = allPosts.sort((a, b) => {
-    const dateA: string = a.updated || a.date;
-    const dateB: string = b.updated || b.date;
-
-    return new Date(dateB) < new Date(dateA) ? -1 : 1;
-  });
+  let posts = [...allPosts];
 
   if (!isDev) {
     // in prod, only 'published' posts
     posts = posts.filter((post) => post.status === 'published');
   }
 
-  // filter by category
+  // filter by category if there is one
   if (category) {
     posts = posts.filter((post) => post.category === category);
   }
+
+  // sort by date here
+  posts = posts.sort((a, b) => {
+    const dateA = a.updated || a.date;
+    const dateB = b.updated || b.date;
+
+    return new Date(dateB) < new Date(dateA) ? -1 : 1;
+  });
 
   // return a number of posts
   if (take) {
