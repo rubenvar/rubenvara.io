@@ -33,13 +33,6 @@
   export let post: Post;
 </script>
 
-<!-- <svelte:head>
-  {#if post}
-    <title>{post.seoTitle || post.title}</title>
-    <meta name="description" content={post.description || post.title} />
-  {/if}
-</svelte:head> -->
-
 {#if post}
   <header>
     <h1>
@@ -65,7 +58,6 @@
 {:else}
   <p>algo no va bien</p>
 {/if}
-<!-- <TwitterBox twitter={frontmatter.twitter} /> -->
 
 <!-- <PostNav prev={prev} next={next} /> -->
 <style lang="scss">
