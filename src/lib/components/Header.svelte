@@ -22,6 +22,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      max-width: 100%;
+      margin: 0 var(--gap50);
+      position: relative;
+      @media only screen and (min-width: 740px) {
+        width: var(--maxWidth);
+        margin: 0 auto;
+      }
       h2 {
         font-size: 1.85rem;
         margin: 0;
@@ -44,15 +51,6 @@
           color: var(--primary400);
         }
       }
-    }
-  }
-  .wrapper {
-    max-width: 100%;
-    margin: 0 var(--gap50);
-    position: relative;
-    @media only screen and (min-width: 740px) {
-      width: var(--maxWidth);
-      margin: 0 auto;
     }
   }
 </style>

@@ -39,27 +39,27 @@
     position: sticky;
     z-index: 999;
     overflow: hidden;
-  }
-  .wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    -webkit-animation: move infinite 45s alternate-reverse linear;
-    animation: move infinite 45s alternate-reverse linear;
-  }
-  .mover {
-    top: 0;
-    z-index: 1000;
-    left: 0;
-    width: 90px;
-    height: 100%;
-    background: linear-gradient(
-      -45deg,
-      var(--primary500),
-      var(--primary400),
-      var(--primary500)
-    );
-    content: '';
-    position: absolute;
+    .wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      -webkit-animation: move infinite 60s alternate-reverse linear;
+      animation: move infinite 60s alternate-reverse linear;
+    }
+    .mover {
+      top: 0;
+      z-index: 1000;
+      left: 0;
+      width: 90px;
+      height: 100%;
+      background: linear-gradient(
+        -45deg,
+        var(--primary500),
+        var(--primary300),
+        var(--primary500)
+      );
+      content: '';
+      position: absolute;
+    }
   }
 </style>
