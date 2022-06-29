@@ -89,4 +89,25 @@ En cualquier ruta:
 
 Retornamos `stuff` con los valores que queramos en la función `load` de la ruta, así estos valores sustituirán a los predeterminados que habíamos establecido en `__layout`.
 
+---
+
 Especialmente útil si tenemos rutas dinámicas, donde podremos usar los parámetros de ruta para conseguir la *data* en la función `load`, y luego usar parte de esa data en el `title` y `description` de nuestra página, haciéndolos también dinámicos (por ejemplo, en artículos de un blog).
+
+Evitaremos tener que añadir la etiqueta `<svelte:head>` en todas las rutas, añadiéndola una vez en el `__layout` principal.
+
+## Con TypeScript
+
+Debería mencionar que, si usas TypeScript, tendrás que declarar los tipos de todo lo que metas en `stuff` si quieres evitar problemas.
+
+Es rápido. En el archivo `/src/app.d.ts` que generará SvelteKit en un proyecto TS, añade lo siguiente:
+
+```ts
+declare namespace App {
+  // ...
+  interface Stuff {
+    title: string;
+    description: string;
+    // o las etiquetas que vayas a meter en `stuff`
+  }
+}
+```
