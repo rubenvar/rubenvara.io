@@ -2,13 +2,16 @@
   export const load: Load = async ({ fetch, params }) => {
     const data = await fetch(`/${params.category}/${params.slug}/__data.json`);
     const json = await data.json();
+
     const post: Post = json.post;
+    const categoryCount: number = json.categoryCount;
 
     if (post) {
       return {
         status: data.status,
         props: {
           post,
+          categoryCount,
         },
         stuff: {
           title: post.seoTitle || post.title,
@@ -31,6 +34,7 @@
   import type { Load } from './__types/[slug]';
 
   export let post: Post;
+  export let categoryCount: number;
 </script>
 
 {#if post}
@@ -42,6 +46,7 @@
       inFullPost={true}
       date={post.updated || post.date}
       category={post.category}
+      {categoryCount}
     />
   </header>
 
@@ -54,6 +59,7 @@
     inFullPost={true}
     date={post.updated || post.date}
     category={post.category}
+    {categoryCount}
   />
 {:else}
   <p>algo no va bien</p>

@@ -9,6 +9,7 @@
   export let date: Post['date'];
   export let category: Post['category'];
   export let inCategoryPage: boolean = !inFullPost;
+  export let categoryCount = 0;
 
   const dateFormat = inFullPost ? 'D [de] MMMM, YYYY' : 'MMMM YYYY';
 </script>
@@ -20,9 +21,9 @@
     </time>
   </span>
   <span>
-    {#if inFullPost}
+    {#if inFullPost && categoryCount > 2}
       <a href="/{category}">
-        #{category.toLowerCase()}
+        #{category.toLowerCase()} ({categoryCount})
       </a>
     {:else if !inCategoryPage}
       #{category.toLowerCase()}

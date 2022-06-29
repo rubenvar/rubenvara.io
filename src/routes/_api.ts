@@ -32,8 +32,8 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
 
   // sort by date here
   let posts = allPosts.sort((a, b) => {
-    const dateA = a.updated || a.date;
-    const dateB = b.updated || b.date;
+    const dateA: string = a.updated || a.date;
+    const dateB: string = b.updated || b.date;
 
     return new Date(dateB) < new Date(dateA) ? -1 : 1;
   });
@@ -57,7 +57,7 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
 }
 
 // ? unused for now until there are more posts
-// export const getAllCategories = async (isDev = false) => {
+// export async function getAllCategories(isDev = false) {
 //   // start by getting all posts resolved
 //   const allPostFiles = import.meta.globEager('../posts/**/*.md');
 
@@ -87,7 +87,32 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
 //   return categoriesCounted;
 // };
 
-export const getSinglePost = async (category: string, slug: string) => {
+export function getCategoryCount(category: string, isDev = false) {
+  // start by getting all posts resolved
+  const allPostFiles = import.meta.globEager('../posts/**/*.md');
+
+  // return category from slug + status from metadata, and filter by category
+  let allPostsInCategory = Object.keys(allPostFiles)
+    .map((key) => {
+      return {
+        category: key.slice(9).split('/')[0],
+        status: allPostFiles[key].metadata.status,
+      };
+    })
+    .filter((post) => post.category === category);
+
+  // if prod, filter out draft posts
+  if (!isDev) {
+    // in prod, only 'published' posts
+    allPostsInCategory = allPostsInCategory.filter(
+      (post) => post.status === 'published'
+    );
+  }
+
+  return allPostsInCategory.length;
+}
+
+export async function getSinglePost(category: string, slug: string) {
   const allPostFiles = import.meta.glob('../posts/**/*.md');
 
   // try to get the single post
@@ -104,4 +129,4 @@ export const getSinglePost = async (category: string, slug: string) => {
   // ? could I get that css into the page?
 
   return { ...metadata, content, category, slug };
-};
+}
