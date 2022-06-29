@@ -67,5 +67,9 @@ export const getSinglePost = async (category: string, slug: string) => {
   const { metadata } = resolvedPost;
   const { html: content } = resolvedPost.default.render();
 
+  // ? default.render() also returns a `css: { code: '', map: '' }` object.
+  // ? it's the css introduced by the components imported in the md file
+  // ? could I get that css into the page?
+
   return { ...metadata, content, category, slug };
 };
