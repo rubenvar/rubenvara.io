@@ -309,3 +309,21 @@ main > * {
 .emphasis-js {
   @include variables.jsEmphasis;
 }
+
+// este css aplica a todas las cajas Box
+// pero debería usar el css del componente en vez de tener que agregarlo aquí
+.box {
+  border: 1px solid;
+  padding: var(--gap40);
+  // padding-bottom: 0; /* ಠ_ಠ */
+  margin-bottom: var(--gap50);
+  > *:last-child {
+    margin-bottom: 0;
+  }
+  &.info {
+    border-color: var(--note500);
+  }
+  &.recuerda {
+    border-color: var(--announce500);
+  }
+}

@@ -3,7 +3,7 @@
   export let type: 'info';
 </script>
 
-<div class={type}>
+<div class="box {type}">
   <slot />
 </div>
 
