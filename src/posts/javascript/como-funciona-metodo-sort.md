@@ -1,7 +1,7 @@
 ---
 title: "Entiende el (inestable) método sort(): consigue resultados consistentes en todos los navegadores"
 seoTitle: "Entiende el (Inestable) Método sort(): Consigue Resultados Consistentes en Todos los Navegadores"
-description: "Con algunos casos lógicos y otros menos previsibles, el método sort() puede amargarte el día: mira cómo obtener resultados consistentes siempre, en Chrome y Firefox"
+description: "Con algunos casos lógicos y otros menos previsibles, el método sort() puede amargarte el día: cómo obtener resultados consistentes en Chrome y Firefox"
 date: 2022-06-05
 status: published
 ---
