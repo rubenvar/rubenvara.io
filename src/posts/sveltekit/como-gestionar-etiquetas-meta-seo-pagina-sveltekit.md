@@ -1,8 +1,8 @@
 ---
-title: Cómo gestionar las etiquetas meta para SEO en cada página página en SvelteKit
+title: Cómo gestionar las etiquetas meta para SEO en cada página en SvelteKit
 seoTitle: Cómo Gestionar las Etiquetas Meta para SEO por Página en SvelteKit
 date: 2022-06-17
-description: Establece valores predeterminados y sustitúyelos por ruta para tener etiquetas meta (title, description) individuales en cada página, sin errores
+description: Establece valores predeterminados y sustitúyelos en cada ruta para tener etiquetas meta (title, description) individuales por página, sin errores
 status: published
 ---
 <script>
