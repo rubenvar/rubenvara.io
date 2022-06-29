@@ -39,7 +39,7 @@ Todo bien hasta aquí.
 
 Ahora, la cosa es algo más compleja:
 
-Si `action.type === 'change`, la `action` llevará *siempre* una segunda propiedad, `payload`. Esta propiedad contiene datos sobre el `change` en cuestión.
+Si `action.type === 'change'`, la `action` llevará *siempre* una segunda propiedad, `payload`. Esta propiedad contiene datos sobre el `change` en cuestión.
 
 El tipo de `payload` sería algo así:
 
@@ -112,7 +112,7 @@ type Action =
   };
 ```
 
-Ahora dentro de la anterior función `reducer(action: Action)`, cuando estamos dentro del bloque `if (action.type === 'change') { ... }`, TS sabe que existe la propiedad `payload`, pero no en los otros bloques `if`.
+Ahora dentro de la anterior función `reducer(action: Action) {}`, cuando estamos dentro del bloque `if (action.type === 'change') { ... }`, TS *sabe* que la propiedad `payload` **existe**, y *sabe* que en los otros bloques `if` **no existe**.
 
 ---
 
