@@ -15,10 +15,6 @@ const config = {
   kit: {
     adapter: adapter(),
     trailingSlash: 'always',
-    // Override http methods in the Todo forms
-    methodOverride: {
-      allowed: ['PATCH', 'DELETE'],
-    },
     prerender: {
       default: true,
     },

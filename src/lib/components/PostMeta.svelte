@@ -23,7 +23,7 @@
   <span>
     {#if inFullPost && categoryCount > 2}
       <a href="/{category}">
-        #{category.toLowerCase()} ({categoryCount})
+        #{category.toLowerCase()}
       </a>
     {:else if !inCategoryPage}
       #{category.toLowerCase()}
