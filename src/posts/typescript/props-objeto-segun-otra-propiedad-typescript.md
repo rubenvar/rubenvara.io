@@ -6,7 +6,7 @@ date: 2022-05-17
 status: published
 ---
 
-Hace poco me encontré con una situación similar a esta intentando a implementar un `useReducer`, aunque [eso es otra historia](/react/como-usar-usereducer).
+Hace poco me encontré con una situación similar a esta intentando a implementar un `useReducer`, aunque [eso es otra historia](/react/como-usar-usereducer/).
 
 Vamos a tener una `action`. Esta `action` es un objeto, con la propiedad `type`.
 

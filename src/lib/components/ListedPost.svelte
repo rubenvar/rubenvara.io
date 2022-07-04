@@ -12,12 +12,15 @@
   <a href="/{post.category}/{post.slug}">
     <div>
       <h2>
+        {#if dev && post.status === 'draft'}
+          DRAFT
+        {/if}
         {post.title}
       </h2>
       {#if post.description}
         <p class="description">{post.description}</p>
       {/if}
-      {#if dev && post.status === 'draft'}
+      {#if dev && post.status === 'draft' && !post.description}
         <p class="description">(draft)</p>
       {/if}
       {#if index}
