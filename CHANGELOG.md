@@ -4,6 +4,17 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.9.0] - 2022-07-04
+
+- Updated post meta components (separated for listed post and single post).
+- Updated dependencies.
+- Created 3 drafts.
+- Wrote 1 new post.
+- Added category post count in api and post meta.
+- Created `getCategories` function to get all post categories from folder names and their count. Unused for now until there are more posts.
+- Added `canonical` in head meta tags.
+- Fixed styling specificity in Header.
+
 ## [0.8.0] - 2022-06-28
 
 - Added old route redirects in category endpoint.
