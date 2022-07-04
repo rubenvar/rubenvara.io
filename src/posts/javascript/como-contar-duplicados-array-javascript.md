@@ -118,12 +118,13 @@ O usando JavaScript del futuro ([ES10](https://developer.mozilla.org/en-US/docs/
 ```js
 // ...
 
+// hacemos magia:
 const sorted = Object.fromEntries(
   Object.entries(result).sort(([, a], [, b]) => a - b)
 );
 ```
 
-De una u otra manera, el objeto `sorted` tiene ahora las propiedades ordenadas de menor a mayor valor de repetición.
+De una u otra manera, el objeto `sorted` tendrá ahora las propiedades ordenadas de menor a mayor valor de repetición.
 
 ---
 
@@ -145,7 +146,7 @@ const result: {[key: string]: number} = {};
 // ...
 ```
 
-Básicamente, le decimos a TS que `result` será un objeto con `string`s como propiedad y `number` como valores.
+Le decimos a TS que `result` será un objeto con `string`s como propiedad y `number` como valores.
 
 Idealmente lo definirías con todos los posibles valores que va a tener `result` como propiedad, tomándolos de los valores de `arrayWithRepetition`.
 
