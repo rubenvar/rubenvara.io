@@ -22,3 +22,9 @@ export type CountedLink = {
   external: string[];
   externalTotal: number;
 }
+
+export type CountWords = {
+  slug: string;
+  wordCount: number;
+  minutes: number;
+}

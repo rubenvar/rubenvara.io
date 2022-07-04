@@ -4,6 +4,7 @@
     const json = await data.json();
     const posts: Post[] = json.posts;
     const counted: CountedLink[] = json.counted;
+    const words: CountWords[] = json.words;
 
     if (posts.length) {
       return {
@@ -11,6 +12,7 @@
         props: {
           posts,
           counted,
+          words,
         },
         stuff: {
           title: `Mi blog sobre JavaScript y otras tecnologías: ${posts.length} artículos detallados`,
@@ -27,13 +29,14 @@
 
 <script lang="ts">
   import type { Load } from './__types';
-  import type { CountedLink, Post } from '$lib/utils/types';
+  import type { CountedLink, CountWords, Post } from '$lib/utils/types';
   import ListedPost from '$lib/components/ListedPost.svelte';
   import { dev } from '$app/env';
-  import SEOLinks from '$lib/components/SEOLinks.svelte';
+  import SEOData from '$lib/components/SEOData.svelte';
 
   export let posts: Post[];
   export let counted: CountedLink[];
+  export let words: CountWords[];
 </script>
 
 <header>
@@ -54,11 +57,13 @@
 {#each posts as post, index}
   <ListedPost {post} index={posts.length - index} />
   {#if dev}
-    <SEOLinks
+    <SEOData
       allLinks={counted}
       link={counted.find(
         (link) => link.slug === `/${post.category}/${post.slug}`
       )}
+      allWords={words}
+      words={words.find((obj) => obj.slug === `/${post.category}/${post.slug}`)}
     />
   {/if}
 {/each}

@@ -2,7 +2,8 @@
 // https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog
 // https://www.aaronhubbard.dev/blogposts/text-from-module
 // https://github.com/mattjennings/sveltekit-blog-template
-import type { CountedLink, Post } from '$lib/utils/types';
+import type { CountedLink, CountWords, Post } from '$lib/utils/types';
+import wordCounter from 'word-counting';
 
 const linkRegex = /<a href="(.*?)"( rel="nofollow")?>/g;
 const isExternal = (l: string) => l.includes('https://');
@@ -67,6 +68,19 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
   }
 
   return posts;
+}
+
+export function countWords(posts: Post[]): CountWords[] {
+  return posts.map((post) => {
+    const { wordsCount: wordCount } = wordCounter(post.content, {
+      isHtml: true,
+    });
+    // harcoded words per minute:
+    // https://clbe.wordpress.com/2019/07/09/cuantas-palabras-por-minuto-lee-un-adulto/
+    const minutes = wordCount / 200;
+
+    return { slug: `/${post.category}/${post.slug}`, wordCount, minutes };
+  });
 }
 
 // count links per post
