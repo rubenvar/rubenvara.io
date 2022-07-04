@@ -1,6 +1,6 @@
 <script lang="ts">
   import { dev } from '$app/env';
-  import PostMeta from './PostMeta.svelte';
+  import ListedPostMeta from './ListedPostMeta.svelte';
   import type { Post } from '$lib/utils/types';
 
   export let post: Post;
@@ -23,8 +23,9 @@
       {#if index}
         <span class="index">{index < 10 ? `0${index}` : index}</span>
       {/if}
-      <PostMeta
-        date={post.updated || post.date}
+      <ListedPostMeta
+        date={post.date}
+        updated={post.updated}
         category={post.category}
         {inCategoryPage}
       />

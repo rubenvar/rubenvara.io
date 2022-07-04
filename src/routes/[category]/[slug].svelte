@@ -29,7 +29,7 @@
 <script lang="ts">
   import type { Post } from '$lib/utils/types';
   import { dev } from '$app/env';
-  import PostMeta from '$lib/components/PostMeta.svelte';
+  import SinglePostMeta from '$lib/components/SinglePostMeta.svelte';
   import TwitterBox from '$lib/components/TwitterBox.svelte';
   import type { Load } from './__types/[slug]';
 
@@ -42,9 +42,9 @@
     <h1>
       {post.title}{#if dev && post.status === 'draft'}{' '}(draft){/if}
     </h1>
-    <PostMeta
-      inFullPost={true}
-      date={post.updated || post.date}
+    <SinglePostMeta
+      date={post.date}
+      updated={post.updated}
       category={post.category}
       {categoryCount}
     />
@@ -54,10 +54,10 @@
 
   <TwitterBox twitter={post.twitter} />
 
-  <PostMeta
-    inBottom={true}
-    inFullPost={true}
-    date={post.updated || post.date}
+  <SinglePostMeta
+    atBottom={true}
+    date={post.date}
+    updated={post.updated}
     category={post.category}
     {categoryCount}
   />

@@ -49,7 +49,7 @@
 </header>
 
 {#each posts as post}
-  <ListedPost inCategoryPage {post} />
+  <ListedPost {post} inCategoryPage />
 {/each}
 
 <style lang="scss">
