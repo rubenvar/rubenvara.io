@@ -24,7 +24,7 @@
     "@sveltejs/kit": "next",
     "dayjs": "^1.11.3",
     "dracula-prism": "^2.1.13",
-    "eslint": "^8.18.0",
+    "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "just-random-integer": "^4.0.0",
