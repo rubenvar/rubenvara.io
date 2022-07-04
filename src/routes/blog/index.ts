@@ -1,11 +1,20 @@
 import { dev } from '$app/env';
 import type { RequestHandler } from './__types';
-import { getAllPosts } from '../_api';
+import { countLinks, getAllPosts } from '../_api';
 
 export const get: RequestHandler = async () => {
   const posts = await getAllPosts(dev);
 
   if (posts.length) {
+    if (dev) {
+      // calculate and return link count only in development
+      return {
+        body: {
+          posts,
+          counted: countLinks(posts),
+        },
+      };
+    }
     return {
       body: { posts },
     };

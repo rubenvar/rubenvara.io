@@ -13,3 +13,12 @@ export type Post = {
   description?: string;
   twitter?: string;
 };
+
+export type CountedLink = {
+  slug: string;
+  total: number;
+  internal: string[];
+  internalTotal: number;
+  external: string[];
+  externalTotal: number;
+}

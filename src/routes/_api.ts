@@ -2,7 +2,10 @@
 // https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog
 // https://www.aaronhubbard.dev/blogposts/text-from-module
 // https://github.com/mattjennings/sveltekit-blog-template
-import type { Post } from '$lib/utils/types';
+import type { CountedLink, Post } from '$lib/utils/types';
+
+const linkRegex = /<a href="(.*?)"( rel="nofollow")?>/g;
+const isExternal = (l: string) => l.includes('https://');
 
 interface Options {
   category?: string;
@@ -20,11 +23,19 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
   // shape each file’s data, so it’s easier to work with on the frontend
   const allPosts: Post[] = await Promise.all(
     iterablePostFiles.map(async ([path, resolver]) => {
-      const { metadata } = await resolver();
-
       // try to get the category and slug from file structure (take out ../posts/ and /index.md)
       // TODO maybe make it more resilient with regex or something?
       const [cat, slug] = path.slice(9, -3).split('/');
+
+      const resolvedPost = await resolver();
+      const { metadata } = resolvedPost;
+
+      if (isDev) {
+        // if dev, get content for link counter
+        const { html: content } = resolvedPost.default.render();
+        // if dev, return post with content
+        return { ...metadata, content, category: cat, slug };
+      }
 
       return { ...metadata, category: cat, slug };
     })
@@ -56,6 +67,27 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
   }
 
   return posts;
+}
+
+// count links per post
+export function countLinks(posts: Post[]): CountedLink[] {
+  return posts
+    .map((post) => {
+      // find links in html
+      const matches = [...post.content.matchAll(linkRegex)];
+      const links = matches.map((match) => match[1]);
+
+      // return links data to build table in /blog, in dev
+      return {
+        slug: `/${post.category}/${post.slug}`,
+        total: links.length,
+        internal: links.filter((l) => !isExternal(l)),
+        internalTotal: links.filter((l) => !isExternal(l)).length,
+        external: links.filter((l) => isExternal(l)),
+        externalTotal: links.filter((l) => isExternal(l)).length,
+      };
+    })
+    .sort((a, b) => b.internalTotal - a.internalTotal);
 }
 
 // ? unused for now until there are more posts
