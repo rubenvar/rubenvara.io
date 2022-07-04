@@ -53,7 +53,7 @@ Así Vite, al montar tu app, reemplazará esa cadena por la versión importada d
 
 Ahora bien, si usas el plugin de svelte para `eslint`, o si usas `TS`, es posible que empieces a ver *quejas*:
 
-![problemas](/posts/problemas.png)
+![problemas](/posts/version-problemas.png)
 
 Meh... 😕
 
