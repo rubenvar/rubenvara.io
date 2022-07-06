@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Wrote 1 new post.
+- Created an SEO link counter per post for `dev`.
+- Created a word counter per post for `dev` to show with SEO links.
+
 ## [0.9.0] - 2022-07-04
 
 - Updated post meta components (separated for listed post and single post).
