@@ -21,10 +21,10 @@ export type CountedLink = {
   internalTotal: number;
   external: string[];
   externalTotal: number;
-}
+};
 
 export type CountWords = {
   slug: string;
   wordCount: number;
   minutes: number;
-}
+};

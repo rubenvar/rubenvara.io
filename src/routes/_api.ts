@@ -144,7 +144,7 @@ export async function getAllCategories(isDev = false) {
       if (date > acc) return date;
       return acc;
     }, '');
-    
+
     return {
       category: key,
       count: categoriesCounted[key],
