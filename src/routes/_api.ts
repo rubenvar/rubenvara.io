@@ -104,37 +104,58 @@ export function countLinks(posts: Post[]): CountedLink[] {
     .sort((a, b) => b.internalTotal - a.internalTotal);
 }
 
-// ? unused for now until there are more posts
-// export async function getAllCategories(isDev = false) {
-//   // start by getting all posts resolved
-//   const allPostFiles = import.meta.globEager('../posts/**/*.md');
+// ? returns an array of objs: category, count, lastmod
+// used in sitemap?
+export async function getAllCategories(isDev = false) {
+  // start by getting all posts resolved
+  const allPostFiles = import.meta.globEager('../posts/**/*.md');
 
-//   // return category from slug and metadata
-//   let allPosts = Object.keys(allPostFiles).map((key) => {
-//     return {
-//       category: key.slice(9).split('/')[0],
-//       ...allPostFiles[key].metadata,
-//     };
-//   });
+  // return category from slug and metadata
+  let allPosts: Post[] = Object.keys(allPostFiles).map((key) => {
+    return {
+      category: key.slice(9).split('/')[0],
+      ...allPostFiles[key].metadata,
+    };
+  });
 
-//   // if prod, filter out draft posts
-//   if (!isDev) {
-//     // in prod, only 'published' posts
-//     allPosts = allPosts.filter((post) => post.status === 'published');
-//   }
+  // if prod, filter out draft posts
+  if (!isDev) {
+    // in prod, only 'published' posts
+    allPosts = allPosts.filter((post) => post.status === 'published');
+  }
 
-//   // get list of all categories as array of strings
-//   const allCategories = allPosts.map((post) => post.category);
+  // get list of all categories as array of strings
+  const allCategories = allPosts.map((post) => ({ category: post.category }));
 
-//   // get post count per category
-//   const categoriesCounted: { [key: string]: number } = {};
-//   allCategories.forEach((cat) => {
-//     categoriesCounted[cat] = (categoriesCounted[cat] || 0) + 1;
-//   });
+  // get post count per category
+  const categoriesCounted: { [key: string]: number } = {};
+  allCategories.forEach((obj) => {
+    categoriesCounted[obj.category] =
+      (categoriesCounted[obj.category] || 0) + 1;
+  });
 
-//   return categoriesCounted;
-// };
+  // build an object per category: name, count, lastmod date from its posts
+  const categoriesArray = Object.keys(categoriesCounted).map(async (key) => {
+    // get all posts for category
+    const posts = await getAllPosts(isDev, { category: key });
+    // try to get latest date from all posts
+    const latestDate = posts.reduce((acc: string, curr) => {
+      const date = curr.updated || curr.date;
+      if (date > acc) return date;
+      return acc;
+    }, '');
+    
+    return {
+      category: key,
+      count: categoriesCounted[key],
+      lastmod: latestDate,
+    };
+  });
 
+  return await Promise.all(categoriesArray);
+}
+
+// ? returns number of posts in a category
 export function getCategoryCount(category: string, isDev = false) {
   // start by getting all posts resolved
   const allPostFiles = import.meta.globEager('../posts/**/*.md');
