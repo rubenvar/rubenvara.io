@@ -4,6 +4,11 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.10.0] - 2022-07-08
+
+- Updated dependencies.
+- Created sitemap.
+- Refactored home page: prepare for English locale, keep latest posts in store.
 - Wrote 1 new post.
 - Created an SEO link counter per post for `dev`.
 - Created a word counter per post for `dev` to show with SEO links.
