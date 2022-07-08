@@ -7,7 +7,7 @@ export const get: RequestHandler = async () => {
 
   if (latestPosts.length) {
     return {
-      body: { latestPosts },
+      body: { homePosts: latestPosts },
     };
   }
 
