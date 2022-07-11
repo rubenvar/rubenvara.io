@@ -315,8 +315,9 @@ main > * {
 .box {
   border: 1px solid;
   padding: var(--gap40);
+  border-radius: var(--radius10);
   // padding-bottom: 0; /* ಠ_ಠ */
-  margin-bottom: var(--gap50);
+  margin-bottom: var(--gap60);
   > *:last-child {
     margin-bottom: 0;
   }

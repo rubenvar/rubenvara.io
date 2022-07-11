@@ -40,10 +40,10 @@
   .outer {
     margin-top: var(--gap70);
     background: linear-gradient(315deg, hsl(203, 89%, 53%), hsl(203, 89%, 83%));
-    border-radius: var(--radius30);
+    border-radius: var(--radius10);
     padding: 4px;
     .inner {
-      border-radius: var(--radius20);
+      border-radius: var(--radius10);
       padding: var(--gap30);
       position: relative;
       background: var(--white);
