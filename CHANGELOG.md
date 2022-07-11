@@ -4,6 +4,12 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.11.0] - 2022-07-11
+
+- Wrote 1 new post.
+- Updated SvelteKit, migrated to new Vite config.
+- Renamed "next.js" post category.
+
 ## [0.10.0] - 2022-07-08
 
 - Updated dependencies.
