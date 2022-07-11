@@ -36,7 +36,7 @@ Tras investigar un tiempo sobre el tema, tenía en principio dos opciones:
 
 Por una lado puedo crear una ruta como `/pages/sitemap.xml.js` que Next.js mostrará en `/sitemap.xml` de mi sitio, y ahí programar un *endpoint* que **dinámicamente** muestre (y cachee) mi sitemap en cada visita.
 
-Por otro lado, puedo generar un archivo *real*, **estático**, en `/public/sitemap.xml` en cada *build* de mi app. Si añado nuevas rutas, tendría que regenerar el sitio (o regenerar solo ese archivo mediante ISR, aunque eso es otra historia).
+Por otro lado, puedo generar un archivo *real*, **estático**, en `/public/sitemap.xml` en cada *build* de mi app. Si añado nuevas rutas, tendría que regenerar el sitio (o regenerar solo ese archivo mediante [On-demand ISR](/nextjs/como-usar-on-demand-isr-next.js/), aunque eso es otra historia).
 
 ---
 
