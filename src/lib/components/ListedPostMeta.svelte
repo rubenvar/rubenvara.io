@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { dev } from '$app/env';
+
   // only used in listed post
   // listed posts appear in home, /blog, and /[category]
   import type { Post } from '$lib/utils/types';
@@ -10,7 +12,7 @@
   export let category: Post['category'];
   export let inCategoryPage: boolean = false; // is the listsed post it in category page?
 
-  const dateFormat = 'MMMM YYYY';
+  const dateFormat = dev ? 'D MMM YYYY' : 'MMMM YYYY';
 </script>
 
 <p class="post-meta">
