@@ -45,6 +45,8 @@
   export let counted: CountedLink[];
   export let words: CountWords[];
   export let categories: Category[];
+
+  let showSEO = true;
 </script>
 
 <header>
@@ -72,12 +74,15 @@
         <li><a href="/{cat.category}">{cat.category}</a>: {cat.count}</li>
       {/each}
     </ul>
+    <button on:click={() => (showSEO = !showSEO)}
+      >{showSEO ? 'Hide' : 'Show'} post SEO</button
+    >
   {/if}
 </header>
 
 {#each posts as post, index}
   <ListedPost {post} index={posts.length - index} />
-  {#if dev}
+  {#if dev && showSEO}
     <SEOData
       allLinks={counted}
       link={counted.find(
@@ -129,6 +134,15 @@
           }
         }
       }
+    }
+    button {
+      margin-top: var(--gap40);
+      box-shadow: none;
+      border-radius: var(--radius20);
+      border: 1px solid var(--primary400);
+      background: var(--grey100);
+      padding: var(--gap10) var(--gap30);
+      font-size: var(--fz20);
     }
   }
 </style>
