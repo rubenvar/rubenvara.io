@@ -1,6 +1,6 @@
 import { dev } from '$app/env';
 import type { RequestHandler } from './__types';
-import { countLinks, countWords, getAllPosts } from '../_api';
+import { countLinks, countWords, getAllCategories, getAllPosts } from '../_api';
 
 export const get: RequestHandler = async () => {
   const posts = await getAllPosts(dev);
@@ -13,6 +13,7 @@ export const get: RequestHandler = async () => {
           posts,
           counted: countLinks(posts),
           words: countWords(posts),
+          categories: await getAllCategories(dev),
         },
       };
     }

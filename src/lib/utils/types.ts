@@ -28,3 +28,9 @@ export type CountWords = {
   wordCount: number;
   minutes: number;
 };
+
+export type Category = {
+  category: string;
+  count: number;
+  lastmod: string;
+};

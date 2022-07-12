@@ -5,6 +5,7 @@
     const posts: Post[] = json.posts;
     const counted: CountedLink[] = json.counted;
     const words: CountWords[] = json.words;
+    const categories: Category[] = json.categories;
 
     if (posts.length) {
       return {
@@ -13,6 +14,7 @@
           posts,
           counted,
           words,
+          categories,
         },
         stuff: {
           title: `Mi blog sobre JavaScript y otras tecnologías: ${posts.length} artículos detallados`,
@@ -29,7 +31,12 @@
 
 <script lang="ts">
   import type { Load } from './__types';
-  import type { CountedLink, CountWords, Post } from '$lib/utils/types';
+  import type {
+    Category,
+    CountedLink,
+    CountWords,
+    Post,
+  } from '$lib/utils/types';
   import ListedPost from '$lib/components/ListedPost.svelte';
   import { dev } from '$app/env';
   import SEOData from '$lib/components/SEOData.svelte';
@@ -37,6 +44,7 @@
   export let posts: Post[];
   export let counted: CountedLink[];
   export let words: CountWords[];
+  export let categories: Category[];
 </script>
 
 <header>
@@ -52,6 +60,19 @@
     Si te quedas por aquí seguro que aprendes algo nuevo sobre JavaScript. Sobre
     todo, <span class="emphasis emphasis-js">JavaScript</span>.
   </p>
+
+  {#if dev}
+    <ul class="stats">
+      <li>total: {posts.length}</li>
+      <li>
+        draft: {posts.filter((post) => post.status !== 'published').length}
+      </li>
+      <li>-</li>
+      {#each categories as cat}
+        <li><a href="/{cat.category}">{cat.category}</a>: {cat.count}</li>
+      {/each}
+    </ul>
+  {/if}
 </header>
 
 {#each posts as post, index}
@@ -85,6 +106,28 @@
     &:hover {
       p {
         color: var(--grey700);
+      }
+    }
+    .stats {
+      margin: 0;
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+      border: 1px solid var(--grey300);
+      border-radius: var(--radius20);
+      padding: var(--gap10) var(--gap20);
+      font-size: var(--fz10);
+      li {
+        margin: 0;
+        padding: 0;
+        color: var(--grey600);
+        a {
+          color: var(--grey600);
+          text-decoration: none;
+          &:hover {
+            color: var(--primary500);
+          }
+        }
       }
     }
   }
