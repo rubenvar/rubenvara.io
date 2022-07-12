@@ -9,4 +9,5 @@ package/
 !.env.example
 .vscode/
 IDEAS.md
+DOCS.md
 .netlify/
