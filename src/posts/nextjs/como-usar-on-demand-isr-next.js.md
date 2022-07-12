@@ -1,21 +1,23 @@
 ---
-title: Como usar On-demand ISR en Next.js
+title: Cómo usar On-demand ISR en Next.js para regenerar rutas estáticas en SSG
+seoTitle: Cómo Usar On-demand ISR en Next.js para Regenerar Rutas Estáticas en SSG
 date: 2022-02-19
 updated: 2022-07-11
-status: draft
+description: Si tienes un sitio estático con Next.js (SSG) y queires regenerar solo una ruta, usar On-demand ISR para avisar al frontend
+status: published
 ---
 
-Si generas las páginas de tu app Next.js de forma estática (SSG), por ejemplo usando `getStaticProps` en tu ruta, conseguirás bastantes beneficios, pero tendrás también algunas desventajas. Veamos un ejemplo rápido:
+Si generas las páginas de tu app Next.js de forma estática (SSG), por ejemplo usando `getStaticProps` en tu ruta, conseguirás bastantes beneficios, pero tendrás también algunas desventajas. Un ejemplo rápido:
 
 Digamos que tengo una web donde listo cientos de eventos (que la tengo: calendarioaguasabiertas.com). Al hacer el *build* de mi app:
 
-- Genero cada página de evento a partir de la data solicitada de la API. Cada página es **estática**. Cientos de páginas.
+- Genero cada página de evento a partir de la *data* solicitada de la API. Cada página es **estática**. Cientos de páginas.
 - Esto es beneficioso: la página será solo `html`+`json` y se cargará **muy rápido**, sin hacer esperar al usuario en cada visita.
 - Pero si **cambia** la información de un evento en la base de datos (algo que pasará constantemente) necesitaré **regenerar** todo el sitio.
 
 ### Ya existía una solución parcial
 
-Next.js tenía desde *siempre* la opción de usar [ISR](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) (Incremental Static Regeneration), pudiendo asignar un tiempo fijo pasado el cual regenerar cada ruta, **después de ser visitada** por primera vez tras ese tiempo.
+Next.js tenía desde *siempre* la opción de usar [ISR](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration) (Incremental Static Regeneration), pudiendo asignar un tiempo fijo tras el cual regenerar cada ruta, **después de ser visitada** por primera vez tras ese tiempo.
 
 Esto quiere decir que siempre habrá usuarios que verán la información desactualizada, lo que no es ideal.
 
@@ -23,11 +25,11 @@ Desde Next.js 12.1.0, tenemos una (maravillosa) solución a estos problemas:
 
 ## Regeneración bajo demanda: cómo funciona
 
-Básicamente, le dices a Next.js que regenere una ruta concreta **cuando tú quieras**. Idealmente, cuando cambia la información sobre esa ruta en la base de datos.
+Básicamente, le mandas una señal a Next.js para que regenere una ruta concreta, **cuando tú quieras**. Idealmente, cuando cambia la información sobre esa ruta en la base de datos.
 
 Siguiendo el ejemplo anterior, cuando actualizo la información sobre un evento en la base de datos, solicito a Next.js que regenere la ruta que muestra ese evento, nada más:
 
-- Menos trabajo para el servidor, menos tiempos de espera (ya que regenerar una ruta es prácticamente instantáneo).
+- Menos trabajo para el servidor, menos tiempos de espera (ya que regenerar una ruta es *prácticamente* instantáneo).
 - Info actualizada siempre para todos los usuarios.
 
 Esto se llama [On-demand ISR](https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation), introducido en *beta* en Next.js 12.1.0, y pasado a **estable** en la versión 12.2.0.
@@ -48,7 +50,7 @@ Miramos la teoría, y seguido vemos un ejemplo completo para tenerlo más claro:
 
 Este paso dependerá de tu *backend*: si usas un CMS, las rutas `api` de Next.js, un backend custom con `node.js` y `Express`, etc.
 
-Pero la idea es la misma: tras guardar un cambio en tu base de datos, mandas una solicitud a una url en tu *frontend* Next.js, concretamente: `https://<tusitioweb>/api/revalidate?secret=<secret_token>`.
+Pero la idea es la misma: tras guardar un cambio en tu base de datos, mandas una solicitud a una url en tu *frontend* Next.js, concretamente: `https://<tusitioweb>/api/revalidate?secret=<secret_token>`. Como llamar a un *webhook*.
 
 Como ves, desde el backend tendrás que pasar en tu solicitud un *secreto* al frontend mediante parámetros de búsqueda. Lo usaremos para el siguiente paso:
 
@@ -83,7 +85,7 @@ En tu app Next.js creas una nueva ruta API, en el archivo `/pages/api/revalidate
 
 export default async function handler(req, res) {
   // comprobar token backend vs token frontend
-  if (req.query.secret !== process.env.SECRET_REVALIDATE_TOKEN) {
+  if (req.query.secret !== process.env.SECRET_IN_FRONTEND) {
     // si son diferentes, devuelve 401, avisa al backend, y no continúa
     return res.status(401).json({ message: 'Invalid token' });
   }
@@ -108,3 +110,7 @@ export default async function handler(req, res) {
   }
 }
 ```
+
+El sistema es ideal porque te puedes **olvidar** completamente de que existe:
+
+Una vez que preparas todo esto y haces un par de pruebas (recuerda que esto no funcionará en `dev`, tendrás que hacer un build local para probarlo) puedes trabajar en añadir info a tu web y tener el frontend **siempre al día** tras nueva información, comentarios, cambios de precios, etc.
