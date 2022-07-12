@@ -17,19 +17,19 @@
     "@fontsource/baloo-2": "^4.5.8",
     "@fontsource/dm-sans": "^4.5.7",
     "@fontsource/mansalva": "^4.5.9",
-    "@fontsource/victor-mono": "^4.5.4"
+    "@fontsource/victor-mono": "^4.5.4",
+    "dracula-prism": "^2.1.13",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "next",
     "@sveltejs/kit": "next",
     "dayjs": "^1.11.3",
-    "dracula-prism": "^2.1.13",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-svelte3": "^4.0.0",
     "just-random-integer": "^4.0.0",
     "mdsvex": "^0.10.6",
-    "normalize.css": "^8.0.1",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.7.0",
     "sass": "^1.53.0",
