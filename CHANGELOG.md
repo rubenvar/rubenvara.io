@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.12.0] - 2022-08-16
+
+- Updated SvelteKit to new `load` function and new routing structure.
+- Updated dependencies.
 - Added different date format in listed post if `dev`.
 - Added a toggle for all SEO boxes in listed posts in blog page.
 - Wrote 1 new post.
