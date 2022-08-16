@@ -108,7 +108,7 @@ export function countLinks(posts: Post[]): CountedLink[] {
 // used in sitemap?
 export async function getAllCategories(isDev = false) {
   // start by getting all posts resolved
-  const allPostFiles = import.meta.globEager('../posts/**/*.md');
+  const allPostFiles = import.meta.glob('../posts/**/*.md', { eager: true });
 
   // return category from slug and metadata
   let allPosts: Post[] = Object.keys(allPostFiles).map((key) => {
@@ -158,7 +158,7 @@ export async function getAllCategories(isDev = false) {
 // ? returns number of posts in a category
 export function getCategoryCount(category: string, isDev = false) {
   // start by getting all posts resolved
-  const allPostFiles = import.meta.globEager('../posts/**/*.md');
+  const allPostFiles = import.meta.glob('../posts/**/*.md', { eager: true });
 
   // return category from slug + status from metadata, and filter by category
   let allPostsInCategory = Object.keys(allPostFiles)

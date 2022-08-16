@@ -2,7 +2,7 @@ import { dev } from '$app/env';
 import type { RequestHandler } from './__types';
 import { countLinks, countWords, getAllCategories, getAllPosts } from '../_api';
 
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
   const posts = await getAllPosts(dev);
 
   if (posts.length) {

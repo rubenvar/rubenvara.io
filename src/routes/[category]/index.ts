@@ -9,7 +9,7 @@ const oldRoutes = [
   'primer-gran-viaje',
 ];
 
-export const get: RequestHandler = async ({ params }) => {
+export const GET: RequestHandler = async ({ params }) => {
   const { category } = params;
 
   if (oldRoutes.includes(category)) {

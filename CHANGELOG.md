@@ -4,6 +4,12 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Added different date format in listed post if `dev`.
+- Added a toggle for all SEO boxes in listed posts in blog page.
+- Wrote 1 new post.
+- In `dev`, show category list in blog page.
+- Reverted "next.js" post category naming to "nextjs".
+
 ## [0.11.0] - 2022-07-11
 
 - Wrote 1 new post.

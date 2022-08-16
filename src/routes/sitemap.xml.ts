@@ -2,22 +2,27 @@ import { dev } from '$app/env';
 import { getAllCategories, getAllPosts } from './_api';
 import type { RequestHandler } from './__types';
 
-export const get: RequestHandler = async ({ url }) => {
+export const GET: RequestHandler = async ({ url }) => {
   const domain = url.origin;
 
   // get metadata from now page md
+  const lastmodObject = import.meta.glob('./now.md', { eager: true })[
+    './now.md'
+  ];
+
   const nowPage: {
     slug: string;
     lastmod: string;
   } = {
     slug: 'now',
-    lastmod: import.meta.globEager('./now.md')['./now.md'].metadata.updated,
+    lastmod: lastmodObject.metadata.updated,
   };
 
   // get slugs and lastest post's date per category
   const categories = (await getAllCategories(dev)).map(
     ({ category, lastmod }) => ({ slug: category, lastmod })
   );
+  // console.log(categories);
 
   // get category, slug, and last date for posts
   const posts = (await getAllPosts(dev)).map((post) => ({
