@@ -7,7 +7,7 @@
 
   $: posts = data.posts;
 
-  const total = posts.length;
+  $: total = posts.length;
   const { category } = $page.params;
 </script>
 
