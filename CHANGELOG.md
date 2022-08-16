@@ -4,6 +4,11 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.12.2] - 2022-08-16
+
+- Fixed error in category page.
+- new drafts (start translations from TkDodo).
+
 ## [0.12.1] - 2022-08-16
 
 - Changed to `adapter-vercel`.
