@@ -2,10 +2,13 @@
   // import HomeEnglish from '$lib/components/home/HomeEnglish.svelte';
   import Header from '$lib/components/home/Header.svelte';
   import HomeSpanish from '$lib/components/home/HomeSpanish.svelte';
-  import type { Post } from '$lib/utils/types';
   import { latestPosts } from '$lib/stores/latestPosts';
+  import type { PageData } from './$types';
 
-  export let homePosts: Post[];
+  export let data: PageData;
+
+  $: homePosts = data.homePosts;
+
   $: if (homePosts) {
     latestPosts.set(homePosts);
   }

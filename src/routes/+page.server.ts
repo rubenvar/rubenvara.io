@@ -1,17 +1,14 @@
 import { dev } from '$app/env';
-import type { RequestHandler } from './__types';
+import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 import { getAllPosts } from './_api';
 
-export const GET: RequestHandler = async () => {
+export const load: PageServerLoad = async () => {
   const latestPosts = await getAllPosts(dev, { take: 3 });
 
   if (latestPosts.length) {
-    return {
-      body: { homePosts: latestPosts },
-    };
+    return { homePosts: latestPosts };
   }
 
-  return {
-    status: 404,
-  };
+  throw error(404, 'some error in main +page.server.ts')
 };

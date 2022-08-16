@@ -1,9 +1,10 @@
 import type { Post } from '$lib/utils/types';
-import type { RequestHandler } from './__types/[slug]';
-import { getCategoryCount, getSinglePost } from '../_api';
+import type { PageServerLoad } from './$types';
+import { getCategoryCount, getSinglePost } from '../../_api';
 import { dev } from '$app/env';
+import { error } from '@sveltejs/kit';
 
-export const GET: RequestHandler = async ({ params }) => {
+export const load: PageServerLoad = async ({ params }) => {
   const { category, slug } = params;
 
   const post: Post = await getSinglePost(category, slug);
@@ -11,11 +12,13 @@ export const GET: RequestHandler = async ({ params }) => {
 
   if (post) {
     return {
-      body: { post, categoryCount },
+      post,
+      categoryCount,
+      // this was in stuff:
+      title: post.seoTitle || post.title,
+      description: post.description || post.title,
     };
   }
 
-  return {
-    status: 404,
-  };
+  throw error(404, 'some error in +page.server.ts');
 };

@@ -1,50 +1,15 @@
-<script context="module" lang="ts">
-  export const load: Load = async ({ fetch }) => {
-    const data = await fetch('/blog/__data.json');
-    const json = await data.json();
-    const posts: Post[] = json.posts;
-    const counted: CountedLink[] = json.counted;
-    const words: CountWords[] = json.words;
-    const categories: Category[] = json.categories;
-
-    if (posts.length) {
-      return {
-        status: data.status,
-        props: {
-          posts,
-          counted,
-          words,
-          categories,
-        },
-        stuff: {
-          title: `Mi blog sobre JavaScript y otras tecnologías: ${posts.length} artículos detallados`,
-          description: `Dicen que no sabes lo que sabes hasta que intentas enseñarlo, así que en eso estamos: Escribo sobre JavaScript y desarrollo web en español`,
-        },
-      };
-    }
-
-    return {
-      status: data.status,
-    };
-  };
-</script>
-
 <script lang="ts">
-  import type { Load } from './__types';
-  import type {
-    Category,
-    CountedLink,
-    CountWords,
-    Post,
-  } from '$lib/utils/types';
+  import type { PageData } from './$types';
   import ListedPost from '$lib/components/ListedPost.svelte';
   import { dev } from '$app/env';
   import SEOData from '$lib/components/SEOData.svelte';
 
-  export let posts: Post[];
-  export let counted: CountedLink[];
-  export let words: CountWords[];
-  export let categories: Category[];
+  export let data: PageData;
+
+  $: posts = data.posts;
+  $: counted = data.counted;
+  $: words = data.words;
+  $: categories = data.categories;
 
   let showSEO = true;
 </script>

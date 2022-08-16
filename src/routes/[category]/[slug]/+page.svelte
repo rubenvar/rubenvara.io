@@ -1,40 +1,13 @@
-<script context="module" lang="ts">
-  export const load: Load = async ({ fetch, params }) => {
-    const data = await fetch(`/${params.category}/${params.slug}/__data.json`);
-    const json = await data.json();
-
-    const post: Post = json.post;
-    const categoryCount: number = json.categoryCount;
-
-    if (post) {
-      return {
-        status: data.status,
-        props: {
-          post,
-          categoryCount,
-        },
-        stuff: {
-          title: post.seoTitle || post.title,
-          description: post.description || post.title,
-        },
-      };
-    }
-
-    return {
-      status: data.status,
-    };
-  };
-</script>
-
 <script lang="ts">
-  import type { Post } from '$lib/utils/types';
   import { dev } from '$app/env';
   import SinglePostMeta from '$lib/components/SinglePostMeta.svelte';
   import TwitterBox from '$lib/components/TwitterBox.svelte';
-  import type { Load } from './__types/[slug]';
+  import type { PageData } from './$types';
 
-  export let post: Post;
-  export let categoryCount: number;
+  export let data: PageData;
+
+  $: post = data.post;
+  $: categoryCount = data.categoryCount;
 </script>
 
 {#if post}

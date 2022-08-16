@@ -2,7 +2,7 @@
 // https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog
 // https://www.aaronhubbard.dev/blogposts/text-from-module
 // https://github.com/mattjennings/sveltekit-blog-template
-import type { CountedLink, CountWords, Post } from '$lib/utils/types';
+import type { Category, CountedLink, CountWords, Post } from '$lib/utils/types';
 import wordCounter from 'word-counting';
 
 const linkRegex = /<a href="(.*?)"( rel="nofollow")?>/g;
@@ -106,7 +106,7 @@ export function countLinks(posts: Post[]): CountedLink[] {
 
 // ? returns an array of objs: category, count, lastmod
 // used in sitemap?
-export async function getAllCategories(isDev = false) {
+export async function getAllCategories(isDev = false): Promise<Category[]> {
   // start by getting all posts resolved
   const allPostFiles = import.meta.glob('../posts/**/*.md', { eager: true });
 
