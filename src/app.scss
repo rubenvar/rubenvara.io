@@ -327,4 +327,8 @@ main > * {
   &.recuerda {
     border-color: var(--announce500);
   }
+  &.traduccion {
+    border-width: 2px;
+    border-color: var(--grey600);
+  }
 }
