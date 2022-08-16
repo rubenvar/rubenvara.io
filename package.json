@@ -21,7 +21,7 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "1.0.0-next.64",
+    "@sveltejs/adapter-vercel": "next",
     "@sveltejs/kit": "1.0.0-next.411",
     "dayjs": "^1.11.5",
     "eslint": "^8.22.0",
