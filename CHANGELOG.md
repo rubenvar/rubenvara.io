@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.12.1] - 2022-08-16
+
+- Changed to `adapter-vercel`.
+
 ## [0.12.0] - 2022-08-16
 
 - Updated SvelteKit to new `load` function and new routing structure.
