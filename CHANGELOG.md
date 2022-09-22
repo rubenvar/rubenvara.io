@@ -4,6 +4,11 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.12.7] - 2022-09-22
+
+- Try to fix vercel deploy 404 (downgrade `adapter-vercel`).
+- Fixed link in post to project file in GH.
+
 ## [0.12.6] - 2022-09-22
 
 - Moved posts api functions.
