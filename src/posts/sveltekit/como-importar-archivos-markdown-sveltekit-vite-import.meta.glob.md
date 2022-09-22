@@ -211,4 +211,4 @@ Y listo, con esto tendrías todo lo que necesitas para mostrar posts en un blog 
 
 ---
 
-Tienes un ejemplo real de todo esto en [el código de este blog](https://github.com/rubenvar/rubenvara.com/blob/main/src/routes/_api.ts), ya que es así como gestiono los artículos que estás leyendo ahora mismo.
+Tienes un ejemplo real de todo esto en [el código de este blog](https://github.com/rubenvar/rubenvara.io/blob/main/src/lib/utils/postApi.ts), ya que es así como gestiono los artículos que estás leyendo ahora mismo.
