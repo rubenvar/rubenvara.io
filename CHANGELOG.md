@@ -4,6 +4,15 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.12.3] - 2022-09-22
+
+- Updated to latest `@sveltejs/kit`:
+  - Updated `$app/env` to `$app/environment`.
+  - Updated `config.kit.prerender.default`
+- Updated posts with SvelteKit API changes.
+- Replaced `eslint-plugin-svelte3` with `eslint-plugin-svelte`.
+- Updated dependencies.
+
 ## [0.12.2] - 2022-08-16
 
 - Fixed error in category page.
