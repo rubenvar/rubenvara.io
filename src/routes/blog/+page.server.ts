@@ -1,7 +1,7 @@
+import { error } from '@sveltejs/kit';
 import { dev } from '$app/environment';
 import type { PageServerLoad } from './$types';
-import { countLinks, countWords, getAllCategories, getAllPosts } from '../_api';
-import { error } from '@sveltejs/kit';
+import { countLinks, countWords, getAllCategories, getAllPosts } from '$lib/utils/postApi';
 
 export const load: PageServerLoad = async () => {
   const posts = await getAllPosts(dev);
@@ -27,5 +27,5 @@ export const load: PageServerLoad = async () => {
     };
   }
 
-  throw error(404, 'some eror in blog +page.ts');
+  throw error(404, 'some error from blog +page.server.ts');
 };

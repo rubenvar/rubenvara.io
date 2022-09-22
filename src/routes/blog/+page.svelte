@@ -28,16 +28,18 @@
     todo, <span class="emphasis emphasis-js">JavaScript</span>.
   </p>
 
-  {#if dev}
+  {#if dev && categories}
     <ul class="stats">
       <li>total: {posts.length}</li>
       <li>
         draft: {posts.filter((post) => post.status !== 'published').length}
       </li>
-      <li>-</li>
-      {#each categories as cat}
-        <li><a href="/{cat.category}">{cat.category}</a>: {cat.count}</li>
-      {/each}
+      {#if categories}
+        <li>-</li>
+        {#each categories as cat}
+          <li><a href="/{cat.category}">{cat.category}</a>: {cat.count}</li>
+        {/each}
+      {/if}
     </ul>
     <button on:click={() => (showSEO = !showSEO)}
       >{showSEO ? 'Hide' : 'Show'} post SEO</button
@@ -47,7 +49,7 @@
 
 {#each posts as post, index}
   <ListedPost {post} index={posts.length - index} />
-  {#if dev && showSEO}
+  {#if dev && showSEO && counted && words}
     <SEOData
       allLinks={counted}
       link={counted.find(

@@ -1,7 +1,7 @@
-import { dev } from '$app/environment';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
-import { getAllPosts } from './_api';
+import { dev } from '$app/environment';
+import { getAllPosts } from '$lib/utils/postApi';
 
 export const load: PageServerLoad = async () => {
   const latestPosts = await getAllPosts(dev, { take: 3 });
@@ -10,5 +10,5 @@ export const load: PageServerLoad = async () => {
     return { homePosts: latestPosts };
   }
 
-  throw error(404, 'some error in main +page.server.ts');
+  throw error(404, 'some error in main +page.ts');
 };

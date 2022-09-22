@@ -1,7 +1,7 @@
+import { error, redirect } from '@sveltejs/kit';
 import { dev } from '$app/environment';
 import type { PageServerLoad } from './$types';
-import { getAllPosts } from '../_api';
-import { error, redirect } from '@sveltejs/kit';
+import { getAllPosts } from '$lib/utils/postApi';
 
 const oldRoutes = [
   'bosnia-y-herzegovina',

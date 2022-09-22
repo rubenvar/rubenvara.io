@@ -1,5 +1,5 @@
 import { dev } from '$app/environment';
-import { getAllCategories, getAllPosts } from '../_api';
+import { getAllCategories, getAllPosts } from '$lib/utils/postApi';
 import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async ({ url }) => {

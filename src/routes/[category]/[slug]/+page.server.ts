@@ -1,14 +1,14 @@
+import { error } from '@sveltejs/kit';
 import type { Post } from '$lib/utils/types';
 import type { PageServerLoad } from './$types';
-import { getCategoryCount, getSinglePost } from '../../_api';
+import { getCategoryCount, getSinglePost } from '$lib/utils/postApi';
 import { dev } from '$app/environment';
-import { error } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async ({ params }) => {
   const { category, slug } = params;
 
   const post: Post = await getSinglePost(category, slug);
-  const categoryCount = getCategoryCount(category, dev);
+  const categoryCount = getCategoryCount(category, dev); 
 
   if (post) {
     return {
@@ -20,5 +20,5 @@ export const load: PageServerLoad = async ({ params }) => {
     };
   }
 
-  throw error(404, 'some error in +page.server.ts');
+  throw error(404, 'some error in [slug]/+page.server.ts');
 };
