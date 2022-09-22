@@ -10,5 +10,5 @@ export const load: PageServerLoad = async () => {
     return { homePosts: latestPosts };
   }
 
-  throw error(404, 'some error in main +page.server.ts')
+  throw error(404, 'some error in main +page.server.ts');
 };
