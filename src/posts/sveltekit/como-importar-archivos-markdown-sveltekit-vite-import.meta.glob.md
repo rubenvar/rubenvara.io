@@ -8,14 +8,14 @@ status: published
 ---
 
 <script>
-  import AlertBox from "../../lib/components/Box.svelte";
+  import Box from "$lib/components/Box.svelte";
 </script>
 
-<AlertBox type="update">
+<Box type="updated">
 
 Atención: este artículo ha sido actualizado para tener en cuenta los cambios importantes en la API de SvelteKit a partir de su versión `@sveltejs/kit@1.0.0-next.406` y `vite@3.0.0`.
 
-</AlertBox>
+</Box>
 
 Una opción para crear un blog con SvelteKit y *markdown* es guardar todos tus posts en una carpeta a parte, fuera de `/src/routes`, importar los archivos con Vite, y mostrarlos usando una plantilla (por ejemplo `/src/routes/blog/[slug]/+page.svelte`).
 

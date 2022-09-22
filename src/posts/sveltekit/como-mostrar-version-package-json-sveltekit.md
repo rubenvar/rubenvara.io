@@ -2,9 +2,20 @@
 title: Cómo mostrar la versión desde package.json en SvelteKit
 seoTitle: Cómo Mostrar la Versión desde package.json en SvelteKit
 date: 2022-04-21
+updated: 2022-09-21
 description: Cómo mostrar la versíon de tu app, importada desde package.json, sin errores ni problemas de ningún tipo
 status: published
 ---
+
+<script>
+  import Box from "$lib/components/Box.svelte";
+</script>
+
+<Box type="updated">
+
+**Atención**: este artículo ha sido actualizado para tener en cuenta los cambios importantes en la API de SvelteKit a partir de su versión `@sveltejs/kit@1.0.0-next.406` y `vite@3.0.0`.
+
+</Box>
 
 Otro de esos artículos que voy a escribir porque siempre se me olvida cómo hacer esto y tengo que volver a buscarlo.
 
@@ -12,7 +23,7 @@ En parte como dicen los [docs de SvelteKit](https://kit.svelte.dev/faq#read-pack
 
 ## Cómo *importar* la versión
 
-En el archivo `svelte.config.js`, añadir lo siguiente:
+En el archivo `vite.config.js`, añadir lo siguiente:
 
 ```js
 import { readFileSync } from 'fs';
@@ -23,21 +34,19 @@ const json = readFileSync(file, 'utf8');
 const pkg = JSON.parse(json);
 
 const config = {
-  kit: {
-    // ...
-    vite: {
-      define: {
-        __APP_VERSION__: JSON.stringify(pkg.version),
-      },
-    },
+  // ...
+  define: {
+    __APP_VERSION__: JSON.stringify(pkg.version),
   },
   // ...
 };
+
+// ...
 ```
 
 Puedes llamarlo `__APP_VERSION__`, `__VERSION__`, o como tú prefieras.
 
-Recuerda reiniciar tu app tras hacer cambios en `svelte.config.js`.
+Recuerda reiniciar tu app tras hacer cambios en `vite.config.js`.
 
 ## Cómo *mostrar* la versión
 

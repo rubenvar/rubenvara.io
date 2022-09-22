@@ -2,9 +2,20 @@
 title: Cómo añadir la barra de progreso NProgress.js en SvelteKit
 seoTitle: Cómo Añadir la Barra de Progreso NProgress.js en SvelteKit para la Navegación Client-Side
 date: 2021-11-26
+updated: 2022-09-16
 description: Detecta la navegación client-side en SvelteKit y crea la ilusión de progreso con NProgress.js, una librería muy ligera y sencilla de usar
 status: published
 ---
+
+<script>
+  import Box from "$lib/components/Box.svelte";
+</script>
+
+<Box type="updated">
+
+Atención: este artículo ha sido actualizado para tener en cuenta los cambios importantes en la API de SvelteKit a partir de su versión `@sveltejs/kit@1.0.0-next.406`.
+
+</Box>
 
 ¿Conoces la popular librería `NProgress.js` de [Rico Sta. Cruz](https://twitter.com/rstacruz)?
 
@@ -34,15 +45,15 @@ Con esto tendrás disponibles los métodos mencionados.
 
 Después, tienes que añadir el `css` para la barra y el *spinner* opcional.
 
-Para mantener un único archivo `.css` en mi app SvelteKit, yo tomo [todo el `css` de la librería](https://github.com/rstacruz/nprogress/blob/master/nprogress.css) y lo pego al final de `/src/app.css` que es la única hoja de estilos que importo en `/src/routes/__layout.svelte`.
+Para mantener un único archivo `.css` en mi app SvelteKit, yo tomo [todo el `css` de la librería](https://github.com/rstacruz/nprogress/blob/master/nprogress.css) y lo pego al final de `/src/app.css` que es la única hoja de estilos que importo en `/src/routes/+layout.svelte`.
 
 ## Cómo detectamos la navegación *client-side* en SvelteKit
 
 El sistema que uso yo es el siguiente:
 
-Como quiero que `NProgress.js` se muestre en todas las páginas de mi web, yo lo añado directamente en `/src/routes/__layout.svelte`, pero puedes hacerlo en la ruta que quieras:
+Como quiero que `NProgress.js` se muestre en todas las páginas de mi web, yo lo añado directamente en `/src/routes/+layout.svelte`, pero puedes hacerlo en la ruta que quieras:
 
-```html
+```js
 <script>
   // ...otros imports
   import { navigating } from '$app/stores'; // readable store de SvelteKit

@@ -121,9 +121,9 @@ El componente en sí depende del aspecto que quieras darle. En lo más básico, 
 
 Para incluir la barra en nuestra app, pero evitar renderizarla cuando la fecha limite haya llegado, la agregamos con un condicional.
 
-Como queremos mostrar la barra en todas las páginas de mi web, agregamos lo siguiente directamente en `/src/routes/__layout.svelte`:
+Como queremos mostrar la barra en todas las páginas de la web, agregamos lo siguiente directamente en `/src/routes/+layout.svelte`:
 
-```html
+```svelte
 <script>
   import { time } from "$lib/stores/countdown.js";
   import PromoBar from "$lib/components/PromoBar.svelte";
