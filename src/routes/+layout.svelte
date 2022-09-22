@@ -4,7 +4,7 @@
   import '@fontsource/baloo-2';
   import '@fontsource/victor-mono';
   import 'normalize.css';
-  import 'dracula-prism/dist/css/dracula-prism.css';
+  import 'dracula-prism/dist/css/dracula-prism.min.css';
 
   import { page } from '$app/stores';
   import type { LayoutData } from './$types';
@@ -22,7 +22,7 @@
 
 <svelte:head>
   <!-- gets `stuff (deprecated, now "page.data")` from page.
-    title and description are either defined here (above) by default, or on the specific route -->
+    title and description are either defined here (in the load fn) by default, or on the specific route -->
   <title>{$page.data.title}</title>
   <meta name="description" content={$page.data.description} />
   <link rel="canonical" href={$page.data.canonical} />
