@@ -12,8 +12,9 @@
 <footer>
   <div class="wrapper">
     <Nav />
+    <!-- svelte-ignore missing-declaration -->
     <p>
-      <!-- svelte-ignore missing-declaration -->
+      <!-- eslint-disable-next-line no-undef -->
       v{__PKG_VERSION__} · ©{new Date().getFullYear()} rubenvara.io ·{' '}
       <a href="mailto:hey@rubenvara.io">Contacto</a>
     </p>
