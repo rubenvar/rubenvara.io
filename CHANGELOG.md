@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.12.6] - 2022-09-22
+
+- Moved posts api functions.
+
 ## [0.12.5] - 2022-09-22
 
 - Fixed `Box` component css.
