@@ -297,7 +297,7 @@ main > pre[class*='language-'] {
   }
 }
 
-/* add it here as svelte strips it from __layout css */
+/* add it here as svelte strips it from +layout css */
 main > * {
   grid-column: 2;
 }
