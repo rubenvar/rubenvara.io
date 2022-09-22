@@ -10,9 +10,6 @@ const config = {
       edge: true,
     }),
     trailingSlash: 'always',
-    prerender: {
-      default: true,
-    },
   },
   extensions: ['.svelte', ...mdsvexConfig.extensions],
   preprocess: [
