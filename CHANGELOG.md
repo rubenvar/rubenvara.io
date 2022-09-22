@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.12.4] - 2022-09-22
+
+- Updated all SvelteKit posts to new SvelteKit API.
+
 ## [0.12.3] - 2022-09-22
 
 - Updated to latest `@sveltejs/kit`:
