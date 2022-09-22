@@ -3,10 +3,21 @@ title: Cómo importar archivos markdown en SvelteKit con `import.meta.glob()` de
 seoTitle: Cómo Importar Archivos markdown en SvelteKit con `import.meta.glob()` de Vite
 description: "Crea un blog con SvelteKit: posts en markdown, conversión de metadata y html con mdsvex, importa los archivos con Vite usando `import.meta.glob()`"
 date: 2022-06-29
+updated: 2022-09-19
 status: published
 ---
 
-Una opción para crear un blog con SvelteKit y *markdown* es guardar todos tus posts en una carpeta a parte, fuera de `/src/routes`, importar los archivos con Vite, y mostrarlos usando una plantilla (por ejemplo `/src/routes/blog/[slug].svelte`).
+<script>
+  import AlertBox from "../../lib/components/Box.svelte";
+</script>
+
+<AlertBox type="update">
+
+Atención: este artículo ha sido actualizado para tener en cuenta los cambios importantes en la API de SvelteKit a partir de su versión `@sveltejs/kit@1.0.0-next.406` y `vite@3.0.0`.
+
+</AlertBox>
+
+Una opción para crear un blog con SvelteKit y *markdown* es guardar todos tus posts en una carpeta a parte, fuera de `/src/routes`, importar los archivos con Vite, y mostrarlos usando una plantilla (por ejemplo `/src/routes/blog/[slug]/+page.svelte`).
 
 Hay otras formas, como meter todos los posts directamente en la carpeta `/src/routes/blog/`, y otras ideas.
 
@@ -55,7 +66,7 @@ Por ejemplo, si quiero generar cada post individual, aunque tengo el `slug` del 
 
 No he encontrado otra forma que importar todos los archivos `.md` y filtrar las rutas con la del post que quiero generar.
 
-Haces trabajar más a Vite, pero como genero una web estática (SSG), solo lo hace una vez *at build time* y al usuario esto no le supone ningún problema.
+Haces trabajar más a Vite, pero como genero una web estática (SSG), solo lo hace una vez *at build time* y al usuario final esto no le supone ningún problema.
 
 ### Qué devuelve
 
@@ -95,9 +106,13 @@ const resolvedPost = await firstPostResolver();
 
 Normalmente esto lo harías en un *loop* porque querrías hacer esto con todos los posts, o varios al menos.
 
-#### También existe `import.meta.globEager()`
+#### También existe la opción `{ eager: true }`
 
-Si vas a necesitar el resultado de todas las rutas importadas, puedes usar directamente `import.meta.globEager()`.
+Si vas a necesitar el resultado de todas las rutas importadas, puedes añadir la opción `eager: true` a la función:
+
+```js
+import.meta.glob('../posts/\*.md', { glob: eager });
+```
 
 Te devuelve la misma estructura que `glob()`, pero el valor de cada ruta es el resultado de ejecutar su función `import`.
 
@@ -165,7 +180,7 @@ Solo queda mostrarlo todo en la plantilla.
 
 ## Mostrar el resultado
 
-Idealmente todo lo anterior lo has hecho en un `endpoint` de tu API, y tu ruta recibirá la *data* vía `props`.
+Idealmente todo lo anterior lo has hecho en un `endpoint` de tu API, por ejemplo `/src/routes/blog/[slug]/+page.server.js`, y tu ruta recibirá la *data* vía `props`.
 
 Las propiedades de la *metadata* puedes usarlas como variables normales.
 
@@ -173,13 +188,15 @@ El *html*, como ya viene con tus etiquetas, etc., queremos mostrarlo sin procesa
 
 - Svelte tiene una función perfecta para esto, `@html`.
 
-Siguiendo el mismo ejemplo que teníamos, dentro de la ruta que será la plantilla de tu post:
+Siguiendo el mismo ejemplo que teníamos, dentro de la ruta que será la plantilla de tu post (por ejemplo `/src/routes/blog/[slug]/+page.svelte`):
 
 ```svelte
 <script>
-  // aquí se recibirá la data
-  export let contents;
-  export let meta;
+  // aquí se recibirá y asignará la data
+  export let data: PageData;
+
+  $: contents = data.contents;
+  $: meta = data.meta;
 </script>
 
 <!-- usamos los valores del frontmatter -->
