@@ -1,4 +1,4 @@
-import { dev } from '$app/env';
+import { dev } from '$app/environment';
 import { getAllCategories, getAllPosts } from '../_api';
 import type { RequestHandler } from './$types';
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { dev } from '$app/env';
+  import { dev } from '$app/environment';
   import ListedPostMeta from './ListedPostMeta.svelte';
   import type { Post } from '$lib/utils/types';
 

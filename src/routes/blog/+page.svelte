@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { PageData } from './$types';
   import ListedPost from '$lib/components/ListedPost.svelte';
-  import { dev } from '$app/env';
+  import { dev } from '$app/environment';
   import SEOData from '$lib/components/SEOData.svelte';
 
   export let data: PageData;

@@ -1,4 +1,4 @@
-import { dev } from '$app/env';
+import { dev } from '$app/environment';
 import type { PageServerLoad } from './$types';
 import { countLinks, countWords, getAllCategories, getAllPosts } from '../_api';
 import { error } from '@sveltejs/kit';

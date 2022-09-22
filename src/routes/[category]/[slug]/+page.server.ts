@@ -1,7 +1,7 @@
 import type { Post } from '$lib/utils/types';
 import type { PageServerLoad } from './$types';
 import { getCategoryCount, getSinglePost } from '../../_api';
-import { dev } from '$app/env';
+import { dev } from '$app/environment';
 import { error } from '@sveltejs/kit';
 
 export const load: PageServerLoad = async ({ params }) => {

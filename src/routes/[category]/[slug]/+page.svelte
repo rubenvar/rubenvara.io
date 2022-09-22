@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { dev } from '$app/env';
+  import { dev } from '$app/environment';
   import SinglePostMeta from '$lib/components/SinglePostMeta.svelte';
   import TwitterBox from '$lib/components/TwitterBox.svelte';
   import type { PageData } from './$types';

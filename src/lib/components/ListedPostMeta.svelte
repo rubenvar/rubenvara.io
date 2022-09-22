@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { dev } from '$app/env';
+  import { dev } from '$app/environment';
 
   // only used in listed post
   // listed posts appear in home, /blog, and /[category]

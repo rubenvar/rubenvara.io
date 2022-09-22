@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { dev } from '$app/env';
+  import { dev } from '$app/environment';
   import type { CountedLink, CountWords } from '$lib/utils/types';
 
   export let allLinks: CountedLink[];
