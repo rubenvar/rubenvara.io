@@ -1,5 +1,6 @@
 <script lang="ts">
   export let tech: string;
+  
   const cl = tech
     .toLowerCase()
     .replace('.', '')

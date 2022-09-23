@@ -2,70 +2,71 @@
   import { fade } from 'svelte/transition';
   import { goto } from '$app/navigation';
   import TechTag from './TechTag.svelte';
+
+  export let id: string;
+  export let title: string;
+  export let techs: string[] = [];
+
   let showBig = false;
 
   const close = () => {
     showBig = false;
-    goto('#button-caa');
+    goto(`#button-${id}`);
   };
 
   const handleClick = () => {
     showBig = !showBig;
-    if (showBig) goto('#card-caa');
+    if (showBig) goto(`#card-${id}`);
   };
+
+  let x = 50;
+  let y = 50;
+
+  const handleMousemove = (event: MouseEvent) => {
+    x = event.clientX;
+    y = event.clientY;
+  };
+
+  // --caa600
+  // --tn500
+  // --vpnf600
+  const customColor = `${id}600`;
 </script>
 
 {#if showBig}
-  <article id="card-caa" transition:fade={{ duration: 200 }}>
+  <article
+    style="--customColor: var(--{customColor});--x: {x}px;--y: {y}px;"
+    id="card-{id}"
+    transition:fade={{ duration: 200 }}
+    on:mousemove={handleMousemove}
+  >
     <button class="close" on:click={close}>&times;</button>
     <div class="main">
-      <h3>calendarioaguasabiertas.com</h3>
+      <h3>{title}</h3>
       <div class="tech">
-        <TechTag tech="React" />
-        <TechTag tech="Next.js 12" />
-        <TechTag tech="Typescript" />
-        <TechTag tech="GraphQL" />
-        <TechTag tech="react-query" />
-        <TechTag tech="graphql-codegen" />
-        <TechTag tech="KeystoneJS 5" />
-        <TechTag tech="node.js" />
-        <TechTag tech="MongoDB" />
+        {#each techs as tech}
+          <TechTag {tech} />
+        {/each}
       </div>
       <div class="text">
-        <p>
-          Un mega-listado de todas las travesías de natación en el estado, y el
-          proyecto del que más orgulloso estoy. Visitado por cientos de personas
-          cada día.
-        </p>
-        <p>
-          He añadido decenas de funciones desde su creación, hace más de 2 años.
-          He aprendido muchísimo trabajando en ello, y sigo teniendo nuevos
-          retos a diario.
-        </p>
-        <p>
-          A partir de este he creado varias herramientas extra, como un <em
-            >scraper</em
-          > o una app de gestión de contactos, ambas con SvelteKit, con bases de
-          datos y autenticación en Supabase.js.
-        </p>
+        <slot name="text" />
       </div>
-      <div class="stats">some easy stats here</div>
+      <div class="stats">
+        <slot name="stats">some easy stats here</slot>
+      </div>
     </div>
   </article>
 {:else}
   <button
+    style="--customColor: var(--{customColor})"
     class="toggle"
-    id="button-caa"
+    id="button-{id}"
     on:click={handleClick}
     transition:fade={{ duration: 200 }}
   >
     <div class="text">
-      <h3>calendarioaguasabiertas.com</h3>
-      <p>
-        Un mega-listado de todas las travesías de natación en el estado, y el
-        proyecto del que más orgulloso estoy. Visitado por cientos de personas
-        cada día.
-      </p>
+      <h3>{title}</h3>
+      <slot name="short" />
     </div>
   </button>
 {/if}
@@ -74,13 +75,20 @@
   .toggle {
     border-radius: var(--radius30);
     padding: var(--gap20);
-    background-color: var(--caa600);
+    background-color: var(--customColor);
+    background: linear-gradient(
+      25deg,
+      var(--customColor),
+      black,
+      var(--customColor)
+    );
     box-shadow: none;
     border: none;
     text-align: left;
-    margin-bottom: var(--gap80);
+    margin: var(--gap60) 0;
     .text {
       background-color: var(--white);
+      background-color: #fffd;
       border-radius: var(--radius20);
       padding: var(--gap20);
     }
@@ -91,6 +99,7 @@
     display: block;
     font-size: var(--fz110);
     box-shadow: none;
+    color: var(--white);
     border: none;
     border-radius: none;
     padding: 0;
@@ -100,12 +109,19 @@
     right: var(--gap40);
   }
   article {
-    padding: var(--gap60);
-    background-color: var(--caa600);
+    padding: var(--gap80) var(--gap100);
+    background-color: var(--customColor);
+    background: radial-gradient(
+      circle at var(--x) var(--y),
+      black,
+      var(--customColor) 300%
+    );
+    transition: all 0.3s;
     color: var(--white);
     width: 100%;
-    min-height: 105vh;
-    margin: var(--gap60) 0;
+    /* min-height: 105vh; */
+    min-height: 75vh;
+    margin: 0;
     grid-column: 1 / -1;
     position: relative;
     .main {
@@ -114,7 +130,9 @@
       gap: 0 var(--gap40);
       h3 {
         margin-top: 0;
+        margin-bottom: var(--gap80);
         grid-column: 2;
+        font-size: var(--fz80);
       }
       .tech {
         grid-row: 2;
@@ -125,9 +143,6 @@
       .text {
         grid-row: 2;
         width: var(--maxWidth);
-        p:last-child {
-          margin-bottom: 0;
-        }
       }
       .stats {
         grid-row: 2;

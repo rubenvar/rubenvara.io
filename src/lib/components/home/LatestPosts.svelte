@@ -3,7 +3,6 @@
   import ListedPost from '$lib/components/ListedPost.svelte';
 </script>
 
-<h2 class="section-title">Posts más recientes</h2>
 <p class="blog-intro">
   En mi blog escribo sobre JavaScript y otros inventos modernos. Mira los
   últimos artículos:
@@ -11,7 +10,7 @@
 {#each $latestPosts as post}
   <ListedPost {post} />
 {/each}
-<p class="read-more"><a href="/blog">Ver todos ⟶</a></p>
+<p class="read-more"><a href="/blog">Ver todos en el blog ⟶</a></p>
 
 <style lang="scss">
   .blog-intro {
