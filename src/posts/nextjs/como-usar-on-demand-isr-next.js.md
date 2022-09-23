@@ -3,7 +3,7 @@ title: Cómo usar On-demand ISR en Next.js para regenerar rutas estáticas en SS
 seoTitle: Cómo Usar On-demand ISR en Next.js para Regenerar Rutas Estáticas en SSG
 date: 2022-02-19
 updated: 2022-07-11
-description: Si tienes un sitio estático con Next.js (SSG) y queires regenerar solo una ruta, usar On-demand ISR para avisar al frontend
+description: Si tienes un sitio estático con Next.js (SSG) y quieres regenerar solo una ruta, usa On-demand ISR para avisar al frontend de cambios en el backend
 status: published
 ---
 
