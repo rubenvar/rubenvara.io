@@ -7,10 +7,11 @@ import { dev } from '$app/environment';
 export const load: PageServerLoad = async ({ params }) => {
   const { category, slug } = params;
 
-  const post: Post = await getSinglePost(category, slug);
-  const categoryCount = getCategoryCount(category, dev); 
-
+  const post = await getSinglePost(category, slug);
+  
   if (post) {
+    const categoryCount = getCategoryCount(category, dev);
+    
     return {
       post,
       categoryCount,

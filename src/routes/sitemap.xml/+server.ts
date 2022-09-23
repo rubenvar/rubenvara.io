@@ -6,23 +6,22 @@ export const GET: RequestHandler = async ({ url }) => {
   const domain = url.origin;
 
   // get metadata from now page md
-  const lastmodObject = import.meta.glob('./now.md', { eager: true })[
-    './now.md'
-  ];
+  const lastmodObject = Object.values(
+    import.meta.glob<{ updated: string }>('../now/*.md', {
+      import: 'metadata',
+      eager: true,
+    })
+  )[0];
 
-  const nowPage: {
-    slug: string;
-    lastmod: string;
-  } = {
+  const nowPage = {
     slug: 'now',
-    lastmod: lastmodObject.metadata.updated,
+    lastmod: lastmodObject.updated,
   };
 
   // get slugs and lastest post's date per category
   const categories = (await getAllCategories(dev)).map(
     ({ category, lastmod }) => ({ slug: category, lastmod })
   );
-  // console.log(categories);
 
   // get category, slug, and last date for posts
   const posts = (await getAllPosts(dev)).map((post) => ({
@@ -65,6 +64,13 @@ export const GET: RequestHandler = async ({ url }) => {
   };
 
   // throw new Error("@migration task: Migrate this return statement (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292701)");
+  // return {
+  //   headers,
+  //   body: `<?xml version="1.0" encoding="UTF-8" ?>
+  //     <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  //       ${content}
+  //     </urlset>`.trim(),
+  // };
   // Suggestion (check for correctness before using):
   return new Response(
     `<?xml version="1.0" encoding="UTF-8" ?>
@@ -73,11 +79,4 @@ export const GET: RequestHandler = async ({ url }) => {
       </urlset>`.trim(),
     { headers: headers }
   );
-  // return {
-  //   headers,
-  //   body: `<?xml version="1.0" encoding="UTF-8" ?>
-  //     <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  //       ${content}
-  //     </urlset>`.trim(),
-  // };
 };

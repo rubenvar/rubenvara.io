@@ -7,7 +7,7 @@
   export let data: PageData;
 
   $: post = data.post;
-  $: categoryCount = data.categoryCount;
+  $: categoryCount = data.categoryCount; // used in post meta to show link to category or only text
 </script>
 
 {#if post}

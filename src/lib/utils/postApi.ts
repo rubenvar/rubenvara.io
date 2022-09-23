@@ -2,11 +2,25 @@
 // https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog
 // https://www.aaronhubbard.dev/blogposts/text-from-module
 // https://github.com/mattjennings/sveltekit-blog-template
-import type { Category, CountedLink, CountWords, Post } from '$lib/utils/types';
+import type {
+  Category,
+  CountedLink,
+  CountWords,
+  Post,
+  PostMeta,
+} from '$lib/utils/types';
 import wordCounter from 'word-counting';
 
 const linkRegex = /<a href="(.*?)"( rel="nofollow")?>/g;
 const isExternal = (l: string) => l.includes('https://');
+
+// type generic for the response of import.meta.glob
+type GlobResp = {
+  default: {
+    render: () => { html: string; css: { code: string }; head: string };
+  };
+  metadata: PostMeta;
+};
 
 interface Options {
   category?: string;
@@ -17,17 +31,17 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
   const category = options?.category;
   const take = options?.take;
 
-  const allPostFiles = import.meta.glob('/src/posts/**/*.md');
-  
+  const allPostFiles = import.meta.glob<GlobResp>('/src/posts/**/*.md');
+
   const iterablePostFiles = Object.entries(allPostFiles);
-  
+
   // shape each file’s data, so it’s easier to work with on the frontend
-  const allPosts: Post[] = await Promise.all(
+  const allPosts = await Promise.all(
     iterablePostFiles.map(async ([path, resolver]) => {
       // try to get the category and slug from file structure (take out ../posts/ and .md)
       // TODO maybe make it more resilient with regex or something?
       const [cat, slug] = path.slice(11, -3).split('/');
-      
+
       const resolvedPost = await resolver();
       const { metadata } = resolvedPost;
 
@@ -107,14 +121,17 @@ export function countLinks(posts: Post[]): CountedLink[] {
 // ? returns an array of objs: category, count, lastmod
 // used in sitemap?
 export async function getAllCategories(isDev = false): Promise<Category[]> {
-  // start by getting all posts resolved
-  const allPostFiles = import.meta.glob('/src/posts/**/*.md', { eager: true });
+  // start by getting all posts resolved, only the metadata field
+  const allPostFiles = import.meta.glob<PostMeta>('/src/posts/**/*.md', {
+    import: 'metadata',
+    eager: true,
+  });
 
   // return category from slug and metadata
-  let allPosts: Post[] = Object.keys(allPostFiles).map((key) => {
+  let allPosts = Object.keys(allPostFiles).map((key) => {
     return {
       category: key.slice(11).split('/')[0],
-      ...allPostFiles[key].metadata,
+      ...allPostFiles[key],
     };
   });
 
@@ -157,15 +174,18 @@ export async function getAllCategories(isDev = false): Promise<Category[]> {
 
 // ? returns number of posts in a category
 export function getCategoryCount(category: string, isDev = false) {
-  // start by getting all posts resolved
-  const allPostFiles = import.meta.glob('/src/posts/**/*.md', { eager: true });
+  // start by getting all posts resolved, but only import the metadata field
+  const allPostFiles = import.meta.glob<PostMeta>('/src/posts/**/*.md', {
+    import: 'metadata',
+    eager: true,
+  });
 
   // return category from slug + status from metadata, and filter by category
   let allPostsInCategory = Object.keys(allPostFiles)
     .map((key) => {
       return {
         category: key.slice(11).split('/')[0],
-        status: allPostFiles[key].metadata.status,
+        status: allPostFiles[key].status,
       };
     })
     .filter((post) => post.category === category);
@@ -181,8 +201,11 @@ export function getCategoryCount(category: string, isDev = false) {
   return allPostsInCategory.length;
 }
 
-export async function getSinglePost(category: string, slug: string) {
-  const allPostFiles = import.meta.glob('/src/posts/**/*.md');
+export async function getSinglePost(
+  category: string,
+  slug: string
+): Promise<Post | undefined> {
+  const allPostFiles = import.meta.glob<GlobResp>('/src/posts/**/*.md');
 
   // try to get the single post
   const postResolver = allPostFiles[`/src/posts/${category}/${slug}.md`];
