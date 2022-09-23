@@ -4,6 +4,9 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Fixed ts in post api.
+- Fixed typos in post.
+
 ## [0.12.8] - 2022-09-23
 
 - Updated dependencies.
