@@ -6,7 +6,7 @@ import {
   countWords,
   getAllCategories,
   getAllPosts,
-} from '$lib/utils/postApi';
+} from '$lib/utils/api';
 
 export const load: PageServerLoad = async () => {
   const posts = await getAllPosts(dev);

@@ -3,6 +3,7 @@
   import ListedPost from '$lib/components/ListedPost.svelte';
   import { dev } from '$app/environment';
   import SEOData from '$lib/components/SEOData.svelte';
+  import Emphasis from '$lib/components/Emphasis.svelte';
 
   export let data: PageData;
 
@@ -25,7 +26,7 @@
   </p>
   <p>
     Si te quedas por aquí seguro que aprendes algo nuevo sobre JavaScript. Sobre
-    todo, <span class="emphasis emphasis-js">JavaScript</span>.
+    todo, <Emphasis type="js">JavaScript</Emphasis>.
   </p>
 
   {#if dev && categories}

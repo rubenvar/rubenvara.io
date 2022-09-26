@@ -1,7 +1,7 @@
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { dev } from '$app/environment';
-import { getAllPosts } from '$lib/utils/postApi';
+import { getAllPosts } from '$lib/utils/api';
 
 export const load: PageServerLoad = async () => {
   const latestPosts = await getAllPosts(dev, { take: 3 });
