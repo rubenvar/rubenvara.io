@@ -312,5 +312,5 @@ main > * {
 }
 
 .box {
-  @include variables.box
+  @include variables.box;
 }

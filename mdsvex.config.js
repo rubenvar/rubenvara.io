@@ -3,8 +3,6 @@ const config = {
   smartypants: {
     dashes: 'oldschool',
   },
-  remarkPlugins: [],
-  rehypePlugins: [],
 };
 
 export default config;
