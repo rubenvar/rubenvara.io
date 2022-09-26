@@ -103,7 +103,8 @@ En el mismo archivo donde hemos añadido el primer bloque de código (idealmente
   // ...
 </script>
 
-<!-- la ruta actual actuará como prop de actualización del bloque #key dentro del componente -->
+<!-- la ruta actual actuará como prop de actualización
+  del bloque #key dentro del componente -->
 <PageTransition refresh={key}>
   <!-- ... -->
 </PageTransition>

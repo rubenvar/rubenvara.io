@@ -5,12 +5,15 @@ date: 2021-11-07
 description: Creamos una cuenta atrás precisa, disponible en toda la app, y la usamos para mostrar una barra promocional, condicionalmente
 status: published
 ---
+<script>
+  import Emphasis from '$lib/components/Emphasis.svelte'
+</script>
 
 En este caso quiero añadir una barra superior a una *landing page* de ventas: una barra promocional que ofrezca un descuento y muestre una cuenta atrás.
 
 Cuando la cuenta atrás termine (termina el descuento) quiero que la barra desaparezca, y las futuras visitas no deberían llegar a verla nunca ya que la cuenta atrás ha terminado y el descuento ya no está vigente.
 
-Aunque existen paquetes para mostrar una cuenta atrás en svelte, me parece un buen ejercicio así que vamos a hacerlo todo nosotros: en gran parte se trata de gestionar una cuenta regresiva con <span class="emphasis emphasis-js">vanilla JavaScript</span>.
+Aunque existen paquetes para mostrar una cuenta atrás en svelte, me parece un buen ejercicio así que vamos a hacerlo todo nosotros: en gran parte se trata de gestionar una cuenta regresiva con <Emphasis type="js">vanilla JavaScript</Emphasis>.
 
 Primero vamos a crear una forma de calcular el tiempo restante. Después, cómo mostrarla en días, horas, minutos, etc.
 

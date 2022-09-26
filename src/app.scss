@@ -310,3 +310,7 @@ main > * {
 .emphasis-js {
   @include variables.jsEmphasis;
 }
+
+.box {
+  @include variables.box
+}

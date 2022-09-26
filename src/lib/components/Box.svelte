@@ -1,4 +1,3 @@
-<!-- unused -->
 <script lang="ts">
   export let type = 'info';
 </script>
@@ -8,7 +7,7 @@
 </div>
 
 <style lang="scss">
-  div {
+  .box {
     border: 1px solid;
     padding: var(--gap40);
     padding-bottom: 0; /* ಠ_ಠ */

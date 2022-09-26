@@ -6,8 +6,11 @@ updated: 2022-06-12
 description: "Un método rápido para contar valores repetidos en un array de cadenas o números con JavaScript, ordenarlos, y definirlo bien en TypeScript"
 status: published
 ---
+<script>
+  import Emphasis from '$lib/components/Emphasis.svelte'
+</script>
 
-Otra de esas cosas que he tenido que consultar un millón de veces y copiar un *snippet* de <span class="emphasis emphasis-js">JavaScript</span> desde [SO](https://stackoverflow.com/questions/19395257/how-to-count-duplicate-value-in-an-array-in-javascript) o algún blog.
+Otra de esas cosas que he tenido que consultar un millón de veces y copiar un *snippet* de <Emphasis type="js">JavaScript</Emphasis> desde [SO](https://stackoverflow.com/questions/19395257/how-to-count-duplicate-value-in-an-array-in-javascript) o algún blog.
 
 Lo publico por aquí para que al menos no tenga que seguir buscándolo, y quizás te ayude.
 

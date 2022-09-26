@@ -5,6 +5,9 @@ date: 2022-03-17
 description: Cómo avisar (correctamente) a TypeScript de que un array ya no contiene elementos `undefined` tras filtrar con .filter()
 status: published
 ---
+<script>
+  import Emphasis from '$lib/components/Emphasis.svelte'
+</script>
 
 Hace poco empecé a convertir un proyecto a TypeScript y así ir poco a poco **aprendiendo** este ~~lenguaje~~ *superset*. A menudo encuentro problemas que no sé cómo solucionar.
 
@@ -93,7 +96,7 @@ Esto es un problema si vamos a seguir trabajando con el *array* `ratings`, así 
 
 ## La (no tan buena) solución
 
-Si vives en el presente y no te importa el futuro ni las consecuencias de tus actos en el <span class="emphasis">continuo espacio-temporal</span>, puedes usar *type assertion* (confirmación de tipos) y no volver a pensar en ello.
+Si vives en el presente y no te importa el futuro ni las consecuencias de tus actos en el <Emphasis>continuo espacio-temporal</Emphasis>, puedes usar *type assertion* (confirmación de tipos) y no volver a pensar en ello.
 
 Quedaría algo como esto:
 
