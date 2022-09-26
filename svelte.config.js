@@ -1,12 +1,12 @@
 import { mdsvex } from 'mdsvex';
 import preprocess from 'svelte-preprocess';
-import vercel from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-auto';
 import mdsvexConfig from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
-    adapter: vercel({
+    adapter: adapter({
       edge: true,
     }),
     trailingSlash: 'always',
