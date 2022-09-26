@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.12.10] - 2022-09-26
+
+- Added `adapter-auto` for netlify deploy.
+
 ## [0.12.9] - 2022-09-26
 
 - Tried to fix 404 on Vercel.
