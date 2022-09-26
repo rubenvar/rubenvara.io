@@ -8,13 +8,13 @@ export type PostMeta = {
   updated?: string;
   description?: string;
   twitter?: string;
-}
+};
 
 export type Post = PostMeta & {
   // from file system
   slug: string;
   category: string;
-  content: string;
+  content?: string;
 };
 
 export type CountedLink = {

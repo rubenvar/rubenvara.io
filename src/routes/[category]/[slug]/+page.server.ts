@@ -7,10 +7,10 @@ export const load: PageServerLoad = async ({ params }) => {
   const { category, slug } = params;
 
   const post = await getSinglePost(category, slug);
-  
+
   if (post) {
     const categoryCount = getCategoryCount(category, dev);
-    
+
     return {
       post,
       categoryCount,
