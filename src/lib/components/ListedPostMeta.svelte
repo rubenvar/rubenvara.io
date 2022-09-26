@@ -10,7 +10,7 @@
   export let date: Post['date'];
   export let updated: Post['updated'] = undefined;
   export let category: Post['category'];
-  export let inCategoryPage: boolean = false; // is the listsed post it in category page?
+  export let inCategoryPage = false; // is the listsed post it in category page?
 
   const dateFormat = dev ? 'D MMM YYYY' : 'MMMM YYYY';
 </script>

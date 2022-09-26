@@ -56,7 +56,7 @@
   }
   h2 {
     font-weight: 500;
-    font-size: var(--fz60);
+    font-size: var(--fz70);
     margin-top: 0;
     margin-bottom: var(--gap30);
   }
