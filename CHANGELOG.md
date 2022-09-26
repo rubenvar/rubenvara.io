@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.12.9] - 2022-09-26
+
 - Fixed ts in post api.
 - Fixed typos in post.
 
