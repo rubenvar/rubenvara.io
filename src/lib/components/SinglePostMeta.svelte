@@ -54,7 +54,8 @@
     color: var(--grey500);
     font-size: var(--fz30);
     &.at-bottom {
-      margin-top: var(--gap110);
+      margin-top: var(--gap100);
+      margin-bottom: var(--gap70);
     }
     a {
       color: var(--grey700);

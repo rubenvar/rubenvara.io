@@ -38,7 +38,7 @@
 <style lang="scss">
   /* make a gradient border with inner and outer divs */
   .outer {
-    margin-top: var(--gap70);
+    margin-top: var(--gap110);
     background: linear-gradient(315deg, hsl(203, 89%, 53%), hsl(203, 89%, 83%));
     border-radius: var(--radius10);
     padding: 4px;
