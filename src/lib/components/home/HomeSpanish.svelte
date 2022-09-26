@@ -55,6 +55,6 @@
     margin-bottom: var(--gap80);
   }
   .project-outro {
-    margin-top: var(--gap60);
+    margin-top: var(--gap80);
   }
 </style>

@@ -19,12 +19,18 @@
     if (showBig) goto(`#card-${id}`);
   };
 
-  let x = 50;
-  let y = 50;
+  // bind component size to these
+  let w: number;
+  let h: number;
+  // x and y for the gradient, always between 35 and 65
+  let x = 0;
+  let y = 0;
 
+  // TODO debounce this
   const handleMousemove = (event: MouseEvent) => {
-    x = event.clientX;
-    y = event.clientY;
+    x = (event.clientX * 20) / w - 10;
+    y = (event.clientY * 20) / h - 10;
+    console.log(x);
   };
 
   // --caa600
@@ -35,13 +41,15 @@
 
 {#if showBig}
   <article
-    style="--customColor: var(--{customColor});--x: {x}px;--y: {y}px;"
+    bind:clientWidth={w}
+    bind:clientHeight={h}
+    style="--customColor: var(--{customColor});--x: {x}%;--y: {y}%;"
     id="card-{id}"
     transition:fade={{ duration: 200 }}
     on:mousemove={handleMousemove}
   >
-    <button class="close" on:click={close}>&times;</button>
     <div class="main">
+      <button class="close" on:click={close}>&times;</button>
       <h3>{title}</h3>
       <div class="tech">
         {#each techs as tech}
@@ -110,12 +118,7 @@
   }
   article {
     padding: var(--gap80) var(--gap100);
-    background-color: var(--customColor);
-    background: radial-gradient(
-      circle at var(--x) var(--y),
-      black,
-      var(--customColor) 300%
-    );
+    /* background-color: var(--customColor); */
     transition: all 0.3s;
     color: var(--white);
     width: 100%;
@@ -124,7 +127,24 @@
     margin: 0;
     grid-column: 1 / -1;
     position: relative;
+    overflow: hidden;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    &::after {
+      width: 180%;
+      height: 180%;
+      position: absolute;
+      z-index: 0;
+      right: -40%;
+      top: -40%;
+      transition: all 0.2s;
+      background: radial-gradient(circle, #000, var(--customColor) 150%);
+      transform: translateX(var(--x)) translateY(var(--y));
+      content: '';
+    }
     .main {
+      z-index: 1;
+      position: relative;
       display: grid;
       grid-template-columns: 1fr auto 1fr;
       gap: 0 var(--gap40);
