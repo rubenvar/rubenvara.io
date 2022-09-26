@@ -8,6 +8,10 @@ export type PostMeta = {
   updated?: string;
   description?: string;
   twitter?: string;
+  series?: {
+    name: string;
+    index: number;
+  };
 };
 
 export type Post = PostMeta & {
@@ -15,6 +19,7 @@ export type Post = PostMeta & {
   slug: string;
   category: string;
   content?: string;
+  postsInSeries?: Post[] | undefined;
 };
 
 export type CountedLink = {

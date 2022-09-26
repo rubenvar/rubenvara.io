@@ -41,7 +41,7 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
       // try to get the category and slug from file structure (take out ../posts/ and .md)
       // TODO maybe make it more resilient with regex or something?
       const [cat, slug] = path.slice(12, -3).split('/');
-      
+
       const resolvedPost = await resolver();
       const { metadata } = resolvedPost;
 
@@ -86,7 +86,9 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
 
 export function countWords(posts: Post[]): CountWords[] {
   return posts.map((post) => {
-    const { wordsCount: wordCount } = wordCounter(post.content, {
+    const postContent = post.content || ''; //! hacky ಠ_ಠ
+
+    const { wordsCount: wordCount } = wordCounter(postContent, {
       isHtml: true,
     });
     // harcoded words per minute:
@@ -101,8 +103,10 @@ export function countWords(posts: Post[]): CountWords[] {
 export function countLinks(posts: Post[]): CountedLink[] {
   return posts
     .map((post) => {
+      const postContent = post.content || ''; //! hacky ಠ_ಠ
+
       // find links in html
-      const matches = [...post.content.matchAll(linkRegex)];
+      const matches = [...postContent.matchAll(linkRegex)];
       const links = matches.map((match) => match[1]);
 
       // return links data to build table in /blog, in dev
@@ -201,6 +205,24 @@ export function getCategoryCount(category: string, isDev = false) {
   return allPostsInCategory.length;
 }
 
+// gets all posts that have a series name in their metadata
+function getPostsInSeries(seriesName: string): Post[] {
+  const allPostFiles = import.meta.glob<GlobResp>('../../posts/**/*.md', {
+    eager: true,
+  });
+
+  const postArray = Object.keys(allPostFiles).map((key) => {
+    const [category, slug] = key.slice(12, -3).split('/');
+    return {
+      category,
+      slug,
+      ...allPostFiles[key].metadata,
+    };
+  });
+
+  return postArray.filter((p) => p.series?.name === seriesName);
+}
+
 export async function getSinglePost(
   category: string,
   slug: string
@@ -216,9 +238,13 @@ export async function getSinglePost(
   const { metadata } = resolvedPost;
   const { html: content } = resolvedPost.default.render();
 
-  // ? default.render() also returns a `css: { code: '', map: '' }` object.
-  // ? it's the css introduced by the components imported in the md file
-  // ? could I get that css into the page?
+  // metadata of posts in a series
+  let postsInSeries: Post[] | undefined;
 
-  return { ...metadata, content, category, slug };
+  // if post is in a series:
+  if (metadata.series?.index) {
+    postsInSeries = getPostsInSeries(metadata.series.name);
+  }
+
+  return { ...metadata, content, category, slug, postsInSeries };
 }

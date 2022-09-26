@@ -1,7 +1,10 @@
 ---
-title: Transformado la data con React Query
+title: Transformando data con React Query
 date: 2022-08-15
 status: draft
+series:
+  name: react-query-tkdodo
+  index: 2
 ---
 
 Welcome to Part 2 of "Things I have to say about react-query". As I've become more and more involved with the library and the community around it, I've observed some more patterns people frequently ask about. Initially, I wanted to write them all down in one big article, but then decided to break them down into more manageable pieces. The first one is about a quite common and important task: Data Transformation.

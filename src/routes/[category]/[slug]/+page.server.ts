@@ -14,7 +14,7 @@ export const load: PageServerLoad = async ({ params }) => {
     return {
       post,
       categoryCount,
-      // this was in stuff:
+      // for SEO tags:
       title: post.seoTitle || post.title,
       description: post.description || post.title,
     };

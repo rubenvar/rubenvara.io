@@ -1,7 +1,10 @@
 ---
-title: React Query en la práctica
+title: "Intro: React Query en el mundo real"
 date: 2022-08-14
 status: draft
+series:
+  name: react-query-tkdodo
+  index: 1
 ---
 <script>
 import Box from '$lib/components/Box.svelte';

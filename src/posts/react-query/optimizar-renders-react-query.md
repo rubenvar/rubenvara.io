@@ -2,6 +2,9 @@
 title: Optimizar los renderizados en React Query
 date: 2022-08-16
 status: draft
+series:
+  name: react-query-tkdodo
+  index: 3
 ---
 
 **Disclaimer**: Render optimizations are an advanced concept for any app. React Query already comes with very good optimizations and defaults out of the box, and most of the time, no further optimizations are needed. "Unneeded re-renders" is a topic that many people tend to put a lot of focus on, which is why I've decided to cover it. But I wanted to point out once again, that usually, for most apps, render optimizations probably don't matter as much as you'd think. Re-renders are a good thing. They make sure your app is up-to-date. I'd take an "unnecessary re-render" over a "missing render-that-should-have-been-there" all day every day. For more on this topic, please read:
