@@ -1,5 +1,6 @@
 <script lang="ts">
   import { dev } from '$app/environment';
+  import PostSeries from '$lib/components/PostSeries.svelte';
   import SinglePostMeta from '$lib/components/SinglePostMeta.svelte';
   import TwitterBox from '$lib/components/TwitterBox.svelte';
   import type { PageData } from './$types';
@@ -25,7 +26,13 @@
 
   {@html post.content}
 
-  <TwitterBox twitter={post.twitter} />
+  {#if post.series}
+    <PostSeries
+      currentPostIndex={post.series.index}
+      seriesName={post.series.name}
+      postsInSeries={post.postsInSeries}
+    />
+  {/if}
 
   <SinglePostMeta
     atBottom={true}
@@ -34,6 +41,8 @@
     category={post.category}
     {categoryCount}
   />
+
+  <TwitterBox twitter={post.twitter} />
 {:else}
   <p>algo no va bien</p>
 {/if}
