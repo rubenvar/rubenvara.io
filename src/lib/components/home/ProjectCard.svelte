@@ -30,7 +30,6 @@
   const handleMousemove = (event: MouseEvent) => {
     x = (event.clientX * 20) / w - 10;
     y = (event.clientY * 20) / h - 10;
-    console.log(x);
   };
 
   // --caa600
