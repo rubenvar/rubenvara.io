@@ -4,6 +4,15 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.13.0] - 2022-09-27
+
+- Updated dependencies.
+- New draft.
+- Tweaked project card css.
+- Created post series functionality:
+  - Added a post series list component for post template.
+- Tweaked font sizes.
+
 ## [0.12.13] - 2022-09-26
 
 - Added `adapter-auto` for netlify deploy.
