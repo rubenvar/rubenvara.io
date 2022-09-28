@@ -1,6 +1,6 @@
 ---
 title: "Gestionando el status de la query con React Query"
-date: 2022-09-27
+date: 2022-09-07
 status: draft
 original:
   title: Status Checks in React Query

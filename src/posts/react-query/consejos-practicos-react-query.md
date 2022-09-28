@@ -2,7 +2,7 @@
 title: "Consejos prácticos sobre React Query"
 seoTitle: "8 Consejos Prácticos sobre React Query: Más Allá de los Docs"
 description: "Primer post de la serie: Consejos para dominar React Query, aplicando ideas prácticas que extienden los docs de esta librería"
-date: 2022-09-28
+date: 2022-09-26
 status: draft
 original:
   title: Practical React Query
