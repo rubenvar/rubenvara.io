@@ -1,5 +1,6 @@
 <script lang="ts">
   import { dev } from '$app/environment';
+  import PostOriginal from '$lib/components/PostOriginal.svelte';
   import PostSeries from '$lib/components/PostSeries.svelte';
   import SinglePostMeta from '$lib/components/SinglePostMeta.svelte';
   import TwitterBox from '$lib/components/TwitterBox.svelte';
@@ -23,6 +24,10 @@
       {categoryCount}
     />
   </header>
+
+  {#if post.original}
+    <PostOriginal original={post.original} seriesName={post.series?.name} />
+  {/if}
 
   {@html post.content}
 
