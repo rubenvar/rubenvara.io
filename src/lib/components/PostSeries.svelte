@@ -11,13 +11,12 @@
 
 {#if allPosts?.length}
   <h2>La serie completa</h2>
-  <p>
-    Este post es parte de la serie <span>
-      {seriesName === 'react-query-tkdodo'
-        ? 'React-Query por Tkdodo'
-        : ''}</span
-    >:
-  </p>
+  {#if seriesName === 'react-query-tkdodo'}
+    <p>
+      Este post es parte de la serie <span>React-Query por Tkdodo</span> que he traducido
+      desde su blog. Mira todos los artículos:
+    </p>
+  {/if}
   <div class="series">
     <ol>
       {#each allPosts as post}
