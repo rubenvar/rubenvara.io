@@ -12,7 +12,8 @@ import type {
 import wordCounter from 'word-counting';
 
 const linkRegex = /<a href="(.*?)"( rel="nofollow")?>/g;
-const isExternal = (l: string) => l.includes('https://');
+// TODO improve this function, maybe a regex, it's not really that resilient... 😅
+const isExternal = (l: string) => l.includes('https://') || l.includes('http://');
 
 // type generic for the response of import.meta.glob
 type GlobResp = {
