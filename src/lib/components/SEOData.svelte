@@ -7,7 +7,7 @@
   export let allWords: CountWords[];
   export let words: CountWords | undefined;
 
-  const linkedFrom = !!link
+  const linkedFrom = link
     ? allLinks.filter((l) => link && l.internal.includes(`${link.slug}/`))
     : [];
 
