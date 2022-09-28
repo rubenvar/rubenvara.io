@@ -1,7 +1,10 @@
 ---
-title: Transformando data con React Query
-date: 2022-08-15
+title: Transformaciones de data con React Query
+date: 2022-09-28
 status: draft
+original:
+  title: React Query Data Transformations
+  url: https://tkdodo.eu/blog/react-query-data-transformations
 series:
   name: react-query-tkdodo
   index: 2

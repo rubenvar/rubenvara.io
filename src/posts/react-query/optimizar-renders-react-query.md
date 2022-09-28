@@ -2,6 +2,9 @@
 title: Optimizar los renderizados en React Query
 date: 2022-08-16
 status: draft
+original:
+  title: React Query Render Optimizations
+  url: https://tkdodo.eu/blog/react-query-render-optimizations
 series:
   name: react-query-tkdodo
   index: 3

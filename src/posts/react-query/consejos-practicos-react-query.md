@@ -4,19 +4,13 @@ seoTitle: "8 Consejos Prácticos sobre React Query: Más Allá de los Docs"
 description: "Primer post de la serie: Consejos para dominar React Query, aplicando ideas prácticas que extienden los docs de esta librería"
 date: 2022-09-28
 status: draft
+original:
+  title: Practical React Query
+  url: https://tkdodo.eu/blog/practical-react-query
 series:
   name: react-query-tkdodo
   index: 1
 ---
-<script>
-import Box from '$lib/components/Box.svelte';
-</script>
-
-<Box type="traduccion">
-
-Este artículo es una traducción del [post "Practical React Query"](https://tkdodo.eu/blog/practical-react-query) publicado por Dominik en su blog TkDodo.eu
-
-</Box>
 
 Cuando GraphQL y especialmente [Apollo Client](https://www.apollographql.com/docs/react/) empezaron a hacerse bastante populares, sobre 2018, se hablaba mucho acerca de si sustituirían completamente a Redux, y se oía mucho la típica pregunta de [¿Ha muerto Redux?](https://dev.to/markerikson/redux---not-dead-yet-1d9k).
 

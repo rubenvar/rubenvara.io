@@ -2,19 +2,13 @@
 title: "Gestionando el status de la query con React Query"
 date: 2022-09-27
 status: draft
+original:
+  title: Status Checks in React Query
+  url: https://tkdodo.eu/blog/status-checks-in-react-query
 series:
   name: react-query-tkdodo
   index: 4
 ---
-<script>
-import Box from '$lib/components/Box.svelte';
-</script>
-
-<Box type="traduccion">
-
-Este artículo es una traducción del [post "Status Checks in React Query"](https://tkdodo.eu/blog/status-checks-in-react-query) publicado por Dominik en su blog TkDodo.eu
-
-</Box>
 
 One advantage of React Query is the easy access to status fields of the query. You instantly know if your query is loading or if it's erroneous. For this, the library exposes a bunch of boolean flags, which are mostly derived from the internal state machine. Looking at [the types](https://github.com/tannerlinsley/react-query/blob/f2137dc4e4553256c4ebc1891b548fe35efe9231/src/core/types.ts#L250), your query can be in one of the following states:
 

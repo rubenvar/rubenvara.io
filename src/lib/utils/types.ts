@@ -12,6 +12,10 @@ export type PostMeta = {
     name: string;
     index: number;
   };
+  original?: {
+    title: string;
+    url: string;
+  };
 };
 
 export type Post = PostMeta & {
