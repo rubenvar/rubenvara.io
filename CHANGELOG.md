@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.14.4] - 2022-09-30
+
+- Fixed local link from post.
+
 ## [0.14.3] - 2022-09-30
 
 - Changed some routes/post titles.
