@@ -4,6 +4,15 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.14.0] - 2022-09-29
+
+- Updated dependencies.
+- Improved API `isInternal` function.
+- Added and styled auto PostOriginal box on post top for translated posts.
+- Changd post frontmatter to include an `original` object for translations.
+- 3 new posts translated and published (react-query 1, 2 and 3).
+- Tweaked the post series component.
+
 ## [0.13.0] - 2022-09-27
 
 - Updated dependencies.
