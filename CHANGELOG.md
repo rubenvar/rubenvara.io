@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.14.3] - 2022-09-30
+
+- Changed some routes/post titles.
+
 ## [0.14.2] - 2022-09-29
 
 - Added redirects for netlify for old routes (previous blog posts).
