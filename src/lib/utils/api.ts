@@ -223,6 +223,11 @@ function getPostsInSeries(seriesName: string): Post[] {
     };
   });
 
+  if (!dev) {
+    // in prod, only 'published' posts
+    postArray = postArray.filter((post) => post.status === 'published');
+  }
+
   return postArray.filter((p) => p.series?.name === seriesName);
 }
 
