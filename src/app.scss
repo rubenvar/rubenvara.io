@@ -229,7 +229,7 @@ ol {
   margin: 0 0 var(--gap60);
   li {
     line-height: var(--textLineHeight);
-    margin-bottom: var(--gap10);
+    margin-bottom: var(--gap20);
   }
 }
 hr {
@@ -276,7 +276,7 @@ ul code {
 code,
 pre[class*='language-'] {
   font-family: var(--codeFont);
-  font-size: 0.9em;
+  font-size: 0.9em; //* special for code blocks
 }
 main > pre[class*='language-'] {
   grid-column: 1 / -1;
@@ -300,6 +300,10 @@ main > pre[class*='language-'] {
     max-width: var(--codeWidth);
     margin: 0 auto;
   }
+}
+
+li pre[class*='language-'] {
+  margin-bottom: var(--gap70);
 }
 
 /* add it here as svelte strips it from +layout css */
