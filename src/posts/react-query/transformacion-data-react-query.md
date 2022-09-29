@@ -25,8 +25,8 @@ Si tu caso es como el de la mayoría, lo más probable es que no uses GraphQL en
 Si trabajas con REST estás más limitado por lo que devuelve el *backend*. ¿Cómo y dónde es la mejor manera de transformar la data cuando usas React Query? La única respuesta real en desarrollo software también aplica aquí:
 
 > Depende.
-
-– Todos los desarrolladores, siempre
+>
+> – Todos los desarrolladores, siempre
 
 Aquí tienes 3+1 ideas sobre **dónde** puedes transformar data, con sus respectivos pros y contras:
 

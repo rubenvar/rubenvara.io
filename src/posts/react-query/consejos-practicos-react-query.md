@@ -59,8 +59,8 @@ Los [Defaults](https://tanstack.com/query/v4/docs/guides/important-defaults) (aj
 **Primero**: React Query **no** invoca tu `queryFn` en cada re-renderizado de React, incluso con un `staleTime` de `0`. Tu app puede re-renderizar por muchas razones y en cualquier momento, así que solicitar tu data cada vez sería una locura.
 
 > Programa siempre esperando re-renderizados, muchos. Yo lo llamo "render-resiliency".
-
-– Tanner Linsley
+>
+> – Tanner Linsley
 
 Si ves una re-solicitud (*refetch*) cuando no la esperabas, es probable que sea porque has vuelto a enfocar la ventana de tu app y React Query ha ejecutado su `refetchOnWindowFocus`, que es genial en *producción*:
 
