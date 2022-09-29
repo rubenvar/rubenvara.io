@@ -4,6 +4,12 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.14.2] - 2022-09-29
+
+- Added redirects for netlify for old routes (previous blog posts).
+- Added `dev` boolean in api, remove from fn definitions.
+- Fixed api to filter out draft posts from series list.
+
 ## [0.14.1] - 2022-09-29
 
 - Fixed deploy error by emptying draft react-query series post 4.
