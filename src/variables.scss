@@ -48,7 +48,7 @@
       width: 100%;
       height: 100%;
       left: 0;
-      top:0;
+      top: 0;
       border: 1px solid var(--grey400);
       transform: none;
       transition: transform 0.5s;
@@ -60,7 +60,7 @@
       width: 100%;
       height: 100%;
       left: 0;
-      top:0;
+      top: 0;
       border: 1px solid var(--grey400);
       transform: none;
       transition: transform 0.5s;
@@ -71,7 +71,8 @@
         transition: transform 0.25s;
       }
       &::after {
-        transform: scale(1.04) rotate(-1.5deg) translateY(-2px) translateX(-20px);
+        transform: scale(1.04) rotate(-1.5deg) translateY(-2px)
+          translateX(-20px);
         transition: transform 0.25s;
       }
     }
