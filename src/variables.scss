@@ -31,7 +31,49 @@
     border-color: var(--announce500);
   }
   &.traduccion {
-    border-width: 2px;
+    border-width: 1px;
     border-color: var(--grey600);
+    border: none;
+    position: relative;
+    color: var(--grey600);
+    margin-bottom: var(--gap70);
+    p {
+      z-index: 1;
+      position: relative;
+    }
+    &::before {
+      background: #fffb;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top:0;
+      border: 1px solid var(--grey400);
+      transform: none;
+      transition: transform 0.5s;
+    }
+    &::after {
+      background: #fffb;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top:0;
+      border: 1px solid var(--grey400);
+      transform: none;
+      transition: transform 0.5s;
+    }
+    &:hover {
+      &::before {
+        transform: scaleX(1.02) rotate(2deg) translateX(8px);
+        transition: transform 0.25s;
+      }
+      &::after {
+        transform: scale(1.04) rotate(-1.5deg) translateY(-2px) translateX(-20px);
+        transition: transform 0.25s;
+      }
+    }
   }
 }
