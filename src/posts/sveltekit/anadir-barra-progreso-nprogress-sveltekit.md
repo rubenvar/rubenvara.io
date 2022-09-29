@@ -1,5 +1,5 @@
 ---
-title: Cómo añadir la barra de progreso NProgress.js en SvelteKit
+title: Añadir la barra de progreso NProgress.js en SvelteKit
 seoTitle: Cómo Añadir la Barra de Progreso NProgress.js en SvelteKit para la Navegación Client-Side
 date: 2021-11-26
 updated: 2022-09-16

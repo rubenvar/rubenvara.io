@@ -1,5 +1,5 @@
 ---
-title: Cómo filtrar elementos `undefined` o `null` de un array en Typescript
+title: Filtrar elementos `undefined` o `null` de un array en Typescript
 seoTitle: Cómo Filtrar Elementos `undefined` o `null` de un array en Typescript
 date: 2022-03-17
 description: Cómo avisar (correctamente) a TypeScript de que un array ya no contiene elementos `undefined` tras filtrar con .filter()

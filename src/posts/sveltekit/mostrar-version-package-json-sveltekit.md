@@ -1,5 +1,5 @@
 ---
-title: Cómo mostrar la versión desde package.json en SvelteKit
+title: Mostrar la versión desde package.json en SvelteKit
 seoTitle: Cómo Mostrar la Versión desde package.json en SvelteKit
 date: 2022-04-21
 updated: 2022-09-21

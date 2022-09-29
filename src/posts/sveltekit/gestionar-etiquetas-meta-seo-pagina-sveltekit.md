@@ -1,5 +1,5 @@
 ---
-title: Cómo gestionar las etiquetas meta para SEO en cada página en SvelteKit
+title: Gestionar las etiquetas meta para SEO en cada página en SvelteKit
 seoTitle: Cómo Gestionar las Etiquetas Meta para SEO por Página en SvelteKit
 date: 2022-06-17
 updated: 2022-09-17
@@ -18,7 +18,7 @@ Anteriormente se usaba la función `load` dentro de una etiqueta `<script contex
 
 </Box>
 
-Ya vimos [cómo usar `page` y `parent()` para pasar información](/sveltekit/como-pasar-props-+layout-pagina-usando-stuff-sveltekit/) entre plantillas y rutas, y lo útil que puede ser.
+Ya vimos [cómo usar `page` y `parent()` para pasar información](/sveltekit/pasar-props-+layout-pagina-usando-stuff-sveltekit/) entre plantillas y rutas, y lo útil que puede ser.
 
 Buscando cómo gestionar el SEO de una web de la mejor forma posible (sin tener que modificar decenas de páginas manualmente, etc.) encontré [esta *issue* en GitHub](https://github.com/sveltejs/kit/issues/1540#issuecomment-1045206613) y los [(breves) docs sobre el tema](https://kit.svelte.dev/docs/seo#manual-setup-title-and-meta).
 

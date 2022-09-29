@@ -1,7 +1,7 @@
 ---
-title: Cómo pasar props desde +layout a una página con `stores` y `parent()` en SvelteKit
+title: Pasar props desde +layout a una página con `stores` y `parent()` en SvelteKit
 seoTitle: Cómo Pasar Props desde +layout.js a cualquier Página en SvelteKit
-description: "Pasa toda la información que quieras en la función load de +layout al resto de la app y accede tanto server-side como client-side en cualquier ruta"
+description: Cómo pasar toda la información que quieras en la función load de +layout al resto de la app y acceder tanto server-side como client-side en cualquier ruta
 date: 2021-12-11
 updated: 2022-09-15
 status: published
