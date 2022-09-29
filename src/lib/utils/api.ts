@@ -2,6 +2,8 @@
 // https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog
 // https://www.aaronhubbard.dev/blogposts/text-from-module
 // https://github.com/mattjennings/sveltekit-blog-template
+import { dev } from '$app/environment';
+import wordCounter from 'word-counting';
 import type {
   Category,
   CountedLink,
@@ -9,11 +11,11 @@ import type {
   Post,
   PostMeta,
 } from '$lib/utils/types';
-import wordCounter from 'word-counting';
 
 const linkRegex = /<a href="(.*?)"( rel="nofollow")?>/g;
 // TODO improve this function, maybe a regex, it's not really that resilient... 😅
-const isExternal = (l: string) => l.includes('https://') || l.includes('http://');
+const isExternal = (l: string) =>
+  l.includes('https://') || l.includes('http://');
 
 // type generic for the response of import.meta.glob
 type GlobResp = {
@@ -28,7 +30,7 @@ interface Options {
   take?: number;
 }
 
-export async function getAllPosts(isDev: boolean, options?: Options) {
+export async function getAllPosts(options?: Options) {
   const category = options?.category;
   const take = options?.take;
 
@@ -46,7 +48,7 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
       const resolvedPost = await resolver();
       const { metadata } = resolvedPost;
 
-      if (isDev) {
+      if (dev) {
         // if dev, get content for link counter
         const { html: content } = resolvedPost.default.render();
         // if dev, return post with content
@@ -59,7 +61,7 @@ export async function getAllPosts(isDev: boolean, options?: Options) {
 
   let posts = [...allPosts];
 
-  if (!isDev) {
+  if (!dev) {
     // in prod, only 'published' posts
     posts = posts.filter((post) => post.status === 'published');
   }
@@ -125,7 +127,7 @@ export function countLinks(posts: Post[]): CountedLink[] {
 
 // ? returns an array of objs: category, count, lastmod
 // used in sitemap?
-export async function getAllCategories(isDev = false): Promise<Category[]> {
+export async function getAllCategories(): Promise<Category[]> {
   // start by getting all posts resolved, only the metadata field
   const allPostFiles = import.meta.glob<PostMeta>('../../posts/**/*.md', {
     import: 'metadata',
@@ -141,7 +143,7 @@ export async function getAllCategories(isDev = false): Promise<Category[]> {
   });
 
   // if prod, filter out draft posts
-  if (!isDev) {
+  if (!dev) {
     // in prod, only 'published' posts
     allPosts = allPosts.filter((post) => post.status === 'published');
   }
@@ -159,7 +161,7 @@ export async function getAllCategories(isDev = false): Promise<Category[]> {
   // build an object per category: name, count, lastmod date from its posts
   const categoriesArray = Object.keys(categoriesCounted).map(async (key) => {
     // get all posts for category
-    const posts = await getAllPosts(isDev, { category: key });
+    const posts = await getAllPosts({ category: key });
     // try to get latest date from all posts
     const latestDate = posts.reduce((acc: string, curr) => {
       const date = curr.updated || curr.date;
@@ -178,7 +180,7 @@ export async function getAllCategories(isDev = false): Promise<Category[]> {
 }
 
 // ? returns number of posts in a category
-export function getCategoryCount(category: string, isDev = false) {
+export function getCategoryCount(category: string) {
   // start by getting all posts resolved, but only import the metadata field
   const allPostFiles = import.meta.glob<PostMeta>('../../posts/**/*.md', {
     import: 'metadata',
@@ -196,7 +198,7 @@ export function getCategoryCount(category: string, isDev = false) {
     .filter((post) => post.category === category);
 
   // if prod, filter out draft posts
-  if (!isDev) {
+  if (!dev) {
     // in prod, only 'published' posts
     allPostsInCategory = allPostsInCategory.filter(
       (post) => post.status === 'published'
@@ -212,7 +214,7 @@ function getPostsInSeries(seriesName: string): Post[] {
     eager: true,
   });
 
-  const postArray = Object.keys(allPostFiles).map((key) => {
+  let postArray = Object.keys(allPostFiles).map((key) => {
     const [category, slug] = key.slice(12, -3).split('/');
     return {
       category,

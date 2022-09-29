@@ -1,4 +1,3 @@
-import { dev } from '$app/environment';
 import { getAllCategories, getAllPosts } from '$lib/utils/api';
 import type { RequestHandler } from './$types';
 
@@ -19,12 +18,12 @@ export const GET: RequestHandler = async ({ url }) => {
   };
 
   // get slugs and lastest post's date per category
-  const categories = (await getAllCategories(dev)).map(
+  const categories = (await getAllCategories()).map(
     ({ category, lastmod }) => ({ slug: category, lastmod })
   );
 
   // get category, slug, and last date for posts
-  const posts = (await getAllPosts(dev)).map((post) => ({
+  const posts = (await getAllPosts()).map((post) => ({
     slug: `${post.category}/${post.slug}`,
     lastmod: post.updated || post.date,
   }));
