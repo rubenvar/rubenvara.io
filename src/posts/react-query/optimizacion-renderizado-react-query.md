@@ -180,7 +180,7 @@ Por supuesto, nada es tan sencillo, y existe cierta carga extra cuando usas esta
 
 <Box type="updated">
 
-**Actulización**: Desde React Query v4 las solicitudes registradas están acitvadas por defecto, y puedes desactivarlas ajustando `notifyOnChangeProps: 'all'`.
+**Actualización**: Desde React Query v4 las solicitudes registradas están acitvadas por defecto, y puedes desactivarlas ajustando `notifyOnChangeProps: 'all'`.
 
 </Box>
 
