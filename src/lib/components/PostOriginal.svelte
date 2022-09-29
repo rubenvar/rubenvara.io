@@ -11,9 +11,9 @@
 {#if original && seriesName === 'react-query-tkdodo'}
   <Box type="traduccion">
     <p>
-      Este artículo es una traducción del <a href={original.url}
-        >post "{original.title}"</a
-      > publicado por Dominik en su blog TkDodo.eu
+      Este artículo es una <strong>traducción</strong> del post
+      <a href={original.url}>"{original.title}"</a> publicado por Dominik en su blog
+      TkDodo.eu
     </p>
   </Box>
 {/if}
