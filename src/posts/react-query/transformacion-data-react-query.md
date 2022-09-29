@@ -3,7 +3,7 @@ title: Transformación de data en React Query
 seoTitle: "Transformar Data con React Query: Cómo y Dónde hacerlo para Optimizar tu App"
 description: Descubre las posibilidades para transformar data tras una solicitud con Raect Query, una tarea habitual e importante para mejorar tu app
 date: 2022-09-28
-status: draft
+status: published
 original:
   title: React Query Data Transformations
   url: https://tkdodo.eu/blog/react-query-data-transformations
@@ -205,7 +205,7 @@ export const useTodo = (id) =>
 
 Aquí hems creado un hook [tipo useSelector de Redux](https://react-redux.js.org/api/hooks#useselector) pasando un selector personalizado a nuestro `useTodosQuery`. El hook todavía funcionará como antes, ya que si no le pasas nada `select` será `undefined` y devolverá todo correctamente.
 
-Pero si le pasas un selector, solo te suscribes al resultado de esa función. Esto es muy potente, ya que significa que incluso aunque actualicemos el nombre de un "ToDo", el componente que se suscribió a la cuenta total vía `useTodosCount` **no re-renderizará**. La cuenta no ha cambiado, así que React Query no necesita *informar* a ese componente sobre la actualización (recuerda que esto es un ejemplo simplificado y no del todo cierto, hablaremos de esto en profundidad en [la parte 3: Optimizaciones](/react-query/optimizar-renders-react-query/)).
+Pero si le pasas un selector, solo te suscribes al resultado de esa función. Esto es muy potente, ya que significa que incluso aunque actualicemos el nombre de un "ToDo", el componente que se suscribió a la cuenta total vía `useTodosCount` **no re-renderizará**. La cuenta no ha cambiado, así que React Query no necesita *informar* a ese componente sobre la actualización (recuerda que esto es un ejemplo simplificado y no del todo cierto, hablaremos de esto en profundidad en [la parte 3: Optimización del renderizado](/react-query/optimizacion-renderizado-react-query/)).
 
 🟢 Máxima optimización.<br/>
 🟢 Permite suscripciones parciales.
