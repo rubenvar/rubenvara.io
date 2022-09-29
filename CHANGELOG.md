@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.14.1] - 2022-09-29
+
+- Fixed deploy error by emptying draft react-query series post 4.
+
 ## [0.14.0] - 2022-09-29
 
 - Updated dependencies.
