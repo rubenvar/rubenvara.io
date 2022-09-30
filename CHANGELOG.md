@@ -4,6 +4,12 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.16.0] - 2022-09-30
+
+- New post translated and published.
+- 2 new drafts.
+- Adjusted previous translation.
+
 ## [0.15.0] - 2022-09-30
 
 - New post draft.
