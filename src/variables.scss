@@ -18,6 +18,7 @@
   // padding-bottom: 0; /* ಠ_ಠ */
   border-radius: var(--radius10);
   margin-bottom: var(--gap60);
+  background-color: #fff;
   > *:last-child {
     margin-bottom: 0;
   }
@@ -50,7 +51,8 @@
       left: 0;
       top: 0;
       border: 1px solid var(--grey400);
-      transform: none;
+  border-radius: var(--radius10);
+  transform: none;
       transition: transform 0.5s;
     }
     &::after {
@@ -62,7 +64,8 @@
       left: 0;
       top: 0;
       border: 1px solid var(--grey400);
-      transform: none;
+  border-radius: var(--radius10);
+  transform: none;
       transition: transform 0.5s;
     }
     &:hover {
