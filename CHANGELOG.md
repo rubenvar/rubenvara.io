@@ -4,6 +4,11 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.15.0] - 2022-09-30
+
+- New post draft.
+- Added Google Analytics in production.
+
 ## [0.14.4] - 2022-09-30
 
 - Fixed local link from post.
