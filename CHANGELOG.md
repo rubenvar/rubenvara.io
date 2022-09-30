@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.16.1] - 2022-09-30
+
+- Slug changed for post.
+
 ## [0.16.0] - 2022-09-30
 
 - New post translated and published.

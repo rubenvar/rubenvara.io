@@ -1,5 +1,5 @@
 ---
-title: Comprobar el estado de la solicitud en React Query
+title: Comprobar el estado en React Query
 seoTitle: "Comprobar el Estado de la Solicitud en React Query: Atención al Orden"
 description: ¿Cómo gestionas el estado de una solicitud en React Query? Según tu patrón de comprobaciones podrías darle un buen susto al usuario
 date: 2022-09-30
