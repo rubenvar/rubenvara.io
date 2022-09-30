@@ -62,15 +62,6 @@ export const GET: RequestHandler = async ({ url }) => {
     'Content-Type': 'application/xml',
   };
 
-  // throw new Error("@migration task: Migrate this return statement (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292701)");
-  // return {
-  //   headers,
-  //   body: `<?xml version="1.0" encoding="UTF-8" ?>
-  //     <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  //       ${content}
-  //     </urlset>`.trim(),
-  // };
-  // Suggestion (check for correctness before using):
   return new Response(
     `<?xml version="1.0" encoding="UTF-8" ?>
       <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
