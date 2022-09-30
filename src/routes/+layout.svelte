@@ -13,6 +13,8 @@
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import PageTransition from '$lib/components/PageTransition.svelte';
+  import Analytics from '$lib/components/Analytics.svelte';
+  import { dev } from '$app/environment';
 
   export let data: LayoutData;
 
@@ -27,6 +29,10 @@
   <meta name="description" content={$page.data.description} />
   <link rel="canonical" href={$page.data.canonical} />
 </svelte:head>
+
+{#if !dev}
+  <Analytics />
+{/if}
 
 <PageTransition refresh={key}>
   <!-- <SkipLink /> -->
