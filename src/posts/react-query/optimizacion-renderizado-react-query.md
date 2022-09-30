@@ -58,7 +58,7 @@ Cada vez que se haga una *re-solicitud de fondo* (background refetch), el compon
 { status: 'success', data: 2, isFetching: false }
 ```
 
-Esto pasa porque React Query expone diversa meta-información sobre cada solicitud, e `isFetching` es parte de ella. Esta *marca* será siempre `true` cuando se esté ejecutando una solicitud. Esto es **muy útil** si quieres mostrar un indicador de progreso, pero bastante inútil si no vas a hacerlo.
+Esto pasa porque React Query expone diversa meta-información sobre cada solicitud, e `isFetching` es parte de ella. Este *indicador* será siempre `true` cuando se esté ejecutando una solicitud. Esto es **muy útil** si quieres mostrar un indicador de progreso, pero bastante inútil si no vas a hacerlo.
 
 ### La opción `notifyOnChangeProps`
 
@@ -82,7 +82,7 @@ Puedes verlo en acción en el ejemplo [optimistic-updates-typescript](https://gi
 
 El código del ejemplo funciona, pero podría perder la sincronización muy fácilmente.
 
-¿Qué pasa si quisiéramos *reaccionar* a los errores? ¿O si empezamos a usar la *marca* `isLoading`? Tendríamos que mantener la lista `notifyOnChangeProps` sincronizada con cualquier campo que estemos usando en los componentes donde se use este *hook*.
+¿Qué pasa si quisiéramos *reaccionar* a los errores? ¿O si empezamos a usar el *indicador* `isLoading`? Tendríamos que mantener la lista `notifyOnChangeProps` sincronizada con cualquier campo que estemos usando en los componentes donde se use este *hook*.
 
 Si se nos olvida una y solo observamos la propiedad `data`, y ocurre un error que querríamos mostrar, nuestro componente no se re-renderizará y por lo tanto estará **desactualizado**.
 
