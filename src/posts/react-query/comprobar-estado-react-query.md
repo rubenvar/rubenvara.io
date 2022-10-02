@@ -31,7 +31,7 @@ Recuerda que el indicador `isFetching` [del que hablamos en la parte 3](/react-q
 
 <Box type="updated">
 
-**Actulización**: En la versión 4 de React Query, el indicador `isFetching` se deriva de un estado `fetchStatus` secundario, igual que el nuevo indicador `isPaused`. Podrás leer más sobre esto en la parte 13 de la serie cuando la traduzca.
+**Actualización**: En la versión 4 de React Query, el indicador `isFetching` se deriva de un estado `fetchStatus` secundario, igual que el nuevo indicador `isPaused`. Podrás leer más sobre esto en la parte 13 de la serie cuando la traduzca.
 
 </Box>
 
