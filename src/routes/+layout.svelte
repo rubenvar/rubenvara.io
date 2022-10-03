@@ -14,12 +14,22 @@
   import Footer from '$lib/components/Footer.svelte';
   import PageTransition from '$lib/components/PageTransition.svelte';
   import Analytics from '$lib/components/Analytics.svelte';
-  import { dev } from '$app/environment';
+  import { browser, dev } from '$app/environment';
 
   export let data: LayoutData;
 
   // for page transitions
   $: key = data.key;
+
+  // goatcounter analytics
+  $: if (browser && window.goatcounter) {
+    window.goatcounter.count({
+      path: key,
+      event: false,
+    });
+  }
+
+  const config = '{"allow_local": true, "no_onload": true}';
 </script>
 
 <svelte:head>
@@ -28,6 +38,11 @@
   <title>{$page.data.title}</title>
   <meta name="description" content={$page.data.description} />
   <link rel="canonical" href={$page.data.canonical} />
+  <script
+    data-goatcounter-settings={config}
+    data-goatcounter="https://{dev ? 'rbn-dev' : 'rbn'}.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.js"></script>
 </svelte:head>
 
 {#if !dev}

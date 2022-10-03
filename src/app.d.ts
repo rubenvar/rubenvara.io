@@ -11,6 +11,12 @@ declare namespace App {
   // interface Session {}
 }
 
+declare interface Window {
+  goatcounter: {
+    count: (args: { path: string; event: false }) => void;
+  };
+}
+
 declare module 'dayjs/locale/es.js';
 
 declare const __PKG_VERSION__: string;
