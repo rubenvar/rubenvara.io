@@ -4,6 +4,7 @@
   import { dev } from '$app/environment';
   import SEOData from '$lib/components/SEOData.svelte';
   import Emphasis from '$lib/components/Emphasis.svelte';
+  import type { Post } from '$lib/utils/types';
 
   export let data: PageData;
 
@@ -13,6 +14,30 @@
   $: categories = data.categories;
 
   let showSEO = true;
+  let filterStatus: Post['status'] | 'all' = 'all';
+
+  $: if (dev) {
+    if (filterStatus === 'draft') {
+      posts = data.posts.filter((post) => post.status === 'draft');
+    } else if (filterStatus === 'published') {
+      posts = data.posts.filter((post) => post.status === 'published');
+    } else {
+      posts = data.posts;
+    }
+  }
+
+  function handleStatusClick() {
+    if (filterStatus === 'all') {
+      filterStatus = 'published';
+      return;
+    } else if (filterStatus === 'draft') {
+      filterStatus = 'all';
+      return;
+    } else if (filterStatus === 'published') {
+      filterStatus = 'draft';
+      return;
+    }
+  }
 </script>
 
 <header>
@@ -42,9 +67,13 @@
         {/each}
       {/if}
     </ul>
-    <button on:click={() => (showSEO = !showSEO)}
-      >{showSEO ? 'Hide' : 'Show'} post SEO</button
-    >
+    <button on:click={() => (showSEO = !showSEO)}>
+      {showSEO ? 'Hide' : 'Show'} post SEO
+    </button>
+    <button on:click={handleStatusClick}>
+      See {#if filterStatus === 'all'}published only{:else if filterStatus === 'published'}draft
+        only{:else}all{/if}
+    </button>
   {/if}
 </header>
 
