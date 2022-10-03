@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.18.0] - 2022-10-04
+
+- 1 new post in `/sveltekit`.
+
 ## [0.17.0] - 2022-10-03
 
 - Added analytics with **GoatCounter**.
