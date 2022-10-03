@@ -44,7 +44,7 @@ El resultado final sería el mismo (un archivo `.xml` en la ruta `/sitemap.xml` 
 
 Yo elegí el segundo camino para mi web con Next.js, me gusta la idea de tener el archivo creado físicamente y viviendo en el servidor.
 
-(Pero para esta web que estás visitando elegí el primer sistema, crear un sitemap dinámico con SvelteKit).
+(Pero para esta web que estás visitando elegí el primer sistema, y escribí sobre [crear un sitemap dinámico con SvelteKit](/sveltekit/como-crear-sitemap-sveltekit/)).
 
 ## Generar un sitemap.xml estático en cada *build* con Next.js
 
@@ -195,16 +195,14 @@ async function main() {
 
 ```
 
-Si todo ha ido bien, en cada build se creará un archivo con una gran cadena `xml` generada automáticamente, de manera muy limpia y ordenada.
+Si todo ha ido bien, en cada *build* se creará un archivo con una gran cadena `xml` generada automáticamente, de manera muy limpia y ordenada.
 
 Obviamente esto se complicará si tienes más rutas, categorias, filtros, requisitos, etc.
 
-El sitemap creado así para calendarioaguasabiertas.com está en perfecto funcionamiento [aquí mismo](https://calendarioaguasabiertas.com/sitemap.xml). El archivo de generación es mucho más complejo, ejecuta una *query* GraphQL al servidor, etc. pero el principio es el mismo.
+El sitemap creado así para calendarioaguasabiertas.com está en perfecto funcionamiento [aquí mismo](https://calendarioaguasabiertas.com/sitemap.xml). El archivo de generación es mucho más complejo, ejecuta una solicitud GraphQL al servidor, etc., pero el principio es el mismo.
 
 ---
 
 ## Otras ideas
 
-Una vez creado el `xml`, y antes de generar el archivo con `fs.writeFileSync()`, podríamos validar que sea `xml` válido programáticamente, quizás mediante algún package, para evitar errores.
-
----
+Una vez creado el `xml`, y antes de generar el archivo con `fs.writeFileSync()`, podríamos validar programáticamente que sea `xml` válido, quizás mediante algún package, para evitar errores.
