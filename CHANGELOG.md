@@ -4,6 +4,14 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.17.0] - 2022-10-03
+
+- Added analytics with **GoatCounter**.
+- Updated dependencies.
+- 1 new post in `/nextjs`.
+- Fixed typo.
+- New draft in `/react-query`.
+
 ## [0.16.1] - 2022-09-30
 
 - Slug changed for post.
