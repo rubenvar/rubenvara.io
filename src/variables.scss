@@ -51,8 +51,8 @@
       left: 0;
       top: 0;
       border: 1px solid var(--grey400);
-  border-radius: var(--radius10);
-  transform: none;
+      border-radius: var(--radius10);
+      transform: none;
       transition: transform 0.5s;
     }
     &::after {
@@ -64,8 +64,8 @@
       left: 0;
       top: 0;
       border: 1px solid var(--grey400);
-  border-radius: var(--radius10);
-  transform: none;
+      border-radius: var(--radius10);
+      transform: none;
       transition: transform 0.5s;
     }
     &:hover {
