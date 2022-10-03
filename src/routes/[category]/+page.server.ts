@@ -10,7 +10,7 @@ export const load: PageServerLoad = async ({ params }) => {
   if (posts.length) {
     return {
       posts,
-      // this was in stuff:
+      // on-page seo:
       title: `Todos los artículos sobre ${params.category}`,
       description: `Mira ${posts.length} artículos detallados sobre ${params.category}: quédate por aquí y seguro que aprendes algo`,
     };

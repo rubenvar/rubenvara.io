@@ -9,6 +9,7 @@ import {
 } from '$lib/utils/api';
 
 export const load: PageServerLoad = async () => {
+  // get ALL posts
   const posts = await getAllPosts();
 
   if (posts.length) {
@@ -19,14 +20,14 @@ export const load: PageServerLoad = async () => {
         counted: countLinks(posts),
         words: countWords(posts),
         categories: await getAllCategories(),
-        // this was in stuff:
+        // on-page seo:
         title: `Mi blog sobre JavaScript y otras tecnologías: ${posts.length} artículos detallados`,
         description: `Dicen que no sabes lo que sabes hasta que intentas enseñarlo, así que en eso estamos: Escribo sobre JavaScript y desarrollo web en español`,
       };
     }
     return {
       posts,
-      // this was in stuff:
+      // on-page seo:
       title: `Mi blog sobre JavaScript y otras tecnologías: ${posts.length} artículos detallados`,
       description: `Dicen que no sabes lo que sabes hasta que intentas enseñarlo, así que en eso estamos: Escribo sobre JavaScript y desarrollo web en español`,
     };
