@@ -12,16 +12,18 @@
   <a href="/{post.category}/{post.slug}">
     <div>
       <h2>
-        {#if dev && post.status === 'draft'}
-          DRAFT
-        {/if}
+        {#if dev && post.status === 'draft'}Draft: {/if}
         {post.title}
       </h2>
       {#if post.description}
         <p class="description">{post.description}</p>
       {/if}
       {#if dev && post.status === 'draft' && !post.description}
-        <p class="description">(draft)</p>
+        <p class="description">
+          Draft: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Aspernatur facilis, doloremque repellendus culpa, illum enim aliquid,
+          maxime fugit amet
+        </p>
       {/if}
       {#if index}
         <span class="index">{index < 10 ? `0${index}` : index}</span>
