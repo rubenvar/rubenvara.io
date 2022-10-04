@@ -75,8 +75,7 @@ export async function getAllPosts(options?: Options) {
   return posts;
 }
 
-// ? returns an array of objs: category, count, lastmod
-// used in sitemap?
+// used in sitemap, and in /blog (in dev)
 export async function getAllCategories(): Promise<Category[]> {
   // start by getting all posts resolved, only the metadata field
   const allPostFiles = import.meta.glob<PostMeta>('../../posts/**/*.md', {
@@ -130,6 +129,7 @@ export async function getAllCategories(): Promise<Category[]> {
 }
 
 // ? returns number of posts in a category
+// used only in single post
 export function getCategoryCount(category: string) {
   // start by getting all posts resolved, but only import the metadata field
   const allPostFiles = import.meta.glob<PostMeta>('../../posts/**/*.md', {
