@@ -1,12 +1,8 @@
 import { error } from '@sveltejs/kit';
 import { dev } from '$app/environment';
 import type { PageServerLoad } from './$types';
-import {
-  countLinks,
-  countWords,
-  getAllCategories,
-  getAllPosts,
-} from '$lib/utils/api';
+import { getAllCategories, getAllPosts } from '$lib/utils/api';
+import { countLinks, countWords } from '$lib/utils/helpers';
 
 export const load: PageServerLoad = async () => {
   // get ALL posts
