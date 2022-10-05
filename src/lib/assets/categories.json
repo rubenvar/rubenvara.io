@@ -1,7 +1,7 @@
 [
   {
     "slug": "react-query",
-    "content": "<p>React Query (ahora llamado <a href='https://tanstack.com/query/v4' target='_blank'>Tanstack Query</a>) es una librería para solicitar y gestionar la <em>data</em> en tu app React.</p><p>Obtén data con REST o GraphQL, usando tu librería favorita: <code>fetch</code>, <code>axios</code>, <code>request</code>, etc. y React Query gestionará el <strong>caché</strong> de forma óptima.</p><p>Mira en esta sección los posts que he traducido desde el blog tkdodo.eu de Dominik:</p>"
+    "content": "<p>React Query (ahora llamado <a href='https://tanstack.com/query/v4' target='_blank'>Tanstack Query</a>) es una librería para solicitar y gestionar la <em>data</em> en tu app React.</p><p>Obtén data con REST o GraphQL, usando tu librería favorita: <code>fetch</code>, <code>axios</code>, <code>graphql-request</code>, <code>tRPC</code>, etc. y React Query gestionará el <strong>caché</strong> de forma óptima para que siempre tengas data actualizada con las menos solicitudes posibles.</p><p>Mira en esta sección los posts que he traducido desde el blog tkdodo.eu de Dominik:</p>"
   },
   {
     "slug": "sveltekit",
