@@ -1,6 +1,6 @@
 ---
 title: React Query y TypeScript
-date: 2022-10-01
+date: 2022-10-05
 status: draft
 original:
   title: React Query and TypeScript
