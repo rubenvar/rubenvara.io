@@ -1,7 +1,9 @@
 ---
 title: Tests en React Query
-date: 2022-09-30
-status: draft
+seoTitle: Cómo Montar y Ejecutar tus Tests en React Query
+description: "Preparar el entorno, simular solicitudes de red y sobreescribir el funcionamiento de React Query: Todo lo que necesitas para ejectura tus pruebas"
+date: 2022-10-04
+status: published
 original:
   title: Testing React Query
   url: https://tkdodo.eu/blog/testing-react-query
@@ -10,148 +12,176 @@ series:
   index: 5
 ---
 
-Questions around the testing topic come up quite often together with React Query, so I'll try to answer some of them here. I think one reason for that is that testing "smart" components (also called [container components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)) is not the easiest thing to do. With the rise of hooks, this split has been largely deprecated. It is now encouraged to consume hooks directly where you need them rather than doing a mostly arbitrary split and drill props down.
+<script>
+  import Box from '$lib/components/Box.svelte';
+</script>
 
-I think this is generally a very good improvement for colocation and code readability, but we now have more components that consume dependencies outside of "just props".
+Las preguntas sobre tests en React Query son bastante comunes, así que voy a tratar de responder algunas aquí. Creo que una razón para ello es que probar [componentes *inteligentes*](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0) no es una de las cosas más fáciles, aunque quizás esta divisón está más bien obsoleta con la aparición de los *hooks*. Ahora se recomienda usar hooks directamente en lugar de separaciones arbitrarias y *pasar props hasta el infinito*.
 
-They might *useContext*. They might *useSelector*. Or they might *useQuery*.
+Esto es una mejora en cuanto a co-ubicación y legibilidad del código, pero ahora tenemos más componentes que consumen dependencias a parte de *solo las props*.
 
-Those components are technically no longer pure, because calling them in different environments leads to different results. When testing them, you need to carefully setup those surrounding environments to get things working.
+Quizás usan `useContext`. Quizás `useSelector`. O quizás `useQery`.
 
-## Mocking network requests
+Estos componentes, técnicamente, ya no son **puros**, porque llamarlos en diferentes entornos genera resultados distintos. Al probarlos tienes que preparar estos entornos con cuidado para conseguir que todo funcione.
 
-Since React Query is an async server state management library, your components will likely make requests to a backend. When testing, this backend is not available to actually deliver data, and even if, you likely don't want to make your tests dependent on that.
+## Simular solicitudes de red
 
-There are tons of articles out there on how to mock data with jest. You can mock your api client if you have one. You can mock fetch or axios directly. I can only second what Kent C. Dodds has written in his article [Stop mocking fetch](https://kentcdodds.com/blog/stop-mocking-fetch):
+Como React Query es una librería asíncrona de gestión de estado del servidor, tus componentes seguramente harán solicitudes a un *backend*. Este backend no está disponible al testear para devolver data real, y aunque lo estuviera seguramente no querrás que tus pruebas dependan de ello.
 
-Use [mock service worker](https://mswjs.io/) by [@ApiMocking](https://twitter.com/ApiMocking)
+Hay decenas de artículos sobre cómo simular data con Jest. Puedes simular tu API si tienes una. Puedes simular `fetch` o `axios` directemente, aunque quizás no deberías, según el artículo [Stop mocking fetch](https://kentcdodds.com/blog/stop-mocking-fetch) de Kent C. Dodds.
 
-It can be your single source of truth when it comes to mocking your apis:
+Mi consejo es que uses [mock service worker](https://mswjs.io/) por [@ApiMocking](https://twitter.com/ApiMocking). Esta será tu *única fuente de verdad* en lo que respecta a simular tus APIs:
 
-- works in node for testing
-- supports REST and GraphQL
-- has a [storybook addon](https://storybook.js.org/addons/msw-storybook-addon) so you can write stories for your components that *useQuery*
-- works in the browser for development purposes, and you'll still see the requests going out in the browser devtools
-- works with cypress, similar to fixtures
+- Funciona en pruebas con `node`.
+- Compatible con REST y GraphQL.
+- Tiene un [addon para storybook](https://storybook.js.org/addons/msw-storybook-addon), así que puedes programar *stories* para tus componentes con `useQuery`.
+- Funciona en el navegador, e incluso puedes ver las solicitudes ejecutándose en las herramientas del desarrollador.
+- Funciona con `cypress`, similar a las *fixtures*.
 
 ---
 
-With our network layer being taken care of, we can start talking about React Query specific things to keep an eye on:
+Una vez clara la capa de red, podemos empezar a hablar sobre temas específicos de React Query:
 
-## QueryClientProvider
+## `QueryClientProvider`
 
-Whenever you use React Query, you need a QueryClientProvider and give it a queryClient - a vessel which holds the *QueryCache*. The cache will in turn hold the data of your queries.
+Siempre que usas React Query necesitas un `QueryClientProvider` al que pasar un `QueryClient` – un contenedor que alojará el `queryCache`. Este caché contendrá a su vez la data de tus solicitudes.
 
-I prefer to give each test its own QueryClientProvider and create a *new QueryClient* for each test. That way, tests are completely isolated from each other. A different approach might be to clear the cache after each test, but I like to keep shared state between tests as minimal as possible. Otherwise, you might get unexpected and flaky results if you run your tests in parallel.
+Yo prefiero darle a cada test su propio `QueryClientProvider` y crear un nuevo `new QueryClient` para cada test. Así cada prueba está completamente **aislada** de las demás.
 
-### For custom hooks
+Un enfoque diferente podría ser limpiar el caché tras cada test, pero yo prefiero reducir todo lo posible el estado compartido entre tests. Sino podrías obtener resultados inesperados o erróneos cuando tus pruebas se ejecutan en paralelo.
 
-If you are testing custom hooks, I'm quite certain you're using [react-hooks-testing-library](https://react-hooks-testing-library.com/). It's the easiest thing there is to test hooks. With that library, we can wrap our hook in a [wrapper](https://react-hooks-testing-library.com/reference/api#wrapper), which is a React component to wrap the test component in when rendering. I think this is the perfect place to create the QueryClient, because it will be executed once per test:
+### Para *hooks* personalizados
 
-```tsx:title=wrapper
+Si vas a probar tus hooks personalizados (y [ya vimos en la parte 1](/react-query/consejos-practicos-react-query/) que deberías tenerlos), seguramente quieras usar [react-hooks-testing-library](https://react-hooks-testing-library.com/). Es lo más fácil que existe para probar hooks. Con esta libería puedes **envolver** tu hook en un [*wrapper*](https://react-hooks-testing-library.com/reference/api#wrapper), que es un componente React para *envolver* durante el renderizado el componente a probar.
+
+Pienso que este es el mejor sitio para crear tu `QueryClient`, ya que se ejecutará una vez por prueba:
+
+```jsx
+// componente "envolvedor"
 const createWrapper = () => {
-  // ✅ creates a new QueryClient for each test
-  const queryClient = new QueryClient()
+  // creamos un nuevo "QueryClient" en cada test
+  const queryClient = new QueryClient();
+  
   return ({ children }) => (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  )
-}
+    <QueryClientProvider client={queryClient}>
+      {children}
+    </QueryClientProvider>
+  );
+};
 
+// test usando el wrapper que envolverá el componente a testear
 test("my first test", async () => {
   const { result } = renderHook(() => useCustomHook(), {
-    wrapper: createWrapper()
-  })
-})
+    wrapper: createWrapper(),
+  });
+});
 ```
 
-### For components
+### Para componentes
 
-If you want to test a Component that uses a *useQuery* hook, you also need to wrap that Component in QueryClientProvider. A small wrapper around *render* from [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/) seems like a good choice. Have a look at how React Query does it [internally for their tests](https://github.com/tannerlinsley/react-query/blob/ead2e5dd5237f3d004b66316b5f36af718286d2d/src/react/tests/utils.tsx#L6-L17).
+Si quieres probar un componente que usa el hook `useQuery`, también tendrás que envolver ese componente en un `QueryClientProvider`. Puedes *envolver* la función `render` de [react-testing-library](https://testing-library.com/docs/react-testing-library/intro/).
 
-## Turn off retries
+Mira un ejemplo en los [tests internos de React Query](https://github.com/TanStack/query/blob/ead2e5dd5237f3d004b66316b5f36af718286d2d/src/react/tests/utils.jsx#L6-L17).
 
-It's one of the most common "gotchas" with React Query and testing: The library defaults to three retries with exponential backoff, which means that your tests are likely to timeout if you want to test an erroneous query. The easiest way to turn retries off is, again, via the *QueryClientProvider*. Let's extend the above example:
+### Descativa los *reintentos*
 
-```tsx:title=no-retries {2-9}
+Es uno de los fallos más habituales al hacer pruebas con React Query: Esta librería hace **tres reintentos** con un retroceso exponencial, lo que significa que seguramente tus tests fallarán por *timeout* si quieres probar una solicitud errónea.
+
+La forma más fácil de desactivar los reintentos es de nuevo vía `QueryClientProvider`. Extendiendo el ejemplo superior:
+
+```jsx
+// componente "envolvedor"
 const createWrapper = () => {
+  // creamos un nuevo "QueryClient" en cada test
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
-        // ✅ turns retries off
+        // desactiva los reintentos
         retry: false,
       },
     },
-  })
+  });
 
   return ({ children }) => (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  )
-}
+    <QueryClientProvider client={queryClient}>
+      {children}
+    </QueryClientProvider>
+  );
+};
 
+// test usando el wrapper que envolverá el componente a testear
 test("my first test", async () => {
   const { result } = renderHook(() => useCustomHook(), {
-    wrapper: createWrapper()
-  })
+    wrapper: createWrapper(),
+  });
 }
 ```
 
-This will set the defaults for all queries in the component tree to "no retries". It is important to know that this will only work if your actual *useQuery* has no explicit retries set. If you have a query that wants 5 retries, this will still take precedence, because defaults are only taken as a fallback.
+Esto fijará el predeterminado para todas las solicitudes bajo este componente como "no reintentos".
+
+Recuerda que esto solo funcionará si no has fijado *reintentos explícitos* en un `useQuery`. Si por ejemplo estableces una solicitud concreta con 5 reintentos, esto tendrá prioridad ante los valores por defecto.
 
 ### setQueryDefaults
 
-The best advice I can give you for this problem is: Don't set these options on *useQuery* directly. Try to use and override the defaults as much as possible, and if you really need to change something for specific queries, use [queryClient.setQueryDefaults](https://react-query.tanstack.com/reference/QueryClient#queryclientsetquerydefaults).
+Y el mejor consejo que puedo darte para evitar este problema es: **no fijes** estas opciones en `useQuery` directamente. Intenta usar o sobreescribir los valores por defecto todo lo posible, y si realmente necesitas cambiar algo para una solicitud específica, usa [queryClient.setQueryDefaults](https://tanstack.com/query/v4/docs/reference/QueryClient#queryclientsetquerydefaults).
 
-So for example, instead of setting retry on *useQuery*:
+Por ejemplo, en vez de fijar `retry` en `useQuery`:
 
-```tsx:title=not-on-useQuery
-const queryClient = new QueryClient()
+```jsx
+const queryClient = new QueryClient();
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Example />
     </QueryClientProvider>
-  )
+  );
 }
 
 function Example() {
-  // 🚨 you cannot override this setting for tests!
-  const queryInfo = useQuery('todos', fetchTodos, { retry: 5 })
+  // 🔴 no podrás sobreescribir este ajuste en los tests!
+  const queryInfo = useQuery('todos', fetchTodos, { retry: 5 });
 }
 ```
 
-Set it like this:
+Hazlo así:
 
-```tsx:title=setQueryDefaults {9-10}
+```jsx
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
+      // cambia los valores por defecto
       retry: 2,
     },
   },
-})
+});
 
-// ✅ only todos will retry 5 times
-queryClient.setQueryDefaults('todos', { retry: 5 })
+// 🟢 solo la solicitud "todos" re-intentará 5 veces
+queryClient.setQueryDefaults('todos', { retry: 5 });
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Example />
     </QueryClientProvider>
-  )
-}
+  );
+};
+
+/* ... */
 ```
 
-Here, all queries will retry two times, only *todos* will retry five times, and I still have the option to turn it off for all queries in my tests 🙌.
+En este caso todas las solicitudes reintentarán 2 veces, solo `todos` reintentará 5 veces, y todavía tendrás la opción de **desactivarlo** para todas la solicitudes en los tests.
 
 ### ReactQueryConfigProvider
 
-Of course, this only works for known query keys. Sometimes, you really want to set some configs on a subset of your component tree. In v2, React Query had a [ReactQueryConfigProvider](https://react-query-v2.tanstack.com/docs/api#reactqueryconfigprovider) for that exact use-case. You can achieve the same thing in v3 with a couple of lines of codes:
+Por supuesto, esto último solo funciona para solicitudes donde conoces la `query key`. Algunas veces *realmente* necesitas ajustar valores para un subgrupo dentro de tu árbol de componentes.
 
-```jsx:title=ReactQueryConfigProvider
+En la v2 React Query tenía [ReactQueryConfigProvider](https://react-query-v2.tanstack.com/docs/api#reactqueryconfigprovider) exactamente para esto. Desde la v3 puedes hacer lo mismo con par de líneas extra:
+
+```jsx
 const ReactQueryConfigProvider = ({ children, defaultOptions }) => {
-  const client = useQueryClient()
+  const client = useQueryClient();
+  // crear el cliente dentro de useState
   const [newClient] = React.useState(
     () =>
       new QueryClient({
@@ -159,21 +189,26 @@ const ReactQueryConfigProvider = ({ children, defaultOptions }) => {
         muationCache: client.getMutationCache(),
         defaultOptions,
       })
-  )
+  );
 
   return (
-    <QueryClientProvider client={newClient}>{children}</QueryClientProvider>
-  )
-}
+    <QueryClientProvider client={newClient}>
+      {children}
+    </QueryClientProvider>
+  );
+};
 ```
 
-You can see this in action in this [codesandbox example](https://codesandbox.io/s/react-query-config-provider-v3-lt00f).
+Puedes verlo en acción en este [ejemplo de codesandbox](https://codesandbox.io/s/react-query-config-provider-v3-lt00f).
 
-## Always await the query
+## Recuerda simpre usar `await` en la solicitud
 
-Since React Query is async by nature, when running the hook, you won't immediately get a result. It usually will be in loading state and without data to check. The [async utilities](https://react-hooks-testing-library.com/reference/api#async-utilities) from react-hooks-testing-library offer a lot of ways to solve this problem. For the simplest case, we can just wait until the query has transitioned to success state:
+Como React Query es **asíncrono** por naturaleza, cuando llames al hook no obtendrás un resultado inmediatamente. Normalmente estará en estado `loading` y sin data que comprobar.
 
-```tsx:title=waitFor {19-22}
+Las [utilidades `async`](https://react-hooks-testing-library.com/reference/api#async-utilities) de react-hooks-testing-library ofrecen muchas formas de resolver este problema. En el caso más simple, podemos esperar hasta que la solicitud haya pasado a un estado de éxito.
+
+```jsx
+// componente "envolvedor" (similar a anteriores ejemplos)
 const createWrapper = () => {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -181,80 +216,91 @@ const createWrapper = () => {
         retry: false,
       },
     },
-  })
-  return ({ children }) => (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  )
-}
+  });
 
+  return ({ children }) => (
+    <QueryClientProvider client={queryClient}>
+      {children}
+    </QueryClientProvider>
+  );
+};
+
+// test usando el wrapper que envolverá el componente a testear
 test("my first test", async () => {
   const { result, waitFor } = renderHook(() => useCustomHook(), {
     wrapper: createWrapper()
-  })
+  });
 
-  // ✅ wait until the query has transitioned to success state
-  await waitFor(() => result.current.isSuccess)
+  // 🟢 esperar a la que la solicitud esté en "success"
+  await waitFor(() => result.current.isSuccess);
 
-  expect(result.current.data).toBeDefined()
+  expect(result.current.data).toBeDefined();
 }
 ```
 
-**Update**:
+<Box type="updated">
 
-[@testing-library/react v13.1.0](https://github.com/testing-library/react-testing-library/releases/tag/v13.1.0) also has a new [renderHook](https://testing-library.com/docs/react-testing-library/api/#renderhook) that you can use. However, it doesn't return its own *waitFor* util, so you'll have to use the one you can [import from @testing-library/react](https://testing-library.com/docs/dom-testing-library/api-async/#waitfor) instead. The API is a bit different, as it doesn't allow to return a *boolean*, but expects a *Promise* instead. That means we must adapt our code slightly:
+**Actualización**: [@testing-library/react v13.1.0](https://github.com/testing-library/react-testing-library/releases/tag/v13.1.0) tiene un nuevo [`renderHook`](https://testing-library.com/docs/react-testing-library/api/#renderhook) que puedes usar para esto.
 
-```tsx:title=new-render-hook
-import { waitFor, renderHook } from '@testing-library/react'
+Eso sí, no devuelve su propio `waitFor`, así que tendrás que [importarlo desde @testing-library/react](https://testing-library.com/docs/dom-testing-library/api-async/#waitfor) en su lugar. La API es un poco distinta, ya que no permite devolver un booleano y espera una `Promesa` en su lugar.
+
+Tenemos que modificar el código un poco:
+
+```jsx
+import { waitFor, renderHook } from '@testing-library/react';
 
 test("my first test", async () => {
   const { result } = renderHook(() => useCustomHook(), {
-    wrapper: createWrapper()
-  })
+    wrapper: createWrapper(),
+  });
 
-  // ✅ return a Promise via expect to waitFor
-  await waitFor(() => expect(result.current.isSuccess).toBe(true))
+  // 🟢 devuelve una Promesa a "waitFor" vía "expect"
+  await waitFor(
+    () => expect(result.current.isSuccess).toBe(true)
+  );
 
-  expect(result.current.data).toBeDefined()
+  expect(result.current.data).toBeDefined();
 }
 ```
 
-## Silence the error console
+</Box>
 
-Per default, React Query prints errors to the console. I think this is quite disturbing during testing, because you'll see 🔴 in the console even though all tests are 🟢. React Query allows overwriting that default behaviour by [setting a logger](https://react-query.tanstack.com/reference/setLogger), so that's what I'm usually doing:
+## Silencia los errores
 
-```ts:title=silence-errors
-import { setLogger } from 'react-query'
+React Query, por defecto, muestra los errores en la consola. Esto puede ser bastante molesto durante las pruebas, ya que verás 🔴 en la consola aunque todos los tests sean 🟢. React Query te permite **sobreescribir** este comportamiento predeterminado:
+
+```ts
+import { setLogger } from 'react-query';
 
 setLogger({
   log: console.log,
   warn: console.warn,
-  // ✅ no more errors on the console
+  // 🟢 no más errores en la consola
   error: () => {},
-})
+});
 ```
 
-**Update**
+<Box type="updated">
 
-*setLogger* was removed in v4. Instead, you can pass your custom logger as prop to the *QueryClient* you create:
+**Actualización**: `setLogger` [fue retirado en la v4](https://tanstack.com/query/v4/docs/guides/migrating-to-react-query-4#setlogger-is-removed). En su lugar puedes pasar un `logger` modificado al crear `QueryClient`:
 
-```js:title=logger-prop
+```js
 const queryClient = new QueryClient({
   logger: {
     log: console.log,
     warn: console.warn,
-    // ✅ no more errors on the console
+    // 🟢 no más errores en la consola
     error: () => {},
   }
-})
+});
 ```
 
-Also, errors are not logged in production mode anymore to avoid confusion.
+</Box>
 
-## Putting it all together
+Además los errores ya no se muestran en producción para evitar confusiones.
 
-I've set up a quick repository where all of this comes nicely together: mock-service-worker, react-testing-library and the mentioned wrapper. It contains four tests - basic failure and success tests for custom hooks and components. Have a look here: <https://github.com/TkDodo/testing-react-query>
+## Todo junto
 
----
+Dominik, el autor del post y *maintainer* de React Query, ha creado un repositorio donde todo esto **se une** muy sencillamente: mock-service-worker, react-testing-library, y el *wrapper* que hemos visto en los ejemplos.
 
-That's it for today. Feel free to reach out to me on [twitter](https://twitter.com/tkdodo)
-if you have any questions, or just leave a comment below. ⬇️
+Contiene 4 pruebas: tests básicos de fallo y éxito para hooks personalizados y para componentes. Puedes verlo aquí: <https://github.com/TkDodo/testing-react-query>.
