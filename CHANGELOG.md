@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.19.1] - 2022-10-05
+
+- Fixed typo.
+
 ## [0.19.0] - 2022-10-05
 
 - New draft.
