@@ -4,6 +4,16 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.19.0] - 2022-10-05
+
+- New draft.
+- 1 new post translated in `/react-query`
+- Updated dependencies.
+- Created `json` file with content for single category pages.
+- Refactor: extracted some helper fns from `api` file.
+- Tweaked blog dev display: see only draft/published.
+- Tweaked ListedPost in dev.
+
 ## [0.18.0] - 2022-10-04
 
 - 1 new post in `/sveltekit`.
