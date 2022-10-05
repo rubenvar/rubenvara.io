@@ -1,7 +1,7 @@
 ---
 title: Tests en React Query
 seoTitle: Cómo Montar y Ejecutar tus Tests en React Query
-description: "Preparar el entorno, simular solicitudes de red y sobreescribir el funcionamiento de React Query: Todo lo que necesitas para ejectura tus pruebas"
+description: "Preparar el entorno, simular solicitudes de red y sobreescribir el funcionamiento de React Query: Todo lo que necesitas para ejecutar tus pruebas"
 date: 2022-10-04
 status: published
 original:
