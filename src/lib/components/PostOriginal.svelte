@@ -9,7 +9,7 @@
 </script>
 
 {#if original && seriesName === 'react-query-tkdodo'}
-  <Box type="traduccion">
+  <Box type="translated">
     <p>
       Este artículo es una <strong>traducción</strong> del post
       <a href={original.url}>"{original.title}"</a> publicado por Dominik en su blog

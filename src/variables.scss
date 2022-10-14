@@ -23,6 +23,7 @@
     margin-bottom: 0;
   }
   &.info {
+    // by default this is the applied styles if no Box type defined
     border-color: var(--note500);
   }
   &.updated {
@@ -31,7 +32,7 @@
   &.recuerda {
     border-color: var(--announce500);
   }
-  &.traduccion {
+  &.translated {
     border-width: 1px;
     border-color: var(--grey600);
     border: none;
