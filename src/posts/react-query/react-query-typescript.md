@@ -1,7 +1,7 @@
 ---
 title: React Query y TypeScript
-description: Combinando estas dos potentes herramientas en una app React conseguirás experiencias de usuario y desarrollo óptimas, y gran seguridad de tipos
 seoTitle: "React Query y TypeScript: Supera los Gotchas y Consigue la Mejor Experiencia"
+description: Combinando estas dos potentes herramientas en una app React conseguirás experiencias de usuario y desarrollo óptimas, y gran seguridad de tipos
 date: 2022-10-11
 status: published
 original:
