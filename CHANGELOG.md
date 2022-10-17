@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.20.1] - 2022-10-17
+
+- Changed post url.
+
 ## [0.20.0] - 2022-10-17
 
 - Updated dependencies.
