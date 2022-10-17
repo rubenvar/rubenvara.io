@@ -194,7 +194,7 @@ La parte más importante de la demo es que el valor que recibimos de React Query
 
 ### La opción `enabled` es muy potente
 
-El hook `useQuery` tiene muchas opciones que puedes pasar para personalizar su comprtamiento, y `enabled` es una opción muy potente que te permite conseguir cosas como estas:
+El hook `useQuery` tiene muchas opciones que puedes pasar para personalizar su comportamiento, y `enabled` es una opción muy potente que te permite conseguir cosas como estas:
 
 - [Dependent Queries](https://tanstack.com/query/v4/docs/guides/dependent-queries): Solicita data en una *query* y lanza una segunda *query* solo cuando hayas obtenido satisfactoriamente la data de la primera.
 - Activa y desactiva solicitudes: Si tienes una *query* que solicita data regulamente con `refetchInterval`, puedes pararla temporalmente por ejemplo cuando se abra un *popup* para evitar actualizaciones en la pantalla de fondo.
