@@ -4,6 +4,15 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.20.0] - 2022-10-17
+
+- Updated dependencies.
+- 2 new translated posts.
+- 2 new drafts.
+- Created test post to test boxes styling.
+- Renamed `Box` type.
+- Updated component and styling for "recuerda" `Box`.
+
 ## [0.19.1] - 2022-10-05
 
 - Fixed typo.
