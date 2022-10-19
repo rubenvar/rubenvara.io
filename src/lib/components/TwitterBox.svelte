@@ -20,7 +20,7 @@
     {#if twitter}
       <p>
         No hay sección de comentarios, pero ya estamos hablando sobre este tema
-        en Twitter: <a href={twitter} target="_blank"
+        en Twitter: <a href={twitter} target="_blank" rel="noreferrer"
           >acércate y cuéntanos tu opinión</a
         >!
       </p>
@@ -28,7 +28,8 @@
       <p>
         No hay sección de comentarios, pero me encantaría escuchar tu opinión: <a
           href="https://www.twitter.com/rubenvara01"
-          target="_blank">escríbeme en Twitter</a
+          target="_blank"
+          rel="noreferrer">escríbeme en Twitter</a
         > y cuéntame!
       </p>
     {/if}
