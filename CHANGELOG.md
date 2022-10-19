@@ -4,6 +4,12 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.20.2] - 2022-10-19
+
+- Updated dependencies.
+- Updated post.
+- Fixed eslint warnings.
+
 ## [0.20.1] - 2022-10-17
 
 - Changed post url.
