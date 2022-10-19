@@ -29,7 +29,7 @@ const uniqueValues = [...new Set(arrayWithRepetition)];
 
 Creamos un nuevo `Set` a partir del array con repeticiones, y esto **elimina los duplicados**. Luego lo expandimos en un array, y terminado.
 
-El `Set` respetará el orden inicial de los elementos a medida que los *encuentra* en el array original. Si quieres otro orden, puedes reordenar tanto el original como el resultado.
+El `Set` respetará el orden inicial de los elementos a medida que los *encuentra* en el array original. Si quieres otro orden, puedes [reordenar](/javascript/como-funciona-metodo-sort/) tanto el original como el resultado.
 
 ### 2. Usando un array auxiliar
 
@@ -61,7 +61,7 @@ Si quieres usar este segundo sistema y programas en TypeScript, tendrás que def
 
 ![problemas](/posts/duplicates-problemas.png)
 
-Excepto que quieras crear una función muy versátil y reutilizable en diferentes casos, puedes definir el tipo del array que pasarás, y con eso lo tienes todo solucionado:
+Excepto que quieras crear una función muy versátil y reutilizable en diferentes casos (en cuyo caso deberías usar Genéricos), puedes definir el tipo del array que pasarás y con eso lo tienes todo solucionado:
 
 ```ts
 // ...
