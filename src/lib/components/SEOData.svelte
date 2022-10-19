@@ -33,6 +33,7 @@
           class:dang={linkedFrom.length < 1}
           class:succ={linkedFrom.length >= 1}
           on:click={() => (showFrom = !showFrom)}
+          on:keypress={() => (showFrom = !showFrom)}
         >
           Linked from {linkedFrom.length} internal
           {#if linkedFrom.length > 0 && showFrom}
@@ -48,6 +49,7 @@
           class:warn={link.internalTotal < 1}
           class:succ={link.internalTotal >= 1}
           on:click={() => (showInternal = !showInternal)}
+          on:keypress={() => (showInternal = !showInternal)}
         >
           Links {link.internalTotal} internal
           {#if link.internalTotal > 0 && showInternal}
@@ -63,6 +65,7 @@
           class:dang={link.externalTotal < 1}
           class:succ={link.externalTotal >= 1}
           on:click={() => (showExternal = !showExternal)}
+          on:keypress={() => (showExternal = !showExternal)}
         >
           Links {link.externalTotal} external.
           {#if link.externalTotal > 0 && showExternal}
