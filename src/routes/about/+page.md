@@ -1,7 +1,7 @@
 
 <script>
   import PageHeader from "$lib/components/PageHeader.svelte";
-  import LastDecadeText from '$lib/components/home/LastDecadeText.svelte';
+  import LastDecadeText from '$lib/components/LastDecadeText.svelte';
 </script>
 
 <PageHeader title="Sobre mí" />
