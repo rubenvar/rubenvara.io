@@ -8,6 +8,7 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 - Add things to home hobbies list.
 - Replace home about me texts (started for now).
 - Refactor read more link.
+- Update dependencies.
 
 ## [0.20.2] - 2022-10-19
 

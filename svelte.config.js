@@ -9,7 +9,6 @@ const config = {
     adapter: adapter({
       edge: true,
     }),
-    trailingSlash: 'always',
   },
   extensions: ['.svelte', ...mdsvexConfig.extensions],
   preprocess: [
