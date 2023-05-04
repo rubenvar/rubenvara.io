@@ -1,6 +1,7 @@
 <script lang="ts">
   import { latestPosts } from '$lib/stores/latestPosts';
   import ListedPost from '$lib/components/ListedPost.svelte';
+  import ReadMore from './ReadMore.svelte';
 </script>
 
 <p class="blog-intro">
@@ -10,7 +11,8 @@
 {#each $latestPosts as post}
   <ListedPost {post} />
 {/each}
-<p class="read-more"><a href="/blog">Ver todos en el blog ⟶</a></p>
+
+<ReadMore href="/blog">Ver todos en el blog ⟶</ReadMore>
 
 <style lang="scss">
   .blog-intro {
@@ -18,12 +20,6 @@
     margin: 0 0 var(--gap100);
     &:last-child {
       margin-bottom: 0;
-    }
-  }
-  .read-more {
-    text-align: right;
-    a {
-      text-decoration: none;
     }
   }
 </style>
