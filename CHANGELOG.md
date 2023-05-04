@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Create draft about me page.
+- Refactor home.
+- Refactor read more link.
+
 ## [0.20.2] - 2022-10-19
 
 - Updated dependencies.
