@@ -38,19 +38,20 @@
   <div class="project-intro">
     <h2 class="section-title">Algunos proyectos</h2>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ea
-      corrupti nostrum delectus reprehenderit! Nostrum excepturi hic repudiandae
-      eius libero voluptatum at adipisci, obcaecati, dignissimos, labore officia
-      doloribus eveniet. Id?
+      Desde hace unos cuantos años, todas las semanas tengo ideas que se
+      convierten en proyectos. Algunos los termino. A veces funcionan. Siempre
+      aprendo algo nuevo, todos los días.
     </p>
   </div>
   <CardCaa />
   <CardTn />
   <CardVpnf />
   <p class="project-outro">
-    Desde hace unos cuantos años, casi cada mes tengo una idea y empiezo un
-    nuevo proyecto. Algunos los termino. A veces funcionan. Siempre aprendo algo
-    nuevo, todos los días.
+    Además, <a href="https://rubenvar.github.io/" target="_blank">aquí</a>
+    puedes ver otros proyectos que he creado, y en mi
+    <a href="https://github.com/rubenvar" target="_blank">GitHub</a>
+    está todo el código que escribo a diario, además de unos cuantos
+    <em>npm packages</em> que he publicado.
   </p>
 {/if}
 
