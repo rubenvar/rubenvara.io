@@ -3,6 +3,20 @@
   let showLong = false;
 </script>
 
+<h2 class="section-title">Durante la década pasada...</h2>
+
+<label for="toggler" class="theme-toggler">
+  <input
+    type="checkbox"
+    id="toggler"
+    class="checkbox"
+    checked={showLong}
+    on:change={() => (showLong = !showLong)}
+  />
+  <span aria-hidden="true" class="switch" />
+  <span class={showLong ? 'text selected' : 'text'}> Versión extendida </span>
+</label>
+
 {#if showLong}
   <p transition:fade={{ duration: 200 }}>
     Estudié un grado en alternancia en el IMH, Elgoibar. Trabajé varios años
@@ -47,18 +61,6 @@
   </p>
 {/if}
 
-<label for="toggler" class="theme-toggler">
-  <input
-    type="checkbox"
-    id="toggler"
-    class="checkbox"
-    checked={showLong}
-    on:change={() => (showLong = !showLong)}
-  />
-  <span aria-hidden="true" class="switch" />
-  <span class={showLong ? 'text selected' : 'text'}> Versión extendida </span>
-</label>
-
 <style lang="scss">
   label {
     /* props to Sara Soueidan (https://sarasoueidan.com) for the component design */
@@ -66,6 +68,7 @@
     justify-self: end;
     transition: all 0.25s;
     color: var(--grey500);
+    margin-bottom: 24px;
     &:hover {
       color: var(--primary500);
       .switch {
