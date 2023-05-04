@@ -4,8 +4,9 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
-- Create draft about me page.
-- Refactor home.
+- Create draft "about me" page.
+- Add things to home hobbies list.
+- Replace home about me texts (started for now).
 - Refactor read more link.
 
 ## [0.20.2] - 2022-10-19
