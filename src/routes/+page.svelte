@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import HomeEnglish from '$lib/components/home/HomeEnglish.svelte';
   import Header from '$lib/components/home/Header.svelte';
   import HomeSpanish from '$lib/components/home/HomeSpanish.svelte';
   import { latestPosts } from '$lib/stores/latestPosts';
