@@ -15,35 +15,13 @@
 </script>
 
 <ProjectCard title="trajesneopreno.es" id="tn" {techs}>
-  <div slot="text">
-    <p>
-      Empezó siendo una página nicho de afiliados, ahora es una guía
-      completísima sobre aguas abiertas y natación con más de 30k visitas al mes
-      y miles de lectores y suscriptores.
-    </p>
-    <p>
-      A partir de esta he creado otros proyectos distintos para la comunidad:
-    </p>
-    <ul>
-      <li>
-        Un comparador de ofertas con backend node.js (Prisma) y frontend
-        Next.js.
-      </li>
-      <li>Un grupo de FB con más de 11k usuarios.</li>
-      <li>Un programa online que también tengo a la venta.</li>
-    </ul>
-    <p>Acabo con algo curioso</p>
-  </div>
-  <div slot="stats">
-    <p>some stats text</p>
-    <ul>
-      <li>stats</li>
-      <li>stats</li>
-    </ul>
-  </div>
-  <p slot="short">
-    Empezó siendo una página nicho de afiliados, ahora es una guía completísima
-    sobre aguas abiertas y natación con más de 30k visitas al mes y miles de
-    lectores y suscriptores.
+  <p>
+    La creé en 2014 como página nicho de afiliados. Ahora es una guía completa
+    sobre aguas abiertas y natación, con más de 30k visitas al mes y
+    <strong>miles</strong> de lectores y suscriptores.
+  </p>
+  <p>
+    A su alrededor he creado un comparador de ofertas en Next.js y Prisma, un
+    grupo de FB con más de 15k usuarios, y un programa online en venta.
   </p>
 </ProjectCard>

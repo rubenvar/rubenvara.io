@@ -1,56 +1,33 @@
 <script lang="ts">
   import ProjectCard from './ProjectCard.svelte';
-  // import { fade } from 'svelte/transition';
-  // import { goto } from '$app/navigation';
-  // import TechTag from './TechTag.svelte';
-  // let showBig = false;
-
-  // const close = () => {
-  //   showBig = false;
-  //   goto('#button-caa');
-  // };
-
-  // const handleClick = () => {
-  //   showBig = !showBig;
-  //   if (showBig) goto('#card-caa');
-  // };
 
   const techs = [
     'React',
-    'Next.js 12',
+    'Next.js 13',
     'Typescript',
-    'GraphQL',
-    'react-query',
-    'graphql-codegen',
-    'KeystoneJS 5',
+    'tanstack-query',
+    'tRPC',
     'node.js',
+    'Fastify',
+    'Prisma',
     'MongoDB',
   ];
 </script>
 
 <ProjectCard id="caa" title="calendarioaguasabiertas.com" {techs}>
-  <div slot="text">
-    <p>
-      Un mega-listado de todas las travesías de natación en el estado, y el
-      proyecto del que más orgulloso estoy. Visitado por cientos de personas
-      cada día.
-    </p>
-    <p>
-      He añadido decenas de funciones desde su creación, hace más de 2 años. He
-      aprendido muchísimo trabajando en ello, y sigo teniendo nuevos retos a
-      diario.
-    </p>
-    <p>
-      A partir de este he creado varias herramientas extra, como un <em
-        >scraper</em
-      > o una app de gestión de contactos, ambas con SvelteKit, con bases de datos
-      y autenticación en Supabase.js.
-    </p>
-  </div>
-  <div slot="stats">some easy easy easy stats here</div>
-  <p slot="short">
+  <p>
     Un mega-listado de todas las travesías de natación en el estado, y el
-    proyecto del que más orgulloso estoy. Visitado por cientos de personas cada
-    día.
+    proyecto del que <strong>más orgulloso</strong> estoy. He trabajado en él casi
+    a diario desde hace más de 3 años.
+  </p>
+  <p>
+    Visitado por más de 30k personas al mes, miles de nadadores confían en el
+    Calendario para planificar su tiempo.
   </p>
 </ProjectCard>
+
+<style lang="scss">
+  p {
+    margin-bottom: var(--gap40);
+  }
+</style>

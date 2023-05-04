@@ -17,10 +17,11 @@
   .tag {
     color: var(--grey700);
     display: block;
-    margin-bottom: var(--gap40);
+    margin: 0;
     padding: var(--gap10) var(--gap20);
     background-color: #fffa;
     border-radius: var(--radius20);
+    font-size: var(--fz20);
   }
   .dot {
     display: inline-block;

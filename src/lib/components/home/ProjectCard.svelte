@@ -1,36 +1,10 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
-  import { goto } from '$app/navigation';
   import TechTag from './TechTag.svelte';
 
   export let id: string;
   export let title: string;
   export let techs: string[] = [];
-
-  let showBig = false;
-
-  const close = () => {
-    showBig = false;
-    goto(`#button-${id}`);
-  };
-
-  const handleClick = () => {
-    showBig = !showBig;
-    if (showBig) goto(`#card-${id}`);
-  };
-
-  // bind component size to these
-  let w: number;
-  let h: number;
-  // x and y for the gradient, always between 35 and 65
-  let x = 0;
-  let y = 0;
-
-  // TODO debounce this
-  const handleMousemove = (event: MouseEvent) => {
-    x = (event.clientX * 20) / w - 10;
-    y = (event.clientY * 20) / h - 10;
-  };
 
   // --caa600
   // --tn500
@@ -38,90 +12,67 @@
   const customColor = `${id}600`;
 </script>
 
-{#if showBig}
-  <article
-    bind:clientWidth={w}
-    bind:clientHeight={h}
-    style="--customColor: var(--{customColor});--x: {x}%;--y: {y}%;"
-    id="card-{id}"
+<a href="https://{title}" target="_blank">
+  <button
+    style="--customColor: var(--{customColor})"
+    id="button-{id}"
     transition:fade={{ duration: 200 }}
-    on:mousemove={handleMousemove}
   >
-    <div class="main">
-      <button class="close" on:click={close}>&times;</button>
+    <div class="inner">
       <h3>{title}</h3>
+      <div class="text">
+        <slot />
+      </div>
       <div class="tech">
         {#each techs as tech}
           <TechTag {tech} />
         {/each}
       </div>
-      <div class="text">
-        <slot name="text" />
-      </div>
-      <div class="stats">
-        <slot name="stats">some easy stats here</slot>
-      </div>
-    </div>
-  </article>
-{:else}
-  <button
-    style="--customColor: var(--{customColor})"
-    class="toggle"
-    id="button-{id}"
-    on:click={handleClick}
-    transition:fade={{ duration: 200 }}
-  >
-    <div class="text">
-      <h3>{title}</h3>
-      <slot name="short" />
     </div>
   </button>
-{/if}
+</a>
 
 <style lang="scss">
-  .toggle {
+  a {
+    margin: var(--gap40) 0 var(--gap80);
+    display: block;
+  }
+  button {
     border-radius: var(--radius30);
-    padding: var(--gap20);
+    padding: var(--gap10);
     background-color: var(--customColor);
     background: linear-gradient(
-      25deg,
+      -210deg,
       var(--customColor),
-      black,
-      var(--customColor)
+      hsla(0, 0%, 99%, 0.9) 55%,
+      /* var(--white) 45% */
     );
     box-shadow: none;
     border: none;
     text-align: left;
-    margin: var(--gap60) 0;
-    .text {
+    font-size: var(--fz30);
+    .inner {
       background-color: var(--white);
-      background-color: #fffd;
+      /* background-color: #fffd; */
       border-radius: var(--radius20);
-      padding: var(--gap20);
+      padding: var(--gap30);
+      h3 {
+        margin-top: 0;
+        margin-bottom: var(--gap40);
+      }
+      .tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap20);
+        margin-bottom: var(--gap10);
+      }
     }
   }
-  .close {
-    background: none;
-    line-height: 0;
-    display: block;
-    font-size: var(--fz110);
-    box-shadow: none;
-    color: var(--white);
-    border: none;
-    border-radius: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: var(--gap60);
-    right: var(--gap40);
-  }
-  article {
+  /* article {
     padding: var(--gap80) var(--gap100);
-    /* background-color: var(--customColor); */
     transition: all 0.3s;
     color: var(--white);
     width: 100%;
-    /* min-height: 105vh; */
     min-height: 75vh;
     margin: 0;
     grid-column: 1 / -1;
@@ -167,5 +118,5 @@
         grid-row: 2;
       }
     }
-  }
+  } */
 </style>

@@ -3,32 +3,24 @@
   const techs = [
     'React',
     'Gatsby 4',
-    'Sapper',
     'GraphQL',
     'REST',
     'AWS Lambda',
+    'Svelte',
+    'Sapper',
   ];
 </script>
 
 <ProjectCard {techs} id="vpnf" title="vpnfacil.com">
-  <div slot="text">
-    <p>
-      Una herramienta para elegir VPN: un listado con decenas de servicios VPN,
-      datos sobre cada uno, comparativas, opiniones, etc.
-    </p>
-    <p>
-      Empezó como un <em>side-project</em> para aprender Sapper. Cuando lo terminé,
-      lo reescribí completamente en Gatsby para aprender este también. Ahora funcionan
-      ambas webs.
-    </p>
-    <p>
-      El backend es una hoja de Google Sheets 😆 que sirve de API REST a través
-      de una función Lambda de AWS.
-    </p>
-  </div>
-  <div slot="stats"><p>some easy stats here here</p></div>
-  <p slot="short">
-    Una herramienta para elegir VPN: un listado con decenas de servicios VPN,
-    datos sobre cada uno, comparativas, opiniones, etc.
+  <p>
+    Un listado con decenas de servicios VPN y sus datos, comparativas y
+    opiniones. Empezó como un <em>side-project</em> para aprender Svelte. Después
+    lo reescribí entero en Gatsby (React) para aprender este también.
+  </p>
+  <p>
+    El backend es un Google Sheet que sirve de API REST a través de una función <em
+      >serverless</em
+    >
+    en AWS Lambda.
   </p>
 </ProjectCard>
