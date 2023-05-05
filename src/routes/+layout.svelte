@@ -42,7 +42,8 @@
     data-goatcounter-settings={config}
     data-goatcounter="https://{dev ? 'rbn-dev' : 'rbn'}.goatcounter.com/count"
     async
-    src="//gc.zgo.at/count.js"></script>
+    src="//gc.zgo.at/count.js"
+  ></script>
 </svelte:head>
 
 {#if !dev}

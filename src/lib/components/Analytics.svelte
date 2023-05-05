@@ -20,9 +20,11 @@
 
 <svelte:head>
   <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54909104-9"></script> -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-54909104-9"></script> -->
   <script
     async
-    src="https://www.googletagmanager.com/gtag/js?id=G-LPH1220C03"></script>
+    src="https://www.googletagmanager.com/gtag/js?id=G-LPH1220C03"
+  ></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
