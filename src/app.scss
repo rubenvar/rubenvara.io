@@ -135,6 +135,7 @@
   --vanillajs-front: #323330;
   --vanillajs: #f0db4f;
   --webpack: #5299c7;
+  --woocommerce: #7f54b3;
   --wordpress: #117ac9;
 
   --boxShadow100: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -328,4 +329,10 @@ main > * {
 
 .box {
   @include variables.box;
+}
+
+svg.icon-tabler {
+  vertical-align: sub;
+  margin-right: var(--gap10);
+  stroke-width: 1.5;
 }

@@ -4,6 +4,7 @@
   const techs = [
     'WordPress',
     'PHP',
+    'WooCommerce',
     'React',
     'Next.js 12',
     'GraphQL',

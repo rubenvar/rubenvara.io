@@ -9,9 +9,9 @@
   {/if}
   <a class:active={$page.url.pathname.includes('/blog')} href="/blog">Blog</a>
   <span>◇</span>
-  <a class:active={$page.url.pathname === '/now'} href="/now">Ahora</a>
+  <a class:active={$page.url.pathname === '/now/'} href="/now">Ahora</a>
   <span>◇</span>
-  <a class:active={$page.url.pathname === '/about'} href="/about">Sobre mí</a>
+  <a class:active={$page.url.pathname === '/about/'} href="/about">Sobre mí</a>
 </nav>
 
 <style lang="scss">

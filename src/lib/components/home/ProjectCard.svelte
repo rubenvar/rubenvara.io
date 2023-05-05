@@ -34,8 +34,11 @@
 
 <style lang="scss">
   a {
-    margin: var(--gap40) 0 var(--gap80);
+    margin: var(--gap40) 0 var(--gap90);
     display: block;
+    &:last-of-type {
+      margin-bottom: var(--gap60);
+    }
   }
   button {
     border-radius: var(--radius30);
@@ -44,8 +47,7 @@
     background: linear-gradient(
       -210deg,
       var(--customColor),
-      hsla(0, 0%, 99%, 0.9) 55%,
-      /* var(--white) 45% */
+      hsla(0, 0%, 99%, 0.9) 55%
     );
     box-shadow: none;
     border: none;
@@ -53,7 +55,6 @@
     font-size: var(--fz30);
     .inner {
       background-color: var(--white);
-      /* background-color: #fffd; */
       border-radius: var(--radius20);
       padding: var(--gap30);
       h3 {
@@ -68,55 +69,4 @@
       }
     }
   }
-  /* article {
-    padding: var(--gap80) var(--gap100);
-    transition: all 0.3s;
-    color: var(--white);
-    width: 100%;
-    min-height: 75vh;
-    margin: 0;
-    grid-column: 1 / -1;
-    position: relative;
-    overflow: hidden;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    &::after {
-      width: 180%;
-      height: 180%;
-      position: absolute;
-      z-index: 0;
-      right: -40%;
-      top: -40%;
-      transition: all 0.2s;
-      background: radial-gradient(circle, #000, var(--customColor) 150%);
-      transform: translateX(var(--x)) translateY(var(--y));
-      content: '';
-    }
-    .main {
-      z-index: 1;
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 0 var(--gap40);
-      h3 {
-        margin-top: 0;
-        margin-bottom: var(--gap80);
-        grid-column: 2;
-        font-size: var(--fz80);
-      }
-      .tech {
-        grid-row: 2;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .text {
-        grid-row: 2;
-        width: var(--maxWidth);
-      }
-      .stats {
-        grid-row: 2;
-      }
-    }
-  } */
 </style>

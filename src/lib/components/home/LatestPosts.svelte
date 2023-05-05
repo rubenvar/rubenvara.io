@@ -16,8 +16,8 @@
 
 <style lang="scss">
   .blog-intro {
-    color: var(--grey600);
-    margin: 0 0 var(--gap100);
+    color: var(--grey700);
+    margin: 0 0 var(--gap90);
     &:last-child {
       margin-bottom: 0;
     }

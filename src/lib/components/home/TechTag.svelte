@@ -19,7 +19,7 @@
     display: block;
     margin: 0;
     padding: var(--gap10) var(--gap20);
-    background-color: #fffa;
+    background-color: var(--grey100);
     border-radius: var(--radius20);
     font-size: var(--fz20);
   }
