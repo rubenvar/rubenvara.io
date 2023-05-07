@@ -42,6 +42,9 @@
     @media only screen and (min-width: 780px) {
       animation: changeColor 11s infinite alternate;
     }
+    @media only screen and (max-width: 370px) {
+      font-size: var(--fz140);
+    }
     span {
       &.🚀 {
         display: inline-block;
