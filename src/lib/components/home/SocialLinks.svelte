@@ -3,18 +3,19 @@
   import IconLinkedin from '$lib/components/icons/IconLinkedin.svelte';
   import IconTwitter from '$lib/components/icons/IconTwitter.svelte';
   import IconMail from '$lib/components/icons/IconMail.svelte';
+  import { dev } from '$app/environment';
 </script>
 
-<p>Y puedes encontrarme por aquí:</p>
+<p>Puedes encontrarme por aquí:</p>
 <div class="links">
   <a href="https://github.com/rubenvar/" target="_blank"><IconGithub />GitHub</a
   >
-  <a href="https://www.linkedin.com/in/rubenvara" target="_blank"
-    ><IconLinkedin />LinkedIn</a
-  >
-  <a href="https://twitter.com/rubenvara01" target="_blank"
-    ><IconTwitter />Twitter</a
-  >
+  {#if dev}<a href="https://www.linkedin.com/in/rubenvara" target="_blank"
+      ><IconLinkedin />LinkedIn</a
+    >
+    <a href="https://twitter.com/rubenvara01" target="_blank"
+      ><IconTwitter />Twitter</a
+    >{/if}
   <a href="mailto:hey@rubenvara.io"><IconMail />Contacto</a>
 </div>
 
