@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.21.0] - 2023-05-08
+
 - Add screenshots in project cards.
 - Add social links in home.
 - Add `release-it`.
