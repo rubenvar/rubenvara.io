@@ -20,7 +20,7 @@
 
 <style lang="scss">
   p {
-    margin-top: var(--gap10);
+    margin-top: 0;
     margin-bottom: var(--gap40);
     color: var(--grey700);
   }
