@@ -22,6 +22,10 @@
     gap: var(--gap70);
     padding: var(--gap80) 0;
     font-size: var(--fz60);
+    flex-wrap: wrap;
+    @media only screen and (max-width: 576px) {
+      gap: var(--gap50);
+    }
     a {
       text-decoration: none;
       color: var(--primary700);

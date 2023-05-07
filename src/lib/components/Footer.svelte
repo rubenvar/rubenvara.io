@@ -33,7 +33,7 @@
       100% 100%,
       0% 100%
     ); */
-    padding: var(--gap50);
+    padding: var(--gap50) 0;
     position: relative;
     margin-top: var(--gap120);
     background: var(--white);
