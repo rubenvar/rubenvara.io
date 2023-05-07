@@ -38,7 +38,7 @@
 
 <style lang="scss">
   a {
-    margin: var(--gap40) 0 var(--gap90);
+    margin: var(--gap40) 0 var(--gap100);
     display: block;
     position: relative;
     &:last-of-type {
@@ -50,10 +50,10 @@
         transition: opacity 0.4s;
       }
       img {
-        scale: 1.75;
-        translate: calc(60% + 15px) 90px;
+        scale: 1.35;
+        translate: calc(30% + 15px) 90px;
         &.iphone {
-          translate: calc(100% + 95px) 90px;
+          translate: calc(100%) 90px;
         }
       }
     }
