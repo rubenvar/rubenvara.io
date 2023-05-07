@@ -12,7 +12,7 @@
   const things = [
     'nado',
     'corro por el monte',
-    'leo',
+    'leo novelas',
     'dibujo',
     'cocino',
     'degusto craft beer',
@@ -29,9 +29,9 @@
 </p>
 <img src={rvImage} alt="Rubén Vara" width={300} height={300} />
 <p class="about-me">
-  Durante la década pasada estudié ingeniería, cometí muchos errores, y abandoné
-  una vida para empezar otra viviendo por el mundo y creando mi negocio online.
-  Como en todo gran viaje, al final volví al inicio.
+  Durante la década pasada estudié ingeniería, decidí cambiar mi vida, y lo
+  abandoné todo para viajar por el mundo y crear mi negocio online. Como en toda
+  gran aventura, al final volví al inicio.
 </p>
 <ReadMore href="/about">Lee más sobre mí ⟶</ReadMore>
 
