@@ -4,8 +4,14 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
-- Create draft "about me" page.
+- Add screenshots in project cards.
+- Add social links in home.
+- Add `release-it`.
+- Create "about me" page.
 - Add things to home hobbies list.
+- Add techs to about me page.
+- Tweak home texts.
+- Make home portfolio cards simpler.
 - Replace home about me texts (started for now).
 - Refactor read more link.
 - Update dependencies.
