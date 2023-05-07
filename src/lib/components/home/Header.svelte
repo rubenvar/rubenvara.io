@@ -40,6 +40,7 @@
     /* this would chose a color randomly for each letter, could be done in js? */
     /* color: var(--${randomColor}); */
     @media only screen and (min-width: 780px) {
+      /* color animation only in wider screens  */
       animation: changeColor 11s infinite alternate;
     }
     @media only screen and (max-width: 370px) {

@@ -94,9 +94,6 @@
 <style lang="scss">
   header {
     margin: 0 0 var(--gap100);
-    @media only screen and (min-width: 480) {
-      margin-bottom: var(--gap100);
-    }
     p {
       color: var(--grey600);
       margin: 0 0 var(--gap50);
