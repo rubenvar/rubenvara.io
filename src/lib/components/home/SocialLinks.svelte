@@ -29,6 +29,8 @@
     display: flex;
     justify-content: space-evenly;
     margin-bottom: var(--gap80);
+    gap: var(--gap40);
+    flex-wrap: wrap;
     a {
       text-decoration: none;
     }
