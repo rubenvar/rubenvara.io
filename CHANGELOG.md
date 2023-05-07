@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Actually show the portfolio.
+
 ## [0.21.2] - 2023-05-08
 
 - Update node version.

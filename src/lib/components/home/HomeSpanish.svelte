@@ -5,7 +5,6 @@
   import CardCaa from './CardCaa.svelte';
   import CardTn from './CardTn.svelte';
   import CardVpnf from './CardVpnf.svelte';
-  import { dev } from '$app/environment';
   import ReadMore from './ReadMore.svelte';
   import SocialLinks from './SocialLinks.svelte';
 
@@ -35,30 +34,29 @@
 </p>
 <ReadMore href="/about">Lee más sobre mí ⟶</ReadMore>
 
-{#if dev}
-  <div class="project-intro">
-    <h2 class="section-title">Algunos proyectos</h2>
-    <p>
-      Desde hace unos cuantos años, todas las semanas tengo ideas que convierto
-      en proyectos. Algunos los termino. A veces funcionan. Siempre aprendo algo
-      nuevo, todos los días.
-    </p>
-  </div>
-  <CardCaa />
-  <CardTn />
-  <CardVpnf />
-  <p class="project-outro">
-    Además, <a href="https://rubenvar.github.io/" target="_blank"
-      >un listado con más proyectos</a
-    >.
-  </p>
+<div class="project-intro">
+  <h2 class="section-title">Algunos proyectos</h2>
   <p>
-    En mi
-    <a href="https://github.com/rubenvar" target="_blank">GitHub</a>
-    está todo el código que escribo a diario, además de unos cuantos
-    <em>npm packages</em> que he publicado.
+    Desde hace unos cuantos años, todas las semanas tengo ideas que convierto en
+    proyectos. Algunos los termino. A veces funcionan. Siempre aprendo algo
+    nuevo, todos los días.
   </p>
-{/if}
+</div>
+<CardCaa />
+<CardTn />
+<CardVpnf />
+<p class="project-outro">
+  Además, <a href="https://rubenvar.github.io/" target="_blank"
+    >un listado con más proyectos</a
+  >.
+</p>
+<p>
+  En mi
+  <a href="https://github.com/rubenvar" target="_blank">GitHub</a>
+  está todo el código que escribo a diario, además de unos cuantos
+  <em>npm packages</em> que he publicado.
+</p>
+
 <SocialLinks />
 <h2 class="section-title">Posts más recientes</h2>
 <LatestPosts />
