@@ -1,5 +1,8 @@
 <script lang="ts">
   import ProjectCard from './ProjectCard.svelte';
+  import vpnfBrowser from '$lib/assets/images/vpnf-browser.webp';
+  import vpnfIphone from '$lib/assets/images/vpnf-iphone.webp';
+
   const techs = [
     'React',
     'Gatsby 4',
@@ -11,7 +14,13 @@
   ];
 </script>
 
-<ProjectCard {techs} id="vpnf" title="vpnfacil.com">
+<ProjectCard
+  {techs}
+  id="vpnf"
+  title="vpnfacil.com"
+  browser={vpnfBrowser}
+  iphone={vpnfIphone}
+>
   <p>
     Un listado con decenas de servicios VPN y sus datos, comparativas y
     opiniones. Empezó como un <em>side-project</em> para aprender Svelte. Después

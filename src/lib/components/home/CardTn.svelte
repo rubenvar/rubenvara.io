@@ -1,5 +1,7 @@
 <script lang="ts">
   import ProjectCard from './ProjectCard.svelte';
+  import tnBrowser from '$lib/assets/images/tn-browser.webp';
+  import tnIphone from '$lib/assets/images/tn-iphone.webp';
 
   const techs = [
     'WordPress',
@@ -15,7 +17,13 @@
   ];
 </script>
 
-<ProjectCard title="trajesneopreno.es" id="tn" {techs}>
+<ProjectCard
+  title="trajesneopreno.es"
+  id="tn"
+  {techs}
+  browser={tnBrowser}
+  iphone={tnIphone}
+>
   <p>
     La creé en 2014 como página nicho de afiliados. Ahora es una guía completa
     sobre aguas abiertas y natación, con más de 30k visitas al mes y

@@ -1,6 +1,6 @@
 <script lang="ts">
   import ProjectCard from './ProjectCard.svelte';
-  import caaBrowser from '$lib/assets/images/caa-browser.png';
+  import caaBrowser from '$lib/assets/images/caa-browser.webp';
   import caaIphone from '$lib/assets/images/caa-iphone.webp';
 
   const techs = [
