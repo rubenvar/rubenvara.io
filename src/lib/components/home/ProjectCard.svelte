@@ -157,6 +157,7 @@
         }
         .mobile-browser {
           rotate: -1deg;
+          border-radius: var(--radius20);
           box-shadow: var(--bs20);
         }
         .mobile-iphone {
@@ -164,7 +165,7 @@
           top: 0;
           right: 0;
           max-height: 70%;
-          translate: -50px 20px;
+          translate: 50px 20px;
           filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
           rotate: 4deg;
         }
