@@ -10,10 +10,10 @@
 <div class="links">
   <a href="https://github.com/rubenvar/" target="_blank"><IconGithub />GitHub</a
   >
-  {#if dev}<a href="https://www.linkedin.com/in/rubenvara" target="_blank"
-      ><IconLinkedin />LinkedIn</a
-    >
-    <a href="https://twitter.com/rubenvara01" target="_blank"
+  <a href="https://www.linkedin.com/in/rubenvara" target="_blank"
+    ><IconLinkedin />LinkedIn</a
+  >
+  {#if dev}<a href="https://twitter.com/rubenvara01" target="_blank"
       ><IconTwitter />Twitter</a
     >{/if}
   <a href="mailto:hey@rubenvara.io"><IconMail />Contacto</a>
