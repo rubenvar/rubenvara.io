@@ -13,7 +13,7 @@
   // --vpnf600
   const customColor = `${id}600`;
 
-  // imgs outside button only show if widerthan 1200px
+  // imgs outside button only show if wider than 1200px
   // if not, images inside .inner will show
 </script>
 
@@ -137,6 +137,7 @@
       h3 {
         margin-top: 0;
         margin-bottom: var(--gap40);
+        word-break: break-word; // break title (url) if too long
       }
       .mobile-images {
         width: 75%;
