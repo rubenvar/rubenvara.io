@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Add linkedin link.
+- Tweak project card styling.
+- Fix project card title not wrapping.
+
 ## [0.21.4] - 2023-05-08
 
 - Replace `@sveltejs/adapter-netlify` with `@sveltejs/adapter-auto`.
