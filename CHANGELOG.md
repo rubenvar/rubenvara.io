@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.21.4] - 2023-05-08
+
 - Replace `@sveltejs/adapter-netlify` with `@sveltejs/adapter-auto`.
 
 ## [0.21.3] - 2023-05-08
