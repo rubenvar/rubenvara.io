@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Fix linkedin link.
+
 ## [0.22.0] - 2023-05-08
 
 - Add linkedin link.

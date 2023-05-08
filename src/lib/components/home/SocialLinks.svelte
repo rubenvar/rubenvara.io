@@ -10,7 +10,7 @@
 <div class="links">
   <a href="https://github.com/rubenvar/" target="_blank"><IconGithub />GitHub</a
   >
-  <a href="https://www.linkedin.com/in/rubenvara" target="_blank"
+  <a href="https://www.linkedin.com/in/rubenvar" target="_blank"
     ><IconLinkedin />LinkedIn</a
   >
   {#if dev}<a href="https://twitter.com/rubenvara01" target="_blank"
