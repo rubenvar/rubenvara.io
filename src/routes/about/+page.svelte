@@ -81,7 +81,7 @@
   <li>Desde el año pasado mi favorito es <code>SvelteKit</code>.</li>
   <li>
     Ahora mismo estoy practicando otros <em>frameworks</em> (<code>Qwik</code>,
-    <code>SolidJS</code>, <code>Astro</code>, etc.)
+    <code>SolidJS</code>, <code>Remix</code>, <code>Astro</code>, etc.)
   </li>
   <li>
     Lo siguiente que quiero aprender es <code>WebAssembly</code>. También quiero
