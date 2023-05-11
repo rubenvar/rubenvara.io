@@ -17,7 +17,11 @@
   // if not, images inside .inner will show
 </script>
 
-<a href="https://{title}" target="_blank">
+<a
+  href="https://{title}"
+  target="_blank"
+  style="--delay: {id.length * 0.2 + 1}s;"
+>
   <button
     style="--customColor: var(--{customColor})"
     id="button-{id}"
@@ -27,12 +31,12 @@
       <h3>{title}</h3>
       <div class="mobile-images">
         <img
-          class="mobile-screenshot mobile-browser"
+          class="screenshot mobile-screenshot browser"
           src={browser}
           alt="página pricipal de {title}"
         />
         <img
-          class="mobile-screenshot mobile-iphone"
+          class="screenshot mobile-screenshot iphone"
           src={iphone}
           alt="{title} en iPhone"
         />
@@ -48,14 +52,28 @@
     </div>
   </button>
   <img
-    class="screenshot browser"
+    class="screenshot wide-screenshot browser"
     src={browser}
     alt="Página Principal de {title}"
   />
-  <img class="screenshot iphone" src={iphone} alt="{title} en iPhone" />
+  <img
+    class="screenshot wide-screenshot iphone"
+    src={iphone}
+    alt="{title} en iPhone"
+  />
 </a>
 
 <style lang="scss">
+  @keyframes floatIphone {
+    0% {
+      transform: translateX(0) translateY(0);
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
+    }
+    50% {
+      transform: translateX(-2px) translateY(-7px);
+      filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.35));
+    }
+  }
   a {
     margin: var(--gap40) 0 var(--gap100);
     display: block;
@@ -69,19 +87,22 @@
           opacity: 1;
           transition: opacity 0.4s;
         }
-        .screenshot {
+        .wide-screenshot {
           scale: 1.35;
-          translate: calc(30% + 15px) 90px;
+          animation: none;
+          &.browser {
+            translate: calc(30% + 15px) 90px;
+          }
           &.iphone {
             translate: calc(100%) 90px;
           }
         }
         .mobile-screenshot {
           scale: 1.35;
-          &.mobile-browser {
+          &.browser {
             translate: 50px 30px;
           }
-          &.mobile-iphone {
+          &.iphone {
             translate: calc(100%) 90px;
           }
         }
@@ -156,19 +177,21 @@
           display: block;
           transition: scale 0.3s, translate 0.3s;
         }
-        .mobile-browser {
+        .browser {
           rotate: -1deg;
           border-radius: var(--radius20);
-          box-shadow: var(--bs20);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
         }
-        .mobile-iphone {
+        .iphone {
           position: absolute;
           top: 0;
           right: 0;
           max-height: 70%;
           translate: 50px 20px;
-          filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+          filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
           rotate: 4deg;
+          animation: floatIphone 6s infinite ease-in-out;
+          animation-delay: var(--delay);
         }
       }
       .tech {
@@ -179,7 +202,7 @@
       }
     }
   }
-  .screenshot {
+  .wide-screenshot {
     position: absolute;
     top: 0;
     right: 0;
@@ -187,16 +210,18 @@
     transition: scale 0.3s, translate 0.3s;
     &.browser {
       border-radius: var(--radius20);
-      box-shadow: var(--bs20);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);
       translate: calc(90% + 15px) 70px;
       rotate: 3deg;
       max-width: 250px;
     }
     &.iphone {
-      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.15));
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.35));
       translate: calc(100% + 50px) 160px;
       rotate: -4deg;
       max-height: 140px;
+      animation: floatIphone 6s infinite ease-in-out;
+      animation-delay: var(--delay);
     }
     @media only screen and (max-width: 1200px) {
       display: none;
