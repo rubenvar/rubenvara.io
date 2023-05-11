@@ -7,7 +7,7 @@ import mdsvexConfig from './mdsvex.config.js';
 const config = {
   kit: {
     adapter: adapter({
-      edge: true,
+      runtime: 'edge',
     }),
   },
   extensions: ['.svelte', ...mdsvexConfig.extensions],
