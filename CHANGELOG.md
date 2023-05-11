@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Vercel redeploy.
+
 ## [0.23.1] - 2023-05-11
 
 - Fix vercel adapter config.
