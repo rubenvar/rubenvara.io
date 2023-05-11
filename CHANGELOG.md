@@ -4,6 +4,11 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Add animation to porftolio iphone screenshots.
+- Update dependencies.
+- Replace Netlify config with Vercel.
+- Fix redirects (implement in SvelteKit server layout)
+
 ## [0.22.1] - 2023-05-08
 
 - Fix linkedin link.
