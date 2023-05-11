@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.23.2] - 2023-05-11
+
 - Vercel redeploy.
 
 ## [0.23.1] - 2023-05-11
