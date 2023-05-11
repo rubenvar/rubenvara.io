@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.23.0] - 2023-05-11
+
 - Add animation to porftolio iphone screenshots.
 - Update dependencies.
 - Replace Netlify config with Vercel.
