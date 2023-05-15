@@ -22,9 +22,9 @@
   target="_blank"
   style="--delay: {id.length * 0.2 + 1}s;"
 >
-  <button
+  <div
+    class="card"
     style="--customColor: var(--{customColor})"
-    id="button-{id}"
     transition:fade={{ duration: 200 }}
   >
     <div class="inner">
@@ -50,7 +50,7 @@
         {/each}
       </div>
     </div>
-  </button>
+  </div>
   <img
     class="screenshot wide-screenshot browser"
     src={browser}
@@ -75,15 +75,18 @@
     }
   }
   a {
+    border-radius: var(--radius30);
     margin: var(--gap40) 0 var(--gap100);
     display: block;
     position: relative;
+    text-decoration: none;
+    color: inherit;
     &:last-of-type {
       margin-bottom: var(--gap60);
     }
     &:hover {
       @media only screen and (min-width: 768px) {
-        button::before {
+        .card::before {
           opacity: 1;
           transition: opacity 0.4s;
         }
@@ -109,7 +112,7 @@
       }
     }
   }
-  button {
+  .card {
     border-radius: var(--radius30);
     padding: var(--gap10);
     background-color: var(--customColor);

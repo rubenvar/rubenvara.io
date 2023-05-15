@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Fix portfolio links are buttons.
+
 ## [0.23.2] - 2023-05-11
 
 - Vercel redeploy.
