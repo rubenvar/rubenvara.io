@@ -4,6 +4,12 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- New post translated and published (react-query 8).
+- New draft to translate (react-query 9).
+- Tweak eslint rules.
+- Update dependencies.
+- Fix typo.
+
 ## [0.23.3] - 2023-05-15
 
 - Fix portfolio links are buttons.
