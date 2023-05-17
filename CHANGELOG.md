@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.24.0] - 2023-05-18
+
 - New post translated and published (react-query 8).
 - New draft to translate (react-query 9).
 - Tweak eslint rules.
