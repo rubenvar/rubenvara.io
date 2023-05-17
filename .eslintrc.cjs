@@ -6,6 +6,9 @@ module.exports = {
     'plugin:svelte/recommended',
     'prettier',
   ],
+  rules: {
+    'svelte/no-at-html-tags': 'off',
+  },
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   parserOptions: {
