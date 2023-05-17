@@ -20,7 +20,7 @@ Las preguntas sobre tests en React Query son bastante comunes, así que voy a tr
 
 Esto es una mejora en cuanto a co-ubicación y legibilidad del código, pero ahora tenemos más componentes que consumen dependencias a parte de *solo las props*.
 
-Quizás usan `useContext`. Quizás `useSelector`. O quizás `useQery`.
+Quizás usan `useContext`. Quizás `useSelector`. O quizás `useQuery`.
 
 Estos componentes, técnicamente, ya no son **puros**, porque llamarlos en diferentes entornos genera resultados distintos. Al probarlos tienes que preparar estos entornos con cuidado para conseguir que todo funcione.
 
