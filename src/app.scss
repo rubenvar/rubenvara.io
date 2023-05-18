@@ -285,7 +285,8 @@ h3 code,
 h4 code,
 p code,
 ol code,
-ul code {
+ul code,
+details summary code {
   background: var(--grey100);
   border-radius: var(--radius10);
   padding: 0 var(--gap10);
@@ -343,4 +344,15 @@ svg.icon-tabler {
   vertical-align: sub;
   margin-right: var(--gap10);
   stroke-width: 1.5;
+}
+
+details {
+  margin: 0 0 var(--gap60);
+  &[open=""] summary {
+    margin: 0 0 var(--gap30);
+  }
+  p {
+    margin: 0;
+    margin-left: var(--gap40);
+  }
 }
