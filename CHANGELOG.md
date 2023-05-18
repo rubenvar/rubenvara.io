@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.25.0] - 2023-05-18
+
 - Add global styles for <details>
 - New post translated and published (react-query 9).
 - New drafts.
