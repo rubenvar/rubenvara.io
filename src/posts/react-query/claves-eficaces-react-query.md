@@ -1,7 +1,7 @@
 ---
 title: Claves eficaces en React Query
 seoTitle: "Query Keys eficaces en React Query: 4 Consejos para Mejorar tus Claves"
-description: Aprende a gestionar las claves de React Query de manera eficaz a medida que tu app se vuelve más compleja para controlar tu data y el caché sin problemas
+description: Aprende a gestionar las claves de React Query de manera eficaz a medida que tu app crece, y controla tu caché al detalle
 date: 2022-11-27
 status: published
 original:
