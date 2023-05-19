@@ -23,17 +23,80 @@ Entiendo que ya tienes instalado Next.js, React, y demás. Vamos a ver cómo met
 npm install leaflet react-leaflet
 ```
 
-Hazme caso, hay que instalar todo esto. Lo iremos usando poco a poco.
+Eso es todo.
+
+Si quieres añadir varias mejoras y detalles a tu resultado, en la sección final vemos unos cuantos paquetes más que tendrás que instalar.
 
 ## Crear el componente de mapa
 
 ## Importar el componente
 
-- use next/dynamic to import component after page load (`ssr: false`)
+Importar
+
+```js
+import dynamic from 'next/dynamic';
+```
+
+Usar
+
+```jsx
+export function MapPage() {
+  // importa Map
+  const MapWithNoSSR = dynamic(() => import('./Map'), { ssr: false });
+  // ...
+  return (
+    // ...
+    <MapWithNoSSR />
+    // ...
+  )
+}
+```
+
+Si el componente `Map` se encarga de solicitar la data que luego rnderizará, listo.
+
+Si quieres solicitar la data en el componente `MapPage` para poder usarla en otros componentes que estén en esta página (algo más realista), puedes pasar a `MapWithNoSSR` las mismas `props` que pasarías al componente `Map`:
+
+```jsx
+export function MapPage() {
+  // solicita tu data a la API, etc.
+  const events = [ /* ... */ ];
+  // importa Map
+  const MapWithNoSSR = dynamic(() => import('./Map'), { ssr: false });
+
+  return (
+    // si Map acepta la prop "events"
+    <MapWithNoSSR events={events} />
+  )
+}
+```
 
 ## Detalles y optimizaciones
 
-- markercluster
-- a11y icon
+### Agrupar los iconos en un mapa leaflet
+
+```sh
+npm install leaflet.markercluster @changey/react-leaflet-markercluster
+```
+
+ markercluster
+
+### Aceptar gestos en pantallas táctiles
+
+```sh
+npm install leaflet-gesture-handling
+```
+
+gesture-handling
+Sin capturar el scroll y *encerrar* al usuario en nuestro mapa
+
+### a11y icon
+
+```sh
+npm install leaflet-defaulticon-compatibility
+```
+
+¿Problemas porque no se muestra el icono en tu mapa leaflet?
+
+Lo solucionamos con un paquete
 
 ---
