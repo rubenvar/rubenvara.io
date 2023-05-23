@@ -68,7 +68,6 @@
     &.section-title {
       margin-top: var(--gap100);
       font-style: italic;
-      font-family: var(--specialFont);
       font-weight: 700;
       font-size: var(--fz70);
     }

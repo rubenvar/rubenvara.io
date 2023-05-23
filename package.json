@@ -13,7 +13,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@fontsource/baloo-2": "^4.5.12",
+    "@fontsource-variable/baloo-2": "^5.0.1",
     "@fontsource/dm-sans": "^4.5.9",
     "@fontsource/mansalva": "^4.5.12",
     "@fontsource/victor-mono": "^4.5.4",

@@ -1,7 +1,7 @@
 <script lang="ts">
   import '@fontsource/mansalva';
   import '@fontsource/dm-sans';
-  import '@fontsource/baloo-2';
+  import '@fontsource-variable/baloo-2';
   import '@fontsource/victor-mono';
   import 'normalize.css';
   import 'dracula-prism/dist/css/dracula-prism.min.css';

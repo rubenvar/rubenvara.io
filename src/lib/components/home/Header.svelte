@@ -34,6 +34,7 @@
   }
   h1 {
     font-family: var(--logoFont);
+    font-weight: 700;
     font-size: var(--fz150);
     /* letter-spacing: -1px; */
     color: var(--primary500);

@@ -34,6 +34,7 @@
         margin: 0;
         line-height: 1;
         font-family: var(--logoFont);
+        font-weight: 700;
         a {
           background: var(--logoGradient);
           background-clip: text;
