@@ -4,9 +4,13 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Add variable font.
+- Tweak/fix some font weights.
+- Update dependencies.
+
 ## [0.25.0] - 2023-05-18
 
-- Add global styles for <details>
+- Add global styles for <details>.
 - New post translated and published (react-query 9).
 - New drafts.
 
@@ -35,7 +39,7 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 - Add animation to porftolio iphone screenshots.
 - Update dependencies.
 - Replace Netlify config with Vercel.
-- Fix redirects (implement in SvelteKit server layout)
+- Fix redirects (implement in SvelteKit server layout).
 
 ## [0.22.1] - 2023-05-08
 
