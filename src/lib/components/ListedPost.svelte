@@ -57,7 +57,7 @@
     position: relative;
   }
   h2 {
-    font-weight: 500;
+    font-weight: 430;
     font-size: var(--fz70);
     margin-top: 0;
     margin-bottom: var(--gap30);

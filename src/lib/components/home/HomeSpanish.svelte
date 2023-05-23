@@ -21,7 +21,7 @@
   ];
 </script>
 
-<h2>Desarollo páginas web naturales, rápidas y modernas</h2>
+<h2 class="title">Desarollo páginas web naturales, rápidas y modernas</h2>
 <p class="sub-title">
   También escalo todo lo que puedo, {shuffle(things).join(', ')} y trabajo en más
   proyectos web.
@@ -63,12 +63,13 @@
 
 <style lang="scss">
   h2 {
-    margin-top: var(--gap50);
-    font-weight: 400;
+    &.title {
+      margin-top: var(--gap50);
+      font-weight: 400;
+    }
     &.section-title {
       margin-top: var(--gap100);
       font-style: italic;
-      font-weight: 700;
       font-size: var(--fz70);
     }
   }

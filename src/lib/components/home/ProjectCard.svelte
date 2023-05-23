@@ -162,6 +162,7 @@
         margin-top: 0;
         margin-bottom: var(--gap40);
         word-break: break-word; // break title (url) if too long
+        font-weight: 450;
       }
       .mobile-images {
         width: 75%;
