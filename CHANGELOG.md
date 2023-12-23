@@ -4,7 +4,9 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
-- Remove Google Analytics..
+- Migrate to svelte/kit 2.
+- Update dependencies.
+- Remove Google Analytics.
 
 ## [0.25.1] - 2023-05-23
 
