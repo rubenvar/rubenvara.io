@@ -4,6 +4,7 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- New post (react-query 10).
 - Create "Sold" label for TN.
 
 ## [0.25.2] - 2023-12-23
