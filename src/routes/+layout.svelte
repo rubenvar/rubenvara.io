@@ -13,7 +13,6 @@
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import PageTransition from '$lib/components/PageTransition.svelte';
-  import Analytics from '$lib/components/Analytics.svelte';
   import { browser, dev } from '$app/environment';
 
   export let data: LayoutData;
@@ -45,10 +44,6 @@
     src="//gc.zgo.at/count.js"
   ></script>
 </svelte:head>
-
-{#if !dev}
-  <Analytics />
-{/if}
 
 <PageTransition refresh={key}>
   <!-- <SkipLink /> -->

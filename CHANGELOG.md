@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Remove Google Analytics..
+
 ## [0.25.1] - 2023-05-23
 
 - Add variable font.
