@@ -16,5 +16,5 @@ export const load: PageServerLoad = async ({ params }) => {
     };
   }
 
-  throw error(404, 'some error in +page.server.ts in [category]');
+  error(404, 'some error in +page.server.ts in [category]');
 };

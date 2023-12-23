@@ -29,5 +29,5 @@ export const load: PageServerLoad = async () => {
     };
   }
 
-  throw error(404, 'some error from blog +page.server.ts');
+  error(404, 'some error from blog +page.server.ts');
 };

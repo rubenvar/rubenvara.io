@@ -10,6 +10,6 @@ export const load = (({ url }) => {
   ];
 
   if (urlsToRedirect.includes(url.pathname.replaceAll('/', ''))) {
-    throw redirect(308, '/');
+    redirect(308, '/');
   }
 }) satisfies LayoutServerLoad;

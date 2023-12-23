@@ -1,5 +1,5 @@
 import { mdsvex } from 'mdsvex';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import adapter from '@sveltejs/adapter-vercel';
 import mdsvexConfig from './mdsvex.config.js';
 

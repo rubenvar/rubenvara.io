@@ -19,5 +19,5 @@ export const load: PageServerLoad = async ({ params }) => {
     };
   }
 
-  throw error(404, 'some error in [slug]/+page.server.ts');
+  error(404, 'some error in [slug]/+page.server.ts');
 };
