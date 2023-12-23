@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Create "Sold" label for TN.
+
 ## [0.25.2] - 2023-12-23
 
 - Migrate to svelte/kit 2.
@@ -18,7 +20,7 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [0.25.0] - 2023-05-18
 
-- Add global styles for <details>.
+- Add global styles for `<details>`.
 - New post translated and published (react-query 9).
 - New drafts.
 

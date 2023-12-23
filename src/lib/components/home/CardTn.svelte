@@ -2,6 +2,7 @@
   import ProjectCard from './ProjectCard.svelte';
   import tnBrowser from '$lib/assets/images/tn-browser.webp';
   import tnIphone from '$lib/assets/images/tn-iphone.webp';
+  import SoldLabel from './SoldLabel.svelte';
 
   const techs = [
     'WordPress',
@@ -25,12 +26,15 @@
   iphone={tnIphone}
 >
   <p>
-    La creé en 2014 como página nicho de afiliados. Ahora es una guía completa
-    sobre aguas abiertas y natación, con más de 30k visitas al mes y
+    La creé en 2014 como página nicho de afiliados. Creció hasta ser una guía
+    completa sobre aguas abiertas y natación, con más de 30k visitas al mes y
     <strong>miles</strong> de lectores y suscriptores.
   </p>
   <p>
-    A su alrededor he creado un comparador de ofertas en Next.js y Prisma, un
-    grupo de FB con más de 15k usuarios, y un programa online en venta.
+    También creé un comparador de ofertas (Next.js y Prisma), un grupo de FB con
+    más de 15k usuarios, y un curso online. <strong
+      >Vendí este negocio en jul-2023</strong
+    >.
   </p>
+  <SoldLabel />
 </ProjectCard>
