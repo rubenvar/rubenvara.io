@@ -7,6 +7,7 @@
   export let techs: string[] = [];
   export let browser: string;
   export let iphone: string;
+  export let noLink: boolean = false;
 
   // --caa600
   // --tn500
@@ -18,8 +19,8 @@
 </script>
 
 <a
-  href="https://{title}"
-  target="_blank"
+  href={noLink ? '' : `https://${title}`}
+  target={noLink ? '_self' : '_blank'}
   style="--delay: {id.length * 0.2 + 1}s;"
 >
   <div
@@ -179,7 +180,9 @@
         }
         img {
           display: block;
-          transition: scale 0.3s, translate 0.3s;
+          transition:
+            scale 0.3s,
+            translate 0.3s;
         }
         .browser {
           rotate: -1deg;
@@ -211,7 +214,9 @@
     top: 0;
     right: 0;
     z-index: 1;
-    transition: scale 0.3s, translate 0.3s;
+    transition:
+      scale 0.3s,
+      translate 0.3s;
     &.browser {
       border-radius: var(--radius20);
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35);

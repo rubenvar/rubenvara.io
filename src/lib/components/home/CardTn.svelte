@@ -24,6 +24,7 @@
   {techs}
   browser={tnBrowser}
   iphone={tnIphone}
+  noLink
 >
   <p>
     La creé en 2014 como página nicho de afiliados. Creció hasta ser una guía
