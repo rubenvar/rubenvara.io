@@ -500,7 +500,7 @@ const MqttConnectButton = () => {
 
 ### App de ejemplo
 
-Para que lo veas más claro, [he creado una app muy sencilla](https://github.com/rubenvar/example-react-mqtt) que utiliza **el mismo código** que tienes en estos ejemplos.
+Para que lo veas más claro, [he creado una app muy sencilla](https://github.com/rubenvar/example-mqtt-react) que utiliza **el mismo código** que tienes en estos ejemplos.
 
 Puedes clonarla y problarla.
 
