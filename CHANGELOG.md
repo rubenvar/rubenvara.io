@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.27.0] - 2024-09-13
+
 - New post.
 - Update many dependencies.
 - Remove link in card.
