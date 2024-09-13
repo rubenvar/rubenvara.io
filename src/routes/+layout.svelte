@@ -68,9 +68,9 @@
       1fr min(var(--maxWidth), calc(100% - var(--gap50) * 2))
       1fr;
     grid-column-gap: var(--gap50);
+    margin-top: var(--gap60);
     > * {
       grid-column: 2;
     }
-    margin-top: var(--gap60);
   }
 </style>
