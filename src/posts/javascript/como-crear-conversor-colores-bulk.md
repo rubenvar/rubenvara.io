@@ -17,7 +17,7 @@ La otra tarde estaba diseñando la paleta de colores para una nueva web. Me enco
 
 <!-- <AlertBox type="success" title="Deberías usar HSL"> -->
 
-Como ya deberías saber, es muchísimo más fácil [crear nuevas paletas de colores usando hsl](https://rubenvara.io), además del resto de ventajas de trabajar con este formato.
+Como ya deberías saber, es muchísimo más fácil crear nuevas paletas de colores usando hsl, además del resto de ventajas de trabajar con este formato.
 
 <!-- </AlertBox> -->
 
