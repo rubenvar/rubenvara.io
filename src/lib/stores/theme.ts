@@ -23,7 +23,7 @@ theme.subscribe((value) => {
 
     // to cookie
     const oneYear = 60 * 60 * 24 * 365;
-    document.cookie = `theme=${value}; max-age=${oneYear}; path=/;`;
+    document.cookie = `theme=${value}; max-age=${oneYear}; path=/; SameSite=Strict;`;
 
     // update the html tag from the store
     document.documentElement.setAttribute('data-theme', value);
