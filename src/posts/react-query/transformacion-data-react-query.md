@@ -1,7 +1,7 @@
 ---
 title: Transformación de data en React Query
 seoTitle: "Transformar Data con React Query: Cómo y Dónde hacerlo para Optimizar tu App"
-description: Descubre las posibilidades para transformar data tras una solicitud con Raect Query, una tarea habitual e importante para mejorar tu app
+description: Descubre las posibilidades para transformar data tras una solicitud con React Query, una tarea habitual e importante para mejorar tu app
 date: 2022-09-28
 status: published
 original:
