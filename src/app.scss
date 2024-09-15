@@ -296,8 +296,8 @@ blockquote {
 button {
   cursor: pointer;
 }
-button:focus,
-a:focus {
+button:focus-visible,
+a:focus-visible {
   outline-style: solid;
   outline-width: 2px;
   outline-color: var(--focus);
