@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.28.0] - 2024-09-15
+
 - New drafts.
 - New (basic) dark theme: first approach.
 - Add some schema.org info in layout and blog posts: first approach.
