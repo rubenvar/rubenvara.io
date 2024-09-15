@@ -1,5 +1,6 @@
 <script>
   import { page } from '$app/stores';
+  import ThemeButton from './theme/ThemeButton.svelte';
 </script>
 
 <header>
@@ -7,9 +8,12 @@
     <h2>
       <a href="/">rubenvara.io</a>
     </h2>
-    {#if !$page.url.pathname.includes('/blog')}
-      <a href="/blog">Ir al blog</a>
-    {/if}
+    <div class="right">
+      <ThemeButton />
+      {#if !$page.url.pathname.includes('/blog')}
+        <a href="/blog">Ir al blog</a>
+      {/if}
+    </div>
   </div>
 </header>
 
@@ -44,12 +48,17 @@
           text-decoration: none;
         }
       }
-      a {
-        text-decoration: none;
-        color: var(--primary600);
-        line-height: 1;
-        &:hover {
-          color: var(--primary400);
+      .right {
+        display: flex;
+        gap: var(--gap60);
+        align-items: center;
+        a {
+          text-decoration: none;
+          color: var(--primary600);
+          line-height: 1;
+          &:hover {
+            color: var(--primary400);
+          }
         }
       }
     }

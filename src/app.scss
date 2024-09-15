@@ -66,6 +66,7 @@
   --danger400: hsl(353, 98%, 62%);
   --danger500: hsl(11, 93%, 44%);
   --danger600: hsl(353, 94%, 30%);
+  --updated500: hsl(39, 100%, 50%);
 
   --gap10: 4px;
   --gap20: 8px;
@@ -178,6 +179,12 @@
   --grey300: hsl(217, 15%, 27%);
   --grey200: hsl(220, 17%, 16%);
   --grey100: hsl(225, 20%, 8%);
+
+  --focus: hsl(39, 86%, 44%);
+
+  --announce500: hsl(189, 85%, 29%);
+  --note500: hsl(60, 92%, 31%);
+  --updated500: hsl(39, 86%, 44%);
 }
 html {
   font-family: var(--normalFont);
@@ -193,6 +200,10 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  transition:
+    background-color 0.25s,
+    border-color 0.25s,
+    color 0.25s;
 }
 body {
   -webkit-font-smoothing: antialiased;
@@ -364,7 +375,7 @@ main > * {
   @include variables.box;
 }
 
-svg.icon-tabler {
+.links svg.icon-tabler {
   vertical-align: sub;
   margin-right: var(--gap10);
   stroke-width: 1.5;

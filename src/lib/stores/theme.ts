@@ -1,8 +1,8 @@
 // https://rodneylab.com/using-local-storage-sveltekit/
+// https://scottspence.com/posts/cookie-based-theme-selection-in-sveltekit-with-daisyui
 import { browser } from '$app/environment';
+import type { Theme } from '$lib/utils/types';
 import { writable } from 'svelte/store';
-
-type Theme = 'dark' | 'light';
 
 let defaultValue: Theme = 'light';
 // use the system as the default
@@ -18,10 +18,15 @@ const theme = writable<Theme>(initialValue);
 
 theme.subscribe((value) => {
   if (browser) {
+    // to localStorage
     window.localStorage.setItem('theme', value);
 
-    // update the html tag from the store?
-    document.getElementsByTagName('html')[0].setAttribute('data-theme', value);
+    // to cookie
+    const oneYear = 60 * 60 * 24 * 365;
+    document.cookie = `theme=${value}; max-age=${oneYear}; path=/;`;
+
+    // update the html tag from the store
+    document.documentElement.setAttribute('data-theme', value);
   }
 });
 

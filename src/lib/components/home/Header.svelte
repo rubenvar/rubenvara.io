@@ -1,17 +1,30 @@
 <script lang="ts">
+  import ThemeButton from '../theme/ThemeButton.svelte';
+
   // separate the letters
   const letters = Array.from('Rubén Vara');
 </script>
 
-<h1>
-  {#each letters as letter}
-    <span class={letter === ' ' ? '💩' : `🚀 ${letter}`}>
-      {letter}
-    </span>
-  {/each}
-</h1>
+<div class="header">
+  <h1>
+    {#each letters as letter}
+      <span class={letter === ' ' ? '💩' : `🚀 ${letter}`}>
+        {letter}
+      </span>
+    {/each}
+  </h1>
+
+  <ThemeButton />
+</div>
 
 <style lang="scss">
+  .header {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: flex-start; */
+    align-items: flex-start;
+    padding-bottom: var(--gap50);
+  }
   @keyframes changeColor {
     0% {
       color: var(--primary400);
@@ -36,6 +49,7 @@
     font-family: var(--logoFont);
     font-weight: 700;
     font-size: var(--fz150);
+    margin-bottom: 0;
     /* letter-spacing: -1px; */
     color: var(--primary500);
     /* this would chose a color randomly for each letter, could be done in js? */
@@ -44,7 +58,7 @@
       /* color animation only in wider screens  */
       animation: changeColor 11s infinite alternate;
     }
-    @media only screen and (max-width: 370px) {
+    @media only screen and (max-width: 410px) {
       font-size: var(--fz140);
     }
     span {

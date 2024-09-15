@@ -14,9 +14,9 @@
   import Footer from '$lib/components/Footer.svelte';
   import PageTransition from '$lib/components/PageTransition.svelte';
   import { browser, dev } from '$app/environment';
-  import { theme } from '$lib/stores/theme';
   import { onMount } from 'svelte';
   import { siteUrl } from '$lib/config';
+  import { theme } from '$lib/stores/theme';
 
   export let data: LayoutData;
 
@@ -34,10 +34,7 @@
   const config = '{"allow_local": true, "no_onload": true}';
 
   onMount(() => {
-    // put the theme from the store into the html tag
-    document.getElementsByTagName('html')[0].setAttribute('data-theme', $theme);
-
-    // listen for changes in the preferred theme from system
+    // add eventListener: listen for changes in the preferred theme from system
     window
       .matchMedia('(prefers-color-scheme: dark)')
       .addEventListener('change', (e) => {
@@ -77,12 +74,6 @@
   {#if $page.url.pathname !== '/'}
     <Header />
   {/if}
-
-  <button
-    on:click={() => {
-      theme.set($theme === 'dark' ? 'light' : 'dark');
-    }}>{$theme === 'dark' ? 'light' : 'dark'}</button
-  >
 
   <main>
     <slot />

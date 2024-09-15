@@ -18,7 +18,7 @@
   // padding-bottom: 0; /* ಠ_ಠ */
   border-radius: var(--radius10);
   margin-bottom: var(--gap60);
-  background-color: #fff;
+  background-color: var(--white);
   > *:last-child {
     margin-bottom: 0;
   }
@@ -27,7 +27,7 @@
     border-color: var(--note500);
   }
   &.updated {
-    border-color: orange;
+    border-color: var(--updated500);
   }
   &.recuerda {
     border-color: var(--announce500);

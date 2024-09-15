@@ -1,3 +1,5 @@
+import type { themes } from '$lib/config';
+
 export type PostMeta = {
   // required on md file creation
   title: string;
@@ -46,3 +48,5 @@ export type Category = {
   count: number;
   lastmod: string;
 };
+
+export type Theme = (typeof themes)[number];
