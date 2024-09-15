@@ -12,6 +12,10 @@
   $: categoryCount = data.categoryCount; // used in post meta to show link to category or only text
 </script>
 
+<svelte:head>
+  {@html `<script type="application/ld+json">${JSON.stringify(data.schema)}${'<'}/script>`}
+</svelte:head>
+
 {#if post}
   <header>
     <h1>

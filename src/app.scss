@@ -5,8 +5,9 @@
 
   --normalFont: 'DM Sans', --apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --specialFont: 'Baloo 2 Variable', --apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --specialFont: 'Baloo 2 Variable', --apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
   --logoFont: 'Mansalva', cursive;
   --codeFont: 'Victor Mono', PT Mono, Consolas, Monaco, 'Andale Mono',
     'Ubuntu Mono', monospace;
@@ -90,7 +91,7 @@
   --fz90: 2.2rem;
   --fz100: 2.55rem;
   --fz110: 2.7rem;
-  --fz140: 3.0rem;
+  --fz140: 3rem;
   --fz150: 3.8rem;
 
   --focus: orange;
@@ -153,6 +154,30 @@
   --radius10: 3px;
   --radius20: 6px;
   --radius30: 11px;
+}
+[data-theme='dark'] {
+  --white: hsl(0, 20%, 5%);
+  --black: hsl(0, 0%, 99%);
+
+  --primary900: hsl(25, 100%, 96%);
+  --primary800: hsl(20, 100%, 88%);
+  --primary700: hsl(5, 100%, 80%);
+  --primary600: hsl(0, 87%, 65%);
+  --primary500: hsl(0, 72%, 50%);
+  --primary400: hsl(0, 73%, 40%);
+  --primary300: hsl(0, 85%, 28%);
+  --primary200: hsl(350, 90%, 18%);
+  --primary100: hsl(340, 100%, 8%);
+
+  --grey900: hsl(200, 30%, 94%);
+  --grey800: hsl(205, 20%, 88%);
+  --grey700: hsl(210, 12%, 74%);
+  --grey600: hsl(210, 8%, 62%);
+  --grey500: hsl(210, 6%, 50%);
+  --grey400: hsl(210, 8%, 38%);
+  --grey300: hsl(217, 15%, 27%);
+  --grey200: hsl(220, 17%, 16%);
+  --grey100: hsl(225, 20%, 8%);
 }
 html {
   font-family: var(--normalFont);
@@ -347,7 +372,7 @@ svg.icon-tabler {
 
 details {
   margin: 0 0 var(--gap60);
-  &[open=""] summary {
+  &[open=''] summary {
     margin: 0 0 var(--gap30);
   }
   p {
