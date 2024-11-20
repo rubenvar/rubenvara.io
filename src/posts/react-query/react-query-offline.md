@@ -18,7 +18,7 @@ Hay muchas formas de crear promesas, pero claramente el caso de uso más frecuen
 
 ## Problemas en la v3
 
-React Query está muy bien equipado para gestionar situaciones offline. Al tener una capa de cacheado, mientras el caché esté lleno, puedes seguir trabajado aunque no tengas conexión de red. Veamos un par de situaciones donde la v3 no funcionaba como se esperaría. Usaremos [el ejemplo básico de la documentación](https://react-query.tanstack.com/examples/basic):
+React Query está muy bien equipado para gestionar situaciones offline. Al tener una capa de cacheado, mientras el caché esté lleno, puedes seguir trabajando aunque no tengas conexión de red. Veamos tres casos donde la v3 no funcionaba como se esperaría. Usaremos [el ejemplo básico de la documentación](https://react-query.tanstack.com/examples/basic):
 
 ### 1. Sin data en el caché
 
