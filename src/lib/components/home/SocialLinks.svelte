@@ -19,7 +19,7 @@
   <a href="mailto:hey@rubenvara.io"><IconMail />Contacto</a>
 </div>
 
-<style lang="scss">
+<style>
   p {
     margin-top: 0;
     margin-bottom: var(--gap40);

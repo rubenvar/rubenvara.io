@@ -19,7 +19,7 @@
   <slot />
 </div>
 
-<style lang="scss">
+<style>
   .box {
     position: relative;
   }

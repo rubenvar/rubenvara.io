@@ -14,7 +14,7 @@
   <a class:active={$page.url.pathname === '/about/'} href="/about">Sobre mí</a>
 </nav>
 
-<style lang="scss">
+<style>
   nav {
     display: flex;
     justify-content: center;

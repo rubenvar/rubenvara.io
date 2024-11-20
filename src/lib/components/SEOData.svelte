@@ -94,7 +94,7 @@
   </div>
 {/if}
 
-<style lang="scss">
+<style>
   div {
     margin-top: calc(-1 * var(--gap100));
     margin-bottom: var(--gap120);

@@ -8,7 +8,7 @@
   {#if content}<p>{content}</p>{/if}
 </header>
 
-<style lang="scss">
+<style>
   header {
     margin-bottom: var(--gap50);
     h1 {

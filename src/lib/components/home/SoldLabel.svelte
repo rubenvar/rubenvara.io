@@ -1,6 +1,6 @@
 <div><p>Vendido!</p></div>
 
-<style lang="scss">
+<style>
   div {
     background-color: #fffd;
     border-radius: var(--radius20);

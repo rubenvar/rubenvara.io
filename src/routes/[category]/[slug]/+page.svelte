@@ -13,6 +13,7 @@
 </script>
 
 <svelte:head>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html `<script type="application/ld+json">${JSON.stringify(data.schema)}${'<'}/script>`}
 </svelte:head>
 
@@ -33,6 +34,7 @@
     <PostOriginal original={post.original} seriesName={post.series?.name} />
   {/if}
 
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html post.content}
 
   {#if post.series}
@@ -57,7 +59,7 @@
 {/if}
 
 <!-- <PostNav prev={prev} next={next} /> -->
-<style lang="scss">
+<style>
   header {
     margin-top: var(--gap50);
     margin-bottom: var(--gap90);

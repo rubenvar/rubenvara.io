@@ -4,6 +4,10 @@ date: 2024-08-10
 status: draft
 ---
 
+<script>
+  import Box from '$lib/components/Box.svelte';
+</script>
+
 Si usas SSR, aunque guardes en `localStorage`, tendrás un problem: Evitar FOUC (Flash of Unstyled Content):
 
 Persistir en cookies, para leer las cookies en un server hook.
@@ -27,6 +31,12 @@ export async function handle({ event, resolve }) {
   });
 }
 ```
+
+<Box type="info">
+
+Quizás esto sea todo lo que necesitas. Aunque recuerda que si recibes muchos mensajes, tu array se hará gigante. Tendrías que gestionarlo e ir borrando mensajes, etc.
+
+</Box>
 
 ```ts
 import type { Theme } from './utils/types';

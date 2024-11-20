@@ -34,7 +34,7 @@
   </p>
 </ProjectCard>
 
-<style lang="scss">
+<style>
   p {
     margin-bottom: var(--gap40);
   }

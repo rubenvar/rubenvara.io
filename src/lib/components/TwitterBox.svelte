@@ -36,33 +36,32 @@
   </div>
 </div>
 
-<style lang="scss">
-  /* make a gradient border with inner and outer divs */
+<style>
   .outer {
     margin-top: var(--gap110);
     background: linear-gradient(315deg, hsl(203, 89%, 53%), hsl(203, 89%, 83%));
     border-radius: var(--radius10);
     padding: 4px;
-    .inner {
-      border-radius: var(--radius10);
-      padding: var(--gap30);
-      position: relative;
-      background: var(--white);
-      svg {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-      }
-      p {
-        color: var(--grey700);
-        margin: 0;
-        a {
-          color: hsl(203, 99%, 23%);
-          &:hover {
-            color: inherit;
-          }
-        }
-      }
-    }
+  }
+  .inner {
+    border-radius: var(--radius10);
+    padding: var(--gap30);
+    position: relative;
+    background: var(--white);
+  }
+  svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  p {
+    color: var(--grey700);
+    margin: 0;
+  }
+  a {
+    color: hsl(203, 99%, 23%);
+  }
+  a:hover {
+    color: inherit;
   }
 </style>

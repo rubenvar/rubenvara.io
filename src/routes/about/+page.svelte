@@ -113,7 +113,7 @@
 
 <LastDecadeText />
 
-<style lang="scss">
+<style>
   .tags {
     display: flex;
     flex-wrap: wrap;

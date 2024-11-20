@@ -2,11 +2,11 @@
 <div class="topbar">
   <!-- <div class="movewidth" /> -->
   <div class="wrapper">
-    <div class="mover" />
+    <div class="mover"></div>
   </div>
 </div>
 
-<style lang="scss">
+<style>
   @keyframes move {
     0%,
     5% {

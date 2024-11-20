@@ -12,7 +12,8 @@
   <a href="/{post.category}/{post.slug}">
     <div>
       <h2>
-        {#if dev && post.status === 'draft'}Draft: {/if}
+        {#if dev && post.status === 'draft'}Draft:
+        {/if}
         {post.title}
       </h2>
       {#if post.description}
@@ -38,7 +39,7 @@
   </a>
 </article>
 
-<style lang="scss">
+<style>
   a {
     display: block;
     text-decoration: none;

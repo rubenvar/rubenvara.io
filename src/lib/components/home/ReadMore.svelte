@@ -4,7 +4,7 @@
 
 <p class="read-more"><a {href}><slot /></a></p>
 
-<style lang="scss">
+<style>
   .read-more {
     text-align: right;
     a {

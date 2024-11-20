@@ -9,11 +9,11 @@
 </script>
 
 <span class="tag">
-  <span class="dot" style="background-color: var(--{techName});" />
+  <span class="dot" style="background-color: var(--{techName});"></span>
   {tech}
 </span>
 
-<style lang="scss">
+<style>
   .tag {
     color: var(--grey700);
     display: block;

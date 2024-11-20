@@ -14,7 +14,7 @@
 
 <ReadMore href="/blog">Ver todos en el blog ⟶</ReadMore>
 
-<style lang="scss">
+<style>
   .blog-intro {
     color: var(--grey700);
     margin: 0 0 var(--gap90);

@@ -13,7 +13,7 @@
   {#if $theme === 'dark'}<IconSun />{:else}<IconMoonStars />{/if}
 </button>
 
-<style lang="scss">
+<style>
   button {
     background: none;
     border: none;

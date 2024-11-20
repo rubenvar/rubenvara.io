@@ -17,7 +17,7 @@
   </div>
 </header>
 
-<style lang="scss">
+<style>
   header {
     background: var(--white);
     margin: 0;

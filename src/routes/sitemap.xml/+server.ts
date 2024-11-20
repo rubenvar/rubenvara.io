@@ -51,8 +51,10 @@ export const GET: RequestHandler = async ({ url }) => {
     .map(
       (route) => `<url>
         <loc>${domain}/${route.slug}/</loc>${
-        route.lastmod ? `<lastmod>${route.lastmod.split('T')[0]}</lastmod>` : ''
-      }
+          route.lastmod
+            ? `<lastmod>${route.lastmod.split('T')[0]}</lastmod>`
+            : ''
+        }
       </url>`
     )
     .join('');

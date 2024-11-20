@@ -13,7 +13,7 @@
     checked={showLong}
     on:change={() => (showLong = !showLong)}
   />
-  <span aria-hidden="true" class="switch" />
+  <span aria-hidden="true" class="switch"></span>
   <span class={showLong ? 'text selected' : 'text'}> Versión extendida </span>
 </label>
 
@@ -61,7 +61,7 @@
   </p>
 {/if}
 
-<style lang="scss">
+<style>
   label {
     /* props to Sara Soueidan (https://sarasoueidan.com) for the component design */
     position: relative;
@@ -91,7 +91,9 @@
       top: 25%;
       z-index: 1;
       &:focus + .switch {
-        box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--focus);
+        box-shadow:
+          0 0 0 2px var(--white),
+          0 0 0 4px var(--focus);
         outline: 3px solid transparent;
       }
       &:focus:not(:focus-visible) + .switch {

@@ -20,7 +20,7 @@
   </div>
 </footer>
 
-<style lang="scss">
+<style>
   footer {
     /* can't make this work (create a top angle) */
     /* --padding: calc(var(--width) * var(--magicNumber)); */

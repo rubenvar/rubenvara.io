@@ -8,7 +8,7 @@
 
   import { page } from '$app/stores';
   import type { LayoutData } from './$types';
-  import '../app.scss';
+  import '../app.css';
   import TopBar from '$lib/components/TopBar.svelte';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
@@ -64,6 +64,7 @@
     async
     src="//gc.zgo.at/count.js"
   ></script>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html `<script type="application/ld+json">${JSON.stringify(websiteSchema)}${'<'}/script>`}
 </svelte:head>
 
@@ -82,7 +83,7 @@
   <Footer />
 </PageTransition>
 
-<style lang="scss">
+<style>
   main {
     position: relative;
     display: grid;
@@ -91,7 +92,7 @@
       1fr;
     grid-column-gap: var(--gap50);
     margin-top: var(--gap60);
-    > * {
+    > :global(*) {
       grid-column: 2;
     }
   }

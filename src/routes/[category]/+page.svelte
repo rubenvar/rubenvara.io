@@ -25,7 +25,7 @@
   <ListedPost {post} inCategoryPage />
 {/each}
 
-<style lang="scss">
+<style>
   header {
     margin: 0 0 var(--gap100);
     h1 {

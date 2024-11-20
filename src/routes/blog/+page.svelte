@@ -91,7 +91,7 @@
   {/if}
 {/each}
 
-<style lang="scss">
+<style>
   header {
     margin: 0 0 var(--gap100);
     p {

@@ -61,7 +61,7 @@
 <h2 class="section-title">Posts más recientes</h2>
 <LatestPosts />
 
-<style lang="scss">
+<style>
   h2 {
     &.title {
       margin-top: var(--gap50);

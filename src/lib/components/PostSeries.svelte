@@ -34,7 +34,7 @@
   </div>
 {/if}
 
-<style lang="scss">
+<style>
   h2 {
     color: var(--grey700);
   }

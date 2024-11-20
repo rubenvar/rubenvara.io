@@ -4,12 +4,12 @@
 // https://github.com/mattjennings/sveltekit-blog-template
 import { dev } from '$app/environment';
 import type { Category, Post, PostMeta } from '$lib/utils/types';
+import type { Component } from 'svelte';
+import { render } from 'svelte/server';
 
 // type generic for the response of import.meta.glob
 type GlobResp = {
-  default: {
-    render: () => { html: string; css: { code: string }; head: string };
-  };
+  default: Component;
   metadata: PostMeta;
 };
 
@@ -37,9 +37,9 @@ export async function getAllPosts(options?: Options) {
       const { metadata } = resolvedPost;
 
       if (dev) {
-        // if dev, get content for link counter
-        const { html: content } = resolvedPost.default.render();
-        // if dev, return post with content
+        // if dev, get content for link counter and return it
+        // const { html: content } = resolvedPost.default.render();
+        const { body: content } = render(resolvedPost.default);
         return { ...metadata, content, category: cat, slug };
       }
 
@@ -194,7 +194,7 @@ export async function getSinglePost(
   const resolvedPost = await postResolver();
 
   const { metadata } = resolvedPost;
-  const { html: content } = resolvedPost.default.render();
+  const { body: content } = render(resolvedPost.default);
 
   // metadata of posts in a series
   let postsInSeries: Post[] | undefined;

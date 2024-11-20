@@ -136,7 +136,7 @@ Quizás esto sea todo lo que necesitas. Aunque recuerda que si recibes muchos me
 
 Algo más complejo sería guardar un objecto por cada mensaje, con el `timestamp` por ejemplo.
 
-En mi caso, he integrado todo esto con [`react-query`](/react-query), y en el _callback_ al recibir un mensaje, lo añado manualmente al caché y no lo mantengo en ningún otro estado. Aunque eso es otra historia.
+En mi caso, he integrado todo esto con [`react-query`](/react-query), y en el *callback* al recibir un mensaje, lo añado manualmente al caché y no lo mantengo en ningún otro estado. Aunque eso es otra historia.
 
 ### Autoconectar
 
@@ -309,7 +309,7 @@ async function mqttDisconnect() {
 
 ### Suscribir
 
-Para recibir un mensaje en un _topic_, necesitas previamente haberte suscrito.
+Para recibir un mensaje en un *topic*, necesitas previamente haberte suscrito.
 
 ```ts
 // suscribir. el topic se pasa como parámetro
@@ -370,7 +370,7 @@ Recuerda que puedes publicar un mensaje en un topic sin estar suscrito a este. T
 
 En este ejemplo, básicamente son funciones que envuelven los métodos que ya expone MQTT.js. Quizás te parezca que no tiene mucho sentido, pero en cada una de estas funciones podrías tener lógica adicional relativa a tu app:
 
-- Validar que el topic esté en una lista de topics _permitidos_.
+- Validar que el topic esté en una lista de topics *permitidos*.
 - Validar la estructura/caracteres/etc. del mensaje a publicar.
 - Loguear en cada función, a consola/archivo/endpoint/etc.
 - Devolver una respuesta que después usarías para mostrar una confirmación al usuario.

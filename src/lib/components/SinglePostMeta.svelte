@@ -45,7 +45,7 @@
   </span>
 </p>
 
-<style lang="scss">
+<style>
   .post-meta {
     margin: 0;
     display: flex;

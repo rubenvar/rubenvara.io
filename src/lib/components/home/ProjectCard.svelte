@@ -64,7 +64,7 @@
   />
 </a>
 
-<style lang="scss">
+<style>
   @keyframes floatIphone {
     0% {
       transform: translateX(0) translateY(0);
@@ -162,7 +162,7 @@
       h3 {
         margin-top: 0;
         margin-bottom: var(--gap40);
-        word-break: break-word; // break title (url) if too long
+        word-break: break-word; /* break title (url) if too long */
         font-weight: 450;
       }
       .mobile-images {

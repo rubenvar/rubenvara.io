@@ -12,14 +12,7 @@ const config = {
     version: { name: process.env.npm_package_version },
   },
   extensions: ['.svelte', ...mdsvexConfig.extensions],
-  preprocess: [
-    vitePreprocess({
-      scss: {
-        prependData: '@use "src/variables.scss";',
-      },
-    }),
-    mdsvex(mdsvexConfig),
-  ],
+  preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
 };
 
 export default config;
