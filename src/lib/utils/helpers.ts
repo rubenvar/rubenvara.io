@@ -1,7 +1,8 @@
 import wordCounter from 'word-counting';
 import type { CountedLink, CountWords, Post } from './types';
 
-const linkRegex = /<a href="(.*?)"( rel="nofollow")?>/g;
+// const linkRegex = /<a href="(.*?)"( rel="nofollow")?>/g;
+const linkRegex = /href="([^"]+)"/g;
 
 // TODO improve this function, maybe a regex, it's not really that resilient... 😅
 const isExternal = (l: string) =>

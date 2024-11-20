@@ -32,49 +32,49 @@
           class:has-inner={linkedFrom.length >= 1}
           class:dang={linkedFrom.length < 1}
           class:succ={linkedFrom.length >= 1}
-          on:click={() => (showFrom = !showFrom)}
-          on:keypress={() => (showFrom = !showFrom)}
         >
-          Linked from {linkedFrom.length} internal
-          {#if linkedFrom.length > 0 && showFrom}
-            <ul>
-              {#each linkedFrom as l}
-                <li>{l.slug}</li>
-              {/each}
-            </ul>
-          {/if}
+          <button on:click={() => (showFrom = !showFrom)}>
+            Linked from {linkedFrom.length} internal
+            {#if linkedFrom.length > 0 && showFrom}
+              <ul>
+                {#each linkedFrom as l}
+                  <li>{l.slug}</li>
+                {/each}
+              </ul>
+            {/if}
+          </button>
         </li>
         <li
           class:has-inner={link.internalTotal >= 1}
           class:warn={link.internalTotal < 1}
           class:succ={link.internalTotal >= 1}
-          on:click={() => (showInternal = !showInternal)}
-          on:keypress={() => (showInternal = !showInternal)}
         >
-          Links {link.internalTotal} internal
-          {#if link.internalTotal > 0 && showInternal}
-            <ul>
-              {#each link.internal as l}
-                <li>{l}</li>
-              {/each}
-            </ul>
-          {/if}
+          <button on:click={() => (showInternal = !showInternal)}>
+            Links {link.internalTotal} internal
+            {#if link.internalTotal > 0 && showInternal}
+              <ul>
+                {#each link.internal as l}
+                  <li>{l}</li>
+                {/each}
+              </ul>
+            {/if}
+          </button>
         </li>
         <li
           class:has-inner={link.externalTotal >= 1}
           class:dang={link.externalTotal < 1}
           class:succ={link.externalTotal >= 1}
-          on:click={() => (showExternal = !showExternal)}
-          on:keypress={() => (showExternal = !showExternal)}
         >
-          Links {link.externalTotal} external.
-          {#if link.externalTotal > 0 && showExternal}
-            <ul>
-              {#each link.external as l}
-                <li>{l}</li>
-              {/each}
-            </ul>
-          {/if}
+          <button on:click={() => (showExternal = !showExternal)}>
+            Links {link.externalTotal} external.
+            {#if link.externalTotal > 0 && showExternal}
+              <ul>
+                {#each link.external as l}
+                  <li>{l}</li>
+                {/each}
+              </ul>
+            {/if}
+          </button>
         </li>
       </ul>
     {/if}
@@ -125,6 +125,18 @@
         }
         &.dang {
           color: var(--danger600);
+        }
+        button {
+          font-size: inherit;
+          background: none;
+          border: none;
+          box-shadow: none;
+          display: block;
+          text-align: left;
+          color: inherit;
+          width: 100%;
+          padding: 0;
+          line-height: inherit;
         }
       }
     }
