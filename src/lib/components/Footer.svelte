@@ -1,4 +1,5 @@
 <script>
+  import { version } from '$app/environment';
   import Nav from './Nav.svelte';
   // const angle = -3;
   // calculate magic number
@@ -12,10 +13,8 @@
 <footer>
   <div class="wrapper">
     <Nav />
-    <!-- svelte-ignore missing-declaration -->
     <p>
-      <!-- eslint-disable-next-line no-undef -->
-      v{__PKG_VERSION__} · ©{new Date().getFullYear()} rubenvara.io ·{' '}
+      v{version} · ©{new Date().getFullYear()} rubenvara.io ·{' '}
       <a href="mailto:hey@rubenvara.io">Contacto</a>
     </p>
   </div>

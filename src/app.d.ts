@@ -20,5 +20,3 @@ declare interface Window {
 }
 
 declare module 'dayjs/locale/es.js';
-
-declare const __PKG_VERSION__: string;

@@ -9,6 +9,7 @@ const config = {
     adapter: adapter({
       runtime: 'edge',
     }),
+    version: { name: process.env.npm_package_version },
   },
   extensions: ['.svelte', ...mdsvexConfig.extensions],
   preprocess: [

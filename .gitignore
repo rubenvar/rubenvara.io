@@ -1,14 +1,26 @@
-.DS_Store
 node_modules
-build/
-functions/
-.svelte-kit/
-package/
+
+# Output
+.output
+.vercel
+/.svelte-kit
+/build
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
 .env
 .env.*
 !.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
 .vscode/
+
 IDEAS.md
 DOCS.md
-.netlify/
-.vercel
