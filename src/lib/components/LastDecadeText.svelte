@@ -1,6 +1,7 @@
 <script>
   import { fade } from 'svelte/transition';
-  let showLong = false;
+
+  let showLong = $state(false);
 </script>
 
 <h2 class="section-title">Durante la década pasada...</h2>
@@ -11,7 +12,7 @@
     id="toggler"
     class="checkbox"
     checked={showLong}
-    on:change={() => (showLong = !showLong)}
+    onchange={() => (showLong = !showLong)}
   />
   <span aria-hidden="true" class="switch"></span>
   <span class={showLong ? 'text selected' : 'text'}> Versión extendida </span>

@@ -6,10 +6,14 @@
   import TwitterBox from '$lib/components/TwitterBox.svelte';
   import type { PageData } from './$types';
 
-  export let data: PageData;
+  interface Props {
+    data: PageData;
+  }
 
-  $: post = data.post;
-  $: categoryCount = data.categoryCount; // used in post meta to show link to category or only text
+  let { data }: Props = $props();
+
+  let post = $derived(data.post);
+  let categoryCount = $derived(data.categoryCount); // used in post meta to show link to category or only text
 </script>
 
 <svelte:head>
@@ -63,8 +67,8 @@
   header {
     margin-top: var(--gap50);
     margin-bottom: var(--gap90);
-    h1 {
-      color: var(--primary600);
-    }
+  }
+  h1 {
+    color: var(--primary600);
   }
 </style>

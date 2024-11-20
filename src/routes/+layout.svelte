@@ -14,22 +14,29 @@
   import Footer from '$lib/components/Footer.svelte';
   import PageTransition from '$lib/components/PageTransition.svelte';
   import { browser, dev } from '$app/environment';
-  import { onMount } from 'svelte';
+  import { onMount, type Snippet } from 'svelte';
   import { siteUrl } from '$lib/config';
   import { theme } from '$lib/stores/theme';
 
-  export let data: LayoutData;
+  interface Props {
+    data: LayoutData;
+    children: Snippet;
+  }
+
+  let { data, children }: Props = $props();
 
   // for page transitions
-  $: key = data.key;
+  let key = $derived(data.key);
 
   // goatcounter analytics
-  $: if (browser && window.goatcounter) {
-    window.goatcounter.count({
-      path: key,
-      event: false,
-    });
-  }
+  $effect(() => {
+    if (browser && window.goatcounter) {
+      window.goatcounter.count({
+        path: key,
+        event: false,
+      });
+    }
+  });
 
   const config = '{"allow_local": true, "no_onload": true}';
 
@@ -77,7 +84,7 @@
   {/if}
 
   <main>
-    <slot />
+    {@render children()}
   </main>
 
   <Footer />

@@ -1,6 +1,13 @@
-<script>
+<script lang="ts">
+  import type { Snippet } from 'svelte';
   import { fly } from 'svelte/transition';
-  export let refresh = '';
+
+  interface Props {
+    refresh: string;
+    children: Snippet;
+  }
+
+  let { refresh, children }: Props = $props();
 </script>
 
 {#key refresh}
@@ -9,6 +16,6 @@
     in:fly={{ duration: 300, delay: 150 }}
     out:fly={{ duration: 300 }}
   >
-    <slot />
+    {@render children()}
   </div>
 {/key}

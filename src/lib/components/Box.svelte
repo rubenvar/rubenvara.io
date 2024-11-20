@@ -1,15 +1,21 @@
 <script lang="ts">
+  import type { Snippet } from 'svelte';
   import BoxRecuerda from './boxes/BoxRecuerda.svelte';
 
-  export let type: 'recuerda' | 'translated' | 'updated' | 'info' = 'info';
+  interface Props {
+    type?: 'recuerda' | 'translated' | 'updated' | 'info';
+    children: Snippet;
+  }
+
+  let { type = 'info', children }: Props = $props();
 </script>
 
 {#if type === 'recuerda'}
   <BoxRecuerda>
-    <slot />
+    {@render children()}
   </BoxRecuerda>
 {:else}
   <div class="box {type}">
-    <slot />
+    {@render children()}
   </div>
 {/if}

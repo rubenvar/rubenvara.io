@@ -3,15 +3,14 @@
   import HomeSpanish from '$lib/components/home/HomeSpanish.svelte';
   import { siteUrl } from '$lib/config';
   import { latestPosts } from '$lib/stores/latestPosts';
-  import type { PageData } from './$types';
 
-  export let data: PageData;
+  let { data } = $props();
 
-  $: homePosts = data.homePosts;
-
-  $: if (homePosts) {
-    latestPosts.set(homePosts);
-  }
+  $effect(() => {
+    if (data) {
+      latestPosts.set(data.homePosts);
+    }
+  });
 
   const entitySchema = {
     '@type': 'Person',
@@ -34,6 +33,7 @@
 </script>
 
 <svelte:head>
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html `<script type="application/ld+json">${JSON.stringify(entitySchema)}${'<'}/script>`}
 </svelte:head>
 

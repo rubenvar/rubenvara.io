@@ -1,5 +1,9 @@
 <script lang="ts">
-  export let twitter: string | undefined;
+  interface Props {
+    twitter: string | undefined;
+  }
+
+  let { twitter }: Props = $props();
 </script>
 
 <div class="outer">

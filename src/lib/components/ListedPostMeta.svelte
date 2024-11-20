@@ -1,16 +1,24 @@
 <script lang="ts">
-  import { dev } from '$app/environment';
-
   // only used in listed post
   // listed posts appear in home, /blog, and /[category]
+  import { dev } from '$app/environment';
   import type { Post } from '$lib/utils/types';
   import dayjs from 'dayjs';
   import 'dayjs/locale/es.js';
 
-  export let date: Post['date'];
-  export let updated: Post['updated'] = undefined;
-  export let category: Post['category'];
-  export let inCategoryPage = false; // is the listsed post it in category page?
+  interface Props {
+    date: Post['date'];
+    updated?: Post['updated'];
+    category: Post['category'];
+    inCategoryPage?: boolean; // is the component being used in the category page?
+  }
+
+  let {
+    date,
+    updated = undefined,
+    category,
+    inCategoryPage = false,
+  }: Props = $props();
 
   const dateFormat = dev ? 'D MMM YYYY' : 'MMMM YYYY';
 </script>

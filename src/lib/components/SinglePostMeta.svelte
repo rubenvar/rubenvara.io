@@ -4,12 +4,21 @@
   import dayjs from 'dayjs';
   import 'dayjs/locale/es.js';
 
-  export let date: Post['date'];
-  export let updated: Post['updated'] = undefined;
-  export let category: Post['category'];
-  export let categoryCount = 0; // how many posts in category
+  interface Props {
+    date: Post['date'];
+    updated: Post['updated'];
+    category: Post['category'];
+    categoryCount: number | undefined; // how many posts in category
+    atBottom?: boolean; // is it at single post bottom?
+  }
 
-  export let atBottom = false; // is it at single post bottom?
+  let {
+    date,
+    updated,
+    category,
+    categoryCount = 0,
+    atBottom = false,
+  }: Props = $props();
 
   const dateFormat = 'D [de] MMMM, YYYY';
 </script>

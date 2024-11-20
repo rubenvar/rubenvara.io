@@ -1,9 +1,14 @@
 <script lang="ts">
   import type { Post } from '$lib/utils/types';
 
-  export let currentPostIndex: number;
-  export let seriesName: string;
-  export let postsInSeries: Post['postsInSeries'] = [];
+  interface Props {
+    currentPostIndex: number;
+    seriesName: string;
+    postsInSeries: Post['postsInSeries'];
+  }
+
+  let { currentPostIndex, seriesName, postsInSeries }: Props = $props();
+
   const allPosts = postsInSeries?.sort(
     (a, b) => (a.series?.index || 0) - (b.series?.index || 0)
   );
@@ -40,6 +45,7 @@
   }
   p {
     color: var(--grey700);
+
     span {
       color: var(--grey900);
     }

@@ -2,10 +2,14 @@
   import { dev } from '$app/environment';
   import type { CountedLink, CountWords } from '$lib/utils/types';
 
-  export let allLinks: CountedLink[];
-  export let link: CountedLink | undefined;
-  export let allWords: CountWords[];
-  export let words: CountWords | undefined;
+  interface Props {
+    allLinks: CountedLink[];
+    link: CountedLink | undefined;
+    allWords: CountWords[];
+    words: CountWords | undefined;
+  }
+
+  let { allLinks, link, allWords, words }: Props = $props();
 
   const linkedFrom = link
     ? allLinks.filter((l) => link && l.internal.includes(`${link.slug}/`))
@@ -19,9 +23,9 @@
     ((currentIndex + 1) * 100) / allWordCounts.length
   );
 
-  let showFrom = true;
-  let showInternal = true;
-  let showExternal = false;
+  let showFrom = $state(true);
+  let showInternal = $state(true);
+  let showExternal = $state(false);
 </script>
 
 {#if dev && (link || words)}
@@ -33,7 +37,7 @@
           class:dang={linkedFrom.length < 1}
           class:succ={linkedFrom.length >= 1}
         >
-          <button on:click={() => (showFrom = !showFrom)}>
+          <button onclick={() => (showFrom = !showFrom)}>
             Linked from {linkedFrom.length} internal
             {#if linkedFrom.length > 0 && showFrom}
               <ul>
@@ -49,7 +53,7 @@
           class:warn={link.internalTotal < 1}
           class:succ={link.internalTotal >= 1}
         >
-          <button on:click={() => (showInternal = !showInternal)}>
+          <button onclick={() => (showInternal = !showInternal)}>
             Links {link.internalTotal} internal
             {#if link.internalTotal > 0 && showInternal}
               <ul>
@@ -65,7 +69,7 @@
           class:dang={link.externalTotal < 1}
           class:succ={link.externalTotal >= 1}
         >
-          <button on:click={() => (showExternal = !showExternal)}>
+          <button onclick={() => (showExternal = !showExternal)}>
             Links {link.externalTotal} external.
             {#if link.externalTotal > 0 && showExternal}
               <ul>

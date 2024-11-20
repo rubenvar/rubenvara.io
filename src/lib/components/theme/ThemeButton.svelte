@@ -9,7 +9,7 @@
   }
 </script>
 
-<button class="theme-toggle" on:click={toggleTheme}>
+<button onclick={toggleTheme}>
   {#if $theme === 'dark'}<IconSun />{:else}<IconMoonStars />{/if}
 </button>
 

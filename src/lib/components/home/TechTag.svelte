@@ -1,5 +1,9 @@
 <script lang="ts">
-  export let tech: string;
+  interface Props {
+    tech: string;
+  }
+
+  let { tech }: Props = $props();
 
   const techName = tech
     .toLowerCase()

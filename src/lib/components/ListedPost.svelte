@@ -3,9 +3,13 @@
   import ListedPostMeta from './ListedPostMeta.svelte';
   import type { Post } from '$lib/utils/types';
 
-  export let post: Post;
-  export let inCategoryPage = false;
-  export let index: number | undefined = undefined;
+  interface Props {
+    post: Post;
+    inCategoryPage?: boolean;
+    index?: number | undefined;
+  }
+
+  let { post, inCategoryPage = false, index = undefined }: Props = $props();
 </script>
 
 <article>

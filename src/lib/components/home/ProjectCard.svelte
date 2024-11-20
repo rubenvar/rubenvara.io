@@ -1,13 +1,27 @@
 <script lang="ts">
   import { fade } from 'svelte/transition';
   import TechTag from './TechTag.svelte';
+  import type { Snippet } from 'svelte';
 
-  export let id: string;
-  export let title: string;
-  export let techs: string[] = [];
-  export let browser: string;
-  export let iphone: string;
-  export let noLink: boolean = false;
+  interface Props {
+    id: string;
+    title: string;
+    techs: string[];
+    browser: string;
+    iphone: string;
+    noLink?: boolean;
+    children: Snippet;
+  }
+
+  let {
+    id,
+    title,
+    techs = [],
+    browser,
+    iphone,
+    noLink = false,
+    children,
+  }: Props = $props();
 
   // --caa600
   // --tn500
@@ -43,7 +57,7 @@
         />
       </div>
       <div class="text">
-        <slot />
+        {@render children?.()}
       </div>
       <div class="tech">
         {#each techs as tech}

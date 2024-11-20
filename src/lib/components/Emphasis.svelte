@@ -1,7 +1,14 @@
 <script lang="ts">
-  export let type = 'default';
+  import type { Snippet } from 'svelte';
+
+  interface Props {
+    type?: string;
+    children: Snippet;
+  }
+
+  let { type = 'default', children }: Props = $props();
 </script>
 
 <span class="emphasis emphasis-{type}">
-  <slot />
+  {@render children()}
 </span>
