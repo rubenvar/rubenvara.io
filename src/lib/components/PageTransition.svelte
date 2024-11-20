@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
-  import { fly } from 'svelte/transition';
+  import { fade } from 'svelte/transition';
 
   interface Props {
     refresh: string;
@@ -11,11 +11,12 @@
 </script>
 
 {#key refresh}
-  <div
+  <!-- <div
     id="wrapper"
     in:fly={{ duration: 300, delay: 150 }}
     out:fly={{ duration: 300 }}
-  >
+  > -->
+  <div in:fade>
     {@render children()}
   </div>
 {/key}

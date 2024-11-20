@@ -2,8 +2,15 @@
 // https://joshcollinsworth.com/blog/build-static-sveltekit-markdown-blog
 // https://www.aaronhubbard.dev/blogposts/text-from-module
 // https://github.com/mattjennings/sveltekit-blog-template
+// https://joyofcode.xyz/sveltekit-markdown-blog
 import { dev } from '$app/environment';
-import type { Category, Post, PostMeta } from '$lib/utils/types';
+import type {
+  Category,
+  // MarkdownFileImport,
+  Post,
+  PostMeta,
+} from '$lib/utils/types';
+import { error } from '@sveltejs/kit';
 import type { Component } from 'svelte';
 import { render } from 'svelte/server';
 
@@ -13,22 +20,20 @@ type GlobResp = {
   metadata: PostMeta;
 };
 
-interface Options {
+interface AllPostsOptions {
   category?: string;
   take?: number;
 }
 
-export async function getAllPosts(options?: Options) {
+export async function getAllPosts(options?: AllPostsOptions) {
   const category = options?.category;
   const take = options?.take;
 
   const allPostFiles = import.meta.glob<GlobResp>('../../posts/**/*.md');
 
-  const iterablePostFiles = Object.entries(allPostFiles);
-
   // shape each file’s data, so it’s easier to work with on the frontend
   const allPosts = await Promise.all(
-    iterablePostFiles.map(async ([path, resolver]) => {
+    Object.entries(allPostFiles).map(async ([path, resolver]) => {
       // try to get the category and slug from file structure (take out ../posts/ and .md)
       // TODO maybe make it more resilient with regex or something?
       const [cat, slug] = path.slice(12, -3).split('/');
@@ -36,9 +41,8 @@ export async function getAllPosts(options?: Options) {
       const resolvedPost = await resolver();
       const { metadata } = resolvedPost;
 
-      if (dev) {
-        // if dev, get content for link counter and return it
-        // const { html: content } = resolvedPost.default.render();
+      if (dev && !category && !take) {
+        // if dev and in blog page, get content for link counter and return it too
         const { body: content } = render(resolvedPost.default);
         return { ...metadata, content, category: cat, slug };
       }
@@ -47,32 +51,18 @@ export async function getAllPosts(options?: Options) {
     })
   );
 
-  let posts = [...allPosts];
-
-  if (!dev) {
+  return allPosts
     // in prod, only 'published' posts
-    posts = posts.filter((post) => post.status === 'published');
-  }
+    .filter((p) => dev || p.status === 'published')
+    // filter by category if there is one
+    .filter((p) => !category || p.category === category)
+    // sort by date here
+    .sort((a, b) =>
+      new Date(b.updated || b.date) < new Date(a.updated || a.date) ? -1 : 1
+    )
+    // return a number of posts
+    .slice(0, take);
 
-  // filter by category if there is one
-  if (category) {
-    posts = posts.filter((post) => post.category === category);
-  }
-
-  // sort by date here
-  posts = posts.sort((a, b) => {
-    const dateA = a.updated || a.date;
-    const dateB = b.updated || b.date;
-
-    return new Date(dateB) < new Date(dateA) ? -1 : 1;
-  });
-
-  // return a number of posts
-  if (take) {
-    posts = posts.slice(0, take);
-  }
-
-  return posts;
 }
 
 // used in sitemap, and in /blog (in dev)
@@ -189,20 +179,20 @@ export async function getSinglePost(
 
   // try to get the single post
   const postResolver = allPostFiles[`../../posts/${category}/${slug}.md`];
-  if (!postResolver) return;
 
-  const resolvedPost = await postResolver();
-
-  const { metadata } = resolvedPost;
-  const { body: content } = render(resolvedPost.default);
-
-  // metadata of posts in a series
-  let postsInSeries: Post[] | undefined;
-
-  // if post is in a series:
-  if (metadata.series?.index) {
-    postsInSeries = getPostsInSeries(metadata.series.name);
+  if (!postResolver) {
+    error(
+      404,
+      `no post "/${category}/${slug}" found (in [slug]/+page.server.ts)`
+    );
   }
+
+  const { metadata, default: content } = await postResolver();
+
+  // metadata of posts in a series (if post is in a series)
+  const postsInSeries = metadata.series?.index
+    ? getPostsInSeries(metadata.series.name)
+    : undefined;
 
   return { ...metadata, content, category, slug, postsInSeries };
 }

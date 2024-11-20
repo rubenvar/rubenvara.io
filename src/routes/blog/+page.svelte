@@ -1,16 +1,11 @@
 <script lang="ts">
-  import type { PageData } from './$types';
   import ListedPost from '$lib/components/ListedPost.svelte';
   import { dev } from '$app/environment';
   import SEOData from '$lib/components/SEOData.svelte';
   import Emphasis from '$lib/components/Emphasis.svelte';
   import type { Post } from '$lib/utils/types';
 
-  interface Props {
-    data: PageData;
-  }
-
-  let { data }: Props = $props();
+  let { data } = $props();
 
   const { counted, words, categories } = data;
   let posts = $state(data.posts);

@@ -4,13 +4,8 @@
   import PostSeries from '$lib/components/PostSeries.svelte';
   import SinglePostMeta from '$lib/components/SinglePostMeta.svelte';
   import TwitterBox from '$lib/components/TwitterBox.svelte';
-  import type { PageData } from './$types';
 
-  interface Props {
-    data: PageData;
-  }
-
-  let { data }: Props = $props();
+  let { data } = $props();
 
   let post = $derived(data.post);
   let categoryCount = $derived(data.categoryCount); // used in post meta to show link to category or only text
@@ -22,7 +17,7 @@
 </svelte:head>
 
 {#if post}
-  <header>
+  <hgroup>
     <h1>
       {post.title}{#if dev && post.status === 'draft'}{' '}(draft){/if}
     </h1>
@@ -32,14 +27,13 @@
       category={post.category}
       {categoryCount}
     />
-  </header>
+  </hgroup>
 
   {#if post.original}
     <PostOriginal original={post.original} seriesName={post.series?.name} />
   {/if}
 
-  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  {@html post.content}
+  <post.content />
 
   {#if post.series}
     <PostSeries
@@ -58,13 +52,14 @@
   />
 
   <TwitterBox twitter={post.twitter} />
+
+  <!-- <PostNav prev={prev} next={next} /> -->
 {:else}
   <p>algo no va bien</p>
 {/if}
 
-<!-- <PostNav prev={prev} next={next} /> -->
 <style>
-  header {
+  hgroup {
     margin-top: var(--gap50);
     margin-bottom: var(--gap90);
   }

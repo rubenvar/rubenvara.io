@@ -1,16 +1,14 @@
-import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
+import type { PageLoad } from './$types';
 import { getCategoryCount, getSinglePost } from '$lib/utils/api';
 import { countWords } from '$lib/utils/helpers';
 import { siteUrl } from '$lib/config';
 
-export const load: PageServerLoad = async ({ params }) => {
-  const { category, slug } = params;
-
-  const post = await getSinglePost(category, slug);
+// cannot be a server page as we are directly returning a non-serializable function (the component)
+export const load: PageLoad = async ({ params }) => {
+  const post = await getSinglePost(params.category, params.slug);
 
   if (post) {
-    const categoryCount = getCategoryCount(category);
+    const categoryCount = getCategoryCount(params.category);
 
     return {
       post,
@@ -41,6 +39,4 @@ export const load: PageServerLoad = async ({ params }) => {
       },
     };
   }
-
-  error(404, 'some error in [slug]/+page.server.ts');
 };

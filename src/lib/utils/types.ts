@@ -1,4 +1,10 @@
 import type { themes } from '$lib/config';
+import type { Component } from 'svelte';
+
+export interface MarkdownFileImport {
+  default: Component;
+  metadata: PostMeta;
+};
 
 export type PostMeta = {
   // required on md file creation
@@ -21,12 +27,15 @@ export type PostMeta = {
 };
 
 export type Post = PostMeta & {
-  // from file system
   slug: string;
   category: string;
-  content?: string;
+  content?: Component;
   postsInSeries?: Post[] | undefined;
 };
+
+export type PostWithRenderedContent = Omit<Post, 'content'> & {
+  content?: string;
+}
 
 export type CountedLink = {
   slug: string;

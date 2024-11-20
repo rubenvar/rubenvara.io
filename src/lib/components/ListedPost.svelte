@@ -1,10 +1,10 @@
 <script lang="ts">
   import { dev } from '$app/environment';
   import ListedPostMeta from './ListedPostMeta.svelte';
-  import type { Post } from '$lib/utils/types';
+  import type { Post, PostWithRenderedContent } from '$lib/utils/types';
 
   interface Props {
-    post: Post;
+    post: Post | PostWithRenderedContent;
     inCategoryPage?: boolean;
     index?: number | undefined;
   }

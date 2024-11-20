@@ -3,9 +3,7 @@ import type { PageServerLoad } from './$types';
 import { getAllPosts } from '$lib/utils/api';
 
 export const load: PageServerLoad = async ({ params }) => {
-  const { category } = params;
-
-  const posts = await getAllPosts({ category });
+  const posts = await getAllPosts({ category: params.category });
 
   if (posts.length) {
     return {

@@ -1,7 +1,6 @@
 import wordCounter from 'word-counting';
-import type { CountedLink, CountWords, Post } from './types';
+import type { CountedLink, CountWords, PostWithRenderedContent } from './types';
 
-// const linkRegex = /<a href="(.*?)"( rel="nofollow")?>/g;
 const linkRegex = /href="([^"]+)"/g;
 
 // TODO improve this function, maybe a regex, it's not really that resilient... 😅
@@ -11,11 +10,9 @@ const isExternal = (l: string) =>
 // helpers used only in /blog +page.server.ts (for now)
 // to show data about each post, only in dev (for now)
 
-export function countWords(posts: Post[]): CountWords[] {
+export function countWords(posts: PostWithRenderedContent[]): CountWords[] {
   return posts.map((post) => {
-    const postContent = post.content || ''; //! hacky ಠ_ಠ
-
-    const { wordsCount: wordCount } = wordCounter(postContent, {
+    const { wordsCount: wordCount } = wordCounter(post.content || '', {
       isHtml: true,
     });
     // harcoded words per minute:
@@ -27,13 +24,11 @@ export function countWords(posts: Post[]): CountWords[] {
 }
 
 // count links per post
-export function countLinks(posts: Post[]): CountedLink[] {
+export function countLinks(posts: PostWithRenderedContent[]): CountedLink[] {
   return posts
     .map((post) => {
-      const postContent = post.content || ''; //! hacky ಠ_ಠ
-
       // find links in html
-      const matches = [...postContent.matchAll(linkRegex)];
+      const matches = [...(post.content || '').matchAll(linkRegex)];
       const links = matches.map((match) => match[1]);
 
       // return links data to build table in /blog, in dev

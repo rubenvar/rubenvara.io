@@ -75,20 +75,20 @@
   {@html `<script type="application/ld+json">${JSON.stringify(websiteSchema)}${'<'}/script>`}
 </svelte:head>
 
+<!-- <SkipLink /> -->
+<TopBar />
+
+{#if $page.url.pathname !== '/'}
+  <Header />
+{/if}
+
 <PageTransition refresh={key}>
-  <!-- <SkipLink /> -->
-  <TopBar />
-
-  {#if $page.url.pathname !== '/'}
-    <Header />
-  {/if}
-
   <main>
     {@render children()}
   </main>
-
-  <Footer />
 </PageTransition>
+
+<Footer />
 
 <style>
   main {

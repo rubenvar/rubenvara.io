@@ -1,17 +1,11 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import ListedPost from '$lib/components/ListedPost.svelte';
-  import type { PageData } from './$types';
   import categoriesMeta from '$lib/assets/categories.json';
 
-  interface Props {
-    data: PageData;
-  }
+  let { data } = $props();
 
-  let { data }: Props = $props();
-
-  let posts = $derived(data.posts);
-  let total = $derived(posts.length);
+  let total = $derived(data.posts.length);
 
   const { category } = $page.params;
   const categoryMeta = categoriesMeta.find((c) => c.slug === category);
@@ -25,7 +19,7 @@
     </div>{/if}
 </header>
 
-{#each posts as post}
+{#each data.posts as post}
   <ListedPost {post} inCategoryPage />
 {/each}
 
