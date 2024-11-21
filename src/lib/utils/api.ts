@@ -174,7 +174,7 @@ function getPostsInSeries(seriesName: string): Post[] {
 export async function getSinglePost(
   category: string,
   slug: string
-): Promise<Post | undefined> {
+) {
   const allPostFiles = import.meta.glob<GlobResp>('../../posts/**/*.md');
 
   // try to get the single post

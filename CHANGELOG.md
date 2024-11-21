@@ -4,6 +4,13 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- 4 new posts.
+- Full migration to Svelte 5.
+- Improve api and `.md` file handling for blog.
+- Improve internal SEO helpers.
+- Update dependencies, svelte 5, eslint 9.
+- Stop using `.scss` files, remove `sass`.
+
 ## [0.28.0] - 2024-09-15
 
 - New drafts.
