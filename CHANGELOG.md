@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.29.0] - 2024-11-21
+
 - 4 new posts.
 - Full migration to Svelte 5.
 - Improve api and `.md` file handling for blog.
