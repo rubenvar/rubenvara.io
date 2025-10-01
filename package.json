@@ -9,9 +9,8 @@
         "preview": "vite preview",
         "prepare": "svelte-kit sync || echo ''",
         "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-        "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
         "format": "prettier --write .",
-        "lint": "prettier --check . && eslint ."
+        "lint": "eslint . && prettier --check ."
     },
     "dependencies": {
         "@fontsource-variable/baloo-2": "^5.2.7",

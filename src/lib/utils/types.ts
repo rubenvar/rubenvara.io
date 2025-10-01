@@ -33,6 +33,11 @@ export type Post = PostMeta & {
   postsInSeries?: Post[] | undefined;
 };
 
+export type LatestPost = PostMeta & {
+  slug: string;
+  category: string;
+}
+
 export type PostWithRenderedContent = Omit<Post, 'content'> & {
   content?: string;
 }

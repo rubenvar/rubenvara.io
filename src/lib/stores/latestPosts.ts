@@ -1,4 +1,4 @@
-import type { Post } from '$lib/utils/types';
+import type { LatestPost } from '$lib/utils/types';
 import { writable } from 'svelte/store';
 
-export const latestPosts = writable<Post[]>([]);
+export const latestPosts = writable<LatestPost[]>([]);
