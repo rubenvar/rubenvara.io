@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.30.0] - 2025-10-01
+
 - Adjust dark theme.
 - Update **now**, **about** and **home** page info.
 - Update all deps, eslint config, etc.
