@@ -4,6 +4,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+- Update all deps, eslint config, etc.
+- Remove Twitter box in post footer.
+- Update `/now` page.
+
 ## [0.29.0] - 2024-11-21
 
 - 4 new posts.
@@ -212,7 +216,7 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 - New draft.
 - Tweaked project card css.
 - Created post series functionality:
-  - Added a post series list component for post template.
+    - Added a post series list component for post template.
 - Tweaked font sizes.
 
 ## [0.12.13] - 2022-09-26
@@ -262,8 +266,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 ## [0.12.3] - 2022-09-22
 
 - Updated to latest `@sveltejs/kit`:
-  - Updated `$app/env` to `$app/environment`.
-  - Updated `config.kit.prerender.default`
+    - Updated `$app/env` to `$app/environment`.
+    - Updated `config.kit.prerender.default`
 - Updated posts with SvelteKit API changes.
 - Replaced `eslint-plugin-svelte3` with `eslint-plugin-svelte`.
 - Updated dependencies.
@@ -373,10 +377,10 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 ## [0.3.0] - 2022-01-25
 
 - Full rewrite (*simple*) site in SvelteKit:
-  - Added (old*ish*) index and now page
-  - Added blog and posts, written in MDsveX.
-  - Added ESlint.
-  - Added netlify adapter.
+    - Added (old*ish*) index and now page
+    - Added blog and posts, written in MDsveX.
+    - Added ESlint.
+    - Added netlify adapter.
 
 ## [0.2.1] - 2021-01-15
 
@@ -396,7 +400,7 @@ Almost ready for launch.
 Deployed in [Netlify](https://quizzical-varahamihira-9fdae1.netlify.app/), with test blog posts and not fully responsive yet. Some SEO and PWA features missing as per Chrome Lighthouse.
 
 - Added basic features:
-  - Main homepage.
-  - Nav only links to /now page.
+    - Main homepage.
+    - Nav only links to /now page.
 
 There are no more pages, the blog is not linked from anywhere (the link in header is commented).

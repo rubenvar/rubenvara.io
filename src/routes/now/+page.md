@@ -1,12 +1,12 @@
 ---
-updated: 2023-05-02
+updated: 2025-10-01
 ---
 
 <script>
   import PageHeader from "$lib/components/PageHeader.svelte";
 </script>
 
-<PageHeader title="Ahora mismo" content="Actualizado: 2 de mayo, 2023" />
+<PageHeader title="Ahora mismo" content="Actualizado: 1 de octubre, 2025" />
 
 Esto es una página **now** ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:
 
@@ -15,22 +15,23 @@ Esto es una página **now** ([explicación aquí](http://nownownow.com/about)). 
 
 ## 🌍 ¿Dónde estoy?
 
-🏡 En casa.
+🏡 En casa, en Vitoria-Gasteiz.
 
-Tras pasar casi tres años viajando (2016-2019) por el este de Europa y Asia Central, decidí volver a casa.
-
-Aunque ya llevo aquí 4 años y me he acostumbrado a la vida estable, sigo teniendo muy presente el tiempo que pasé moviéndome constantemente de un lugar a otro, lo que me hace valorar mucho más todos los aspectos de mi vida actual.
+Sin planes de cambiar de ubicación a corto plazo... ¿o quizás sí?
 
 ## 💻 ¿Qué estoy haciendo ahora?
 
-Empezar nuevos proyectos y trabajar en ellos: Tanto en programación (node.js, Fastify, React, tRPC, SvelteKit, etc.), como en el mundo real.
+En mi tiempo libre sigo aprendiendo todo lo que puedo sobre sobre desarrollo de software, web o no.
 
-Escalar todo lo que puedo. Cuando no, correr por el monte.
+- Ahora mismo rehaciendo partes de [calendarioaguasabiertas.com](https://calendarioaguasabiertas.com).
+- Y estudiando **animaciones**, con el fantástico curso [Whimsical Animations](https://whimsy.joshwcomeau.com/) de Josh C.
 
-Además, seguir tratando de mejorar, física y mentalmente, poco a poco.
+🌳 También intento pasar en la **naturaleza** todo el tiempo posible. Leer, meditar.
+
+Además, trabajo como **Frontend Developer** en CMZ, donde aúno mi pasión por el desarrollo web con mi conocimiento previo en máquina herramienta.
 
 ## 📆 ¿Qué planes tengo?
 
-Seguir **aprendiendo** desarrollo web. En los ratos libres pienso en empezar con Python, y también Rust, pero me cuesta encontrarles una utilidad directa para aplicarlos en mi día a día, como sí que hago con JavaScript.
+Seguir **aprendiendo** sobre desarrollo y tecnologías web. Animaciones. Integración de IA.
 
-Seguir escalando, corriendo, y tratando de mejorar en otras aficiones como el dibujo, la escritura, o el bricolaje. Poco a poco.
+Moverme más, correr, volver a la montaña, y seguir trabajando en mejorar otros ámbitos: creatividad, disciplina, alimentación. Poco a poco.
