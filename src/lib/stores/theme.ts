@@ -7,27 +7,25 @@ import { writable } from 'svelte/store';
 let defaultValue: Theme = 'light';
 // use the system as the default
 if (browser && window.matchMedia('(prefers-color-scheme: dark)')?.matches) {
-  defaultValue = 'dark';
+    defaultValue = 'dark';
 }
 
-const initialValue = browser
-  ? ((window.localStorage.getItem('theme') as Theme) ?? defaultValue)
-  : defaultValue;
+const initialValue = browser ? ((window.localStorage.getItem('theme') as Theme) ?? defaultValue) : defaultValue;
 
 const theme = writable<Theme>(initialValue);
 
 theme.subscribe((value) => {
-  if (browser) {
-    // to localStorage
-    window.localStorage.setItem('theme', value);
+    if (browser) {
+        // to localStorage
+        window.localStorage.setItem('theme', value);
 
-    // to cookie
-    const oneYear = 60 * 60 * 24 * 365;
-    document.cookie = `theme=${value}; max-age=${oneYear}; path=/; SameSite=Strict;`;
+        // to cookie
+        const oneYear = 60 * 60 * 24 * 365;
+        document.cookie = `theme=${value}; max-age=${oneYear}; path=/; SameSite=Strict;`;
 
-    // update the html tag from the store
-    document.documentElement.setAttribute('data-theme', value);
-  }
+        // update the html tag from the store
+        document.documentElement.setAttribute('data-theme', value);
+    }
 });
 
 export { theme };
