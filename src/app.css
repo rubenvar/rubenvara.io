@@ -149,8 +149,10 @@
     --radius30: 11px;
 }
 [data-theme='dark'] {
-    --white: hsl(0, 20%, 5%);
-    --black: hsl(0, 0%, 99%);
+    --white: hsl(0, 5%, 10%);
+    --black: hsl(0, 0%, 91%);
+    /* --white: hsl(0, 20%, 5%);
+    --black: hsl(0, 0%, 99%); */
 
     --primary900: hsl(25, 100%, 96%);
     --primary800: hsl(20, 100%, 88%);
