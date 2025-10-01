@@ -6,7 +6,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 - Update all deps, eslint config, etc.
 - Remove Twitter box in post footer.
-- Update `/now` page.
+- Update now, about and home page info.
+- Fix eslint and prettier issues.
 
 ## [0.29.0] - 2024-11-21
 
