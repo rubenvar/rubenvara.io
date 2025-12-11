@@ -6,6 +6,7 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 - Adapt for coolify.
 - Update dependencies.
+- Fix Svelte 5 warnings.
 
 ## [0.30.0] - 2025-10-01
 

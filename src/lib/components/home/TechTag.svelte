@@ -5,7 +5,7 @@
 
     let { tech }: Props = $props();
 
-    const techName = tech.toLowerCase().replace('.', '').replace(/\s\d+/, '').replace(' ', '-');
+    const techName = $derived(tech.toLowerCase().replace('.', '').replace(/\s\d+/, '').replace(' ', '-'));
 </script>
 
 <span class="tag">

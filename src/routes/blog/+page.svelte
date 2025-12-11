@@ -8,7 +8,7 @@
 
     let { data } = $props();
 
-    let posts = $state(data.posts);
+    let posts = $derived(data.posts);
     let showSEO = $state(true);
     let filterStatus: Post['status'] | 'all' = $state('all');
 
