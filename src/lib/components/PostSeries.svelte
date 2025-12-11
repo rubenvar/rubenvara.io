@@ -10,7 +10,7 @@
 
     let { currentPostIndex, seriesName, postsInSeries }: Props = $props();
 
-    const allPosts = postsInSeries?.sort((a, b) => (a.series?.index || 0) - (b.series?.index || 0));
+    const allPosts = $derived(postsInSeries?.sort((a, b) => (a.series?.index || 0) - (b.series?.index || 0)));
 </script>
 
 {#if allPosts?.length}

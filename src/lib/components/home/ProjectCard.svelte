@@ -18,7 +18,7 @@
     // --caa600
     // --tn500
     // --vpnf600
-    const customColor = `${id}600`;
+    const customColor = $derived(`${id}600`);
 
     // imgs outside button only show if wider than 1200px
     // if not, images inside .inner will show

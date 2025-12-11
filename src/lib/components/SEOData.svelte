@@ -11,11 +11,11 @@
 
     let { allLinks, link, allWords, words }: Props = $props();
 
-    const linkedFrom = link ? allLinks.filter((l) => link && l.internal.includes(`${link.slug}/`)) : [];
+    const linkedFrom = $derived(link ? allLinks.filter((l) => link && l.internal.includes(`${link.slug}/`)) : []);
 
-    const allWordCounts = allWords.map((w) => w.wordCount).sort((a, b) => a - b);
-    const currentIndex = words?.wordCount ? allWordCounts.indexOf(words?.wordCount) : 0;
-    const wordsPercent = Math.round(((currentIndex + 1) * 100) / allWordCounts.length);
+    const allWordCounts = $derived(allWords.map((w) => w.wordCount).sort((a, b) => a - b));
+    const currentIndex = $derived(words?.wordCount ? allWordCounts.indexOf(words?.wordCount) : 0);
+    const wordsPercent = $derived(Math.round(((currentIndex + 1) * 100) / allWordCounts.length));
 
     let showFrom = $state(true);
     let showInternal = $state(true);

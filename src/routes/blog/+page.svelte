@@ -8,7 +8,6 @@
 
     let { data } = $props();
 
-    const { counted, words, categories } = data;
     let posts = $state(data.posts);
     let showSEO = $state(true);
     let filterStatus: Post['status'] | 'all' = $state('all');
@@ -46,15 +45,15 @@
         Si te quedas por aquí seguro que aprendes algo nuevo sobre JavaScript. Sobre todo, <Emphasis type="js">JavaScript</Emphasis>.
     </p>
 
-    {#if dev && categories}
+    {#if dev && data.categories}
         <ul class="stats">
             <li>total: {posts.length}</li>
             <li>
                 draft: {posts.filter((post) => post.status !== 'published').length}
             </li>
-            {#if categories}
+            {#if data.categories}
                 <li>-</li>
-                {#each categories as cat (cat.category)}
+                {#each data.categories as cat (cat.category)}
                     <li><a href={resolve(`/${cat.category}`)}>{cat.category}</a>: {cat.count}</li>
                 {/each}
             {/if}
@@ -70,12 +69,12 @@
 
 {#each posts as post, index (post.slug)}
     <ListedPost {post} index={posts.length - index} />
-    {#if dev && showSEO && counted && words}
+    {#if dev && showSEO && data.counted && data.words}
         <SEOData
-            allLinks={counted}
-            link={counted.find((link) => link.slug === `/${post.category}/${post.slug}`)}
-            allWords={words}
-            words={words.find((obj) => obj.slug === `/${post.category}/${post.slug}`)}
+            allLinks={data.counted}
+            link={data.counted.find((link) => link.slug === `/${post.category}/${post.slug}`)}
+            allWords={data.words}
+            words={data.words.find((obj) => obj.slug === `/${post.category}/${post.slug}`)}
         />
     {/if}
 {/each}
