@@ -1,8 +1,6 @@
 <script>
     import { resolve } from '$app/paths';
     import { page } from '$app/state';
-
-    console.log(page.url.pathname);
 </script>
 
 <nav>
