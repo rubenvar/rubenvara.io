@@ -4,6 +4,8 @@ All the notable changes made to this site. It adheres to [Semantic Versioning](h
 
 ## [Unreleased]
 
+## [0.31.1] - 2026-05-19
+
 - Update **now**.
 
 ## [0.31.0] - 2025-12-11
