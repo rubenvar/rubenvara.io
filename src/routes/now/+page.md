@@ -1,12 +1,12 @@
 ---
-updated: 2025-10-01
+updated: 2026-05-20
 ---
 
 <script>
   import PageHeader from "$lib/components/PageHeader.svelte";
 </script>
 
-<PageHeader title="Ahora mismo" content="Actualizado: 1 de octubre, 2025" />
+<PageHeader title="Ahora mismo" content="Actualizado: 20 de mayo, 2026" />
 
 Esto es una página **now** ([explicación aquí](http://nownownow.com/about)). La actualizo a menudo:
 
@@ -15,16 +15,16 @@ Esto es una página **now** ([explicación aquí](http://nownownow.com/about)). 
 
 ## 🌍 ¿Dónde estoy?
 
-🏡 En casa, en Vitoria-Gasteiz.
+🏡 En casa, en Gijón.
 
-Sin planes de cambiar de ubicación a corto plazo... ¿o quizás sí?
+Recién llegado, empezando una nueva etapa viviendo en Asturias.
 
 ## 💻 ¿Qué estoy haciendo ahora?
 
 En mi tiempo libre sigo aprendiendo todo lo que puedo sobre sobre desarrollo de software, web o no.
 
-- Ahora mismo rehaciendo partes de [calendarioaguasabiertas.com](https://calendarioaguasabiertas.com).
-- Y estudiando **animaciones**, con el fantástico curso [Whimsical Animations](https://whimsy.joshwcomeau.com/) de Josh C.
+- Ahora mismo rehaciendo partes de [calendarioaguasabiertas.com](https://calendarioaguasabiertas.com), actualizando a lo último de React y Next.js.
+- Y sigo estudiando **animaciones**, con el fantástico curso [Whimsical Animations](https://whimsy.joshwcomeau.com/) de Josh Comeau.
 
 🌳 También intento pasar en la **naturaleza** todo el tiempo posible. Leer, meditar.
 
